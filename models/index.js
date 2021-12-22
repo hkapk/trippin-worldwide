@@ -11,20 +11,13 @@ User.hasMany(Post, {
 
 Post.belongsTo(User, {
     foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-});
-
-Comment.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-});
-
-Comment.belongsTo(Post, {
-    foreignKey: 'post_id',
-    onDelete: 'SET NULL'
 });
 
 User.hasMany(Comment, {
+    foreignKey: 'user_id',
+});
+
+Comment.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
@@ -32,32 +25,12 @@ Post.hasMany(Comment, {
     foreignKey: 'post_id'
 });
 
-Location.belongsTo(Post, {
+Comment.belongsTo(Post, {
     foreignKey: 'post_id',
-    onDelete: 'SET NULL'
 });
 
-Post.hasMany(Location, {
-    foreignKey: 'post_id'
-});
 
-Activity.belongsTo(Post, {
-    foreignKey: 'post_id',
-    onDelete: 'SET NULL'
-});
 
-Post.hasMany(Activity, {
-    foreignKey: 'post_id'
-});
-
-Cuisine.belongsTo(Post, {
-    foreignKey: 'post_id',
-    onDelete: 'SET NULL'
-});
-
-Post.hasMany(Cuisine, {
-    foreignKey: 'post_id'
-});
 
 
 module.exports = { User, Post, Comment, Location, Activity, Cuisine }

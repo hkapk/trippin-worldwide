@@ -15,13 +15,6 @@ Cuisine.init(
         },
         name: {
             type: DataTypes.STRING,
-        },
-        post_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'post',
-                key: 'id'
-            }
         }
     },
     {
