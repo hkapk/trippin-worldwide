@@ -68,4 +68,14 @@ Cuisine.belongsToMany(Post, {
     foreignKey: 'cuisine_id'
 });
 
-module.exports = { User, Post, Comment, Location, Activity, Cuisine }
+module.exports = { 
+    User, 
+    Post, 
+    Comment, 
+    Location, 
+    Activity, 
+    Cuisine,
+    PostLocation,
+    PostActivity,
+    PostCuisine
+}

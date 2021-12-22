@@ -20,7 +20,7 @@ PostLocation.init(
                 key: 'id'
             }
         },
-        cuisine_id: {
+        location_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'location',
