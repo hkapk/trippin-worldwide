@@ -14,7 +14,7 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: tru
+            autoIncrement: true
         },
         // TODO verify with team use of first and last name upon sign up
         first_name: {
