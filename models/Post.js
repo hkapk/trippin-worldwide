@@ -27,11 +27,17 @@ Post.init(
         description: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        start_date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+        end_date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
         }
-        //TODO add start/end dates, formatted
         //TODO add location, references Location model
         //TODO add activities, reference Activities model
-        //TODO add comments, references Comments model
     },
     {
         sequelize,
