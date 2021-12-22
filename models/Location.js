@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require("../config/connection");
 
-class Post extends Model {
+class Location extends Model {
 
 }
 
-Post.init(
+Location.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,28 +13,20 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        country: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        post_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'post',
                 key: 'id'
             }
-        },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        description: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        start_date: {
-            type: DataTypes.DATEONLY,
-            allowNull: false
-        },
-        end_date: {
-            type: DataTypes.DATEONLY,
-            allowNull: false
         }
     },
     {
@@ -45,4 +37,4 @@ Post.init(
     }
 );
 
-module.exports = Post;
+module.exports = Location;
