@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const { Activity } = require('.');
 const sequelize = require("../config/connection");
 
 class Post extends Model {
@@ -35,6 +36,27 @@ Post.init(
         end_date: {
             type: DataTypes.DATEONLY,
             allowNull: false
+        },
+        location_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'location',
+                key: 'id'
+            }
+        },
+        activity_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'activity',
+                key: 'id'
+            }
+        },
+        cuisine_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'cuisine',
+                key: 'id'
+            }
         }
     },
     {

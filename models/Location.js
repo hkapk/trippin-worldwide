@@ -33,7 +33,7 @@ Location.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
+        modelName: 'location'
     }
 );
 
