@@ -15,9 +15,12 @@
     <h1>Trippin Worldwide</h1>
   </header>
   <div class="top-nav">
-    <a class="btn-nav" href="/login">Log in</a>
-    <button class="btn-nav" type="submit">Sign Up</button>
+       {{#if loggedIn}}
     <button id="logout" class="btn-nav">logout</button>
+    {{else}}
+    <a class="btn-nav" href="/login">Log in</a>
+    <a class="btn-nav" href="/signup">Sign Up</a>
+    {{/if}}
   </div>
   <body class="hero-image">
     <container class="page">
@@ -36,6 +39,9 @@
         </main>
       </div>
     </container>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
   </body>
   <footer>Thanks for visiting!</footer>
 </html>
