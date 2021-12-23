@@ -21,6 +21,9 @@ const activityData = [
     },
     {
         name: 'Boating'
+    },
+    {
+        name: 'Wineries'
     }
 ]
 

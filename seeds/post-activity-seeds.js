@@ -68,6 +68,18 @@ const postActivityData = [
     {
         post_id: 10,
         activity_id: 4
+    },
+    {
+        post_id: 11,
+        activity_id: 1
+    },
+    {
+        post_id: 11,
+        activity_id: 2
+    },
+    {
+        post_id: 12,
+        activity_id: 8
     }
 ]
 

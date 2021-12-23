@@ -71,6 +71,20 @@ const postData = [
         start_date: 2019-01-01,
         end_date: 2019-01-07
     },
+    {
+        user_id: 1,
+        title: "Roman Holiday",
+        description: "Sightseeing in capitol",
+        start_date: 2019-01-01,
+        end_date: 2019-01-07
+    },
+    {
+        user_id: 2,
+        title: "Wine trip to Northern California",
+        description: "Tour the city and traveled surrounding areas",
+        start_date: 2019-01-01,
+        end_date: 2019-01-07
+    },
 ]
 
 const seedPosts = () => Post.bulkCreate(postData);

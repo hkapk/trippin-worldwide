@@ -49,6 +49,14 @@ const postLocationData = [
         post_id: 10,
         location_id: 12
     },
+    {
+        post_id: 11,
+        location_id: 10
+    },
+    {
+        post_id: 12,
+        location_id: 7
+    }
 ];
 
 const seedPostLocations = () => PostLocation.bulkCreate(postLocationData);
