@@ -1,0 +1,29 @@
+const { Activity } = require('../models');
+
+const activityData = [
+    {
+        name: 'Sightseeing'
+    },
+    {
+        name: 'Shopping'
+    },
+    {
+        name: 'Guided Tours'
+    },
+    {
+        name: 'Museums'
+    },
+    {
+        name: 'Hiking'
+    },
+    {
+        name: 'Swimming'
+    },
+    {
+        name: 'Boating'
+    }
+]
+
+const seedActivities = () => Activity.bulkCreate(activityData);
+
+module.exports = seedActivities;
