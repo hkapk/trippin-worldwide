@@ -20,7 +20,35 @@ const locationData = [
     {
         city: 'Cancun',
         country: 'Mexico'
-    }
+    },
+    {
+        city: 'Tokyo',
+        country: 'Japan'
+    },
+    {
+        city: 'San Francisco',
+        country: 'United States of America'
+    },
+    {
+        city: 'Barcelona',
+        country: 'Spain'
+    },
+    {
+        city: 'Ochos Rios',
+        country: 'Jamaica'
+    },
+    {
+        city: 'Rome',
+        country: 'Italy'
+    },
+    {
+        city: 'Venice',
+        country: 'Italy'
+    },
+    {
+        city: 'Florence',
+        country: 'Italy'
+    },
 ]
 
 const seedLocations = () => Location.bulkCreate(locationData);
