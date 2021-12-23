@@ -34,7 +34,7 @@ const locationData = [
         country: 'Spain'
     },
     {
-        city: 'Ochos Rios',
+        city: 'Ocho Rios',
         country: 'Jamaica'
     },
     {
