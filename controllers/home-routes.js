@@ -5,7 +5,7 @@ const {User, PostLocation, PostCuisine, PostActivity, Post, Location, Cuisine, C
 
 // get all posts for homepage
 router.get('/', (req, res) => {
-    console.log('req.session');
+    // console.log(req.session);
     Post.findAll({
 //attributes to include go below  
         attributes: [
@@ -14,15 +14,23 @@ router.get('/', (req, res) => {
           'title',
           'description',
           'start_date',
-          'end_date'
-        ]
-
+          'end_date',
+          'created_at'
+        ],
+        order: [['end_date', 'DESC']],
+        include: [
+          {
+            model: User,
+            attributes: ['first_name']
+          }
+        ],
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        
+        // console.log(posts);
         res.render('homepage', 
-        { posts
+        { posts,
+          loggedIn: req.session.loggedIn
       }
       );
       })
@@ -42,6 +50,10 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//signup route
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
 
 router.get('/post/:id', (req, res) => {
     Post.findOne({

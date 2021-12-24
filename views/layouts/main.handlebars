@@ -16,9 +16,9 @@
   </header>
   <div class="top-nav">
        {{#if loggedIn}}
-    <button id="logout" class="btn-nav">logout</button>
+    <button id="logout" class="btn-nav">Log Out</button>
     {{else}}
-    <a class="btn-nav" href="/login">Log in</a>
+    <a class="btn-nav" href="/login">Log In</a>
     <a class="btn-nav" href="/signup">Sign Up</a>
     {{/if}}
   </div>
@@ -26,13 +26,14 @@
     <container class="page">
       <div class="row">
         <nav class="sidebar col-12 col-sm-2 col-xl-1">
-          <a class="nav-choice" href="/recent">Recent</a>
-          <a class="nav-choice" href="/location">Location</a>
+          <a class="nav-choice" href="/">Recent</a>
+          {{!-- the 'Recent' nav button will act as 'homepage' --}}
+          <a class="nav-choice" href="/location">Locations</a>
           <a class="nav-choice" href="/users">Users</a>
           <a class="nav-choice" href="/popular">Popular</a>
           <a class="nav-choice" href="/activities">Activities</a>
           <a class="nav-choice" href="/food">Food</a>
-          <a class="nav-choice" href="/photots">Photos</a>
+          <a class="nav-choice" href="/photos">Photos</a>
         </nav>
         <main class="col-12 col-sm-10 col-xl-11">
          {{{body}}}
