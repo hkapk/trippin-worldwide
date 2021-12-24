@@ -174,8 +174,8 @@ If you have any questions about the repo, open an issue or contact us directly a
 | :--------------: | :-------------------------: | :-----------: |
 |  Kristin Gaito   |    kngurley25@gmail.com     |               |
 |  Sam Davenport   |   samueldavenport@att.net   |               |
-|     Raman TV     |     ramantv@outlook.com     |               |
-|    Hank Kapka    |     hankkapka@gmail.com     |               |
+|     Raman TV     |     ramantv@outlook.com     |    ramantv    |
+|    Hank Kapka    |     hankkapka@gmail.com     |     hkapk     |
 | Christine Baxter | christine.d.baxter@live.com | baxters4karma |
 
 [back to top](#table-of-contents)
