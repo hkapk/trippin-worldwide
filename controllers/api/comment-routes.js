@@ -7,27 +7,13 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
-            'post_url',
+            'user_id',
             'title',
-            'created_at',
+            'description',
+            'start_date',
+            'end_date'
         ],
-        include: [
-            {
-                model: Comment,
-                attributes:[`'id',
-                'comment_text', 
-                'post_id', 
-                'user_id', 
-                'post_id'`],
-                include: {
-                    model: User,
-                    attributes: ['email']
-                }
-            },
-            {model: User,
-            attributes:['email']
-        }
-        ]
+
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -44,7 +30,7 @@ router.post('/',  (req, res) => {
       comment_text: req.body.comment_text,
       post_id: req.body.post_id,
       // use the id from the session
-      email: req.session.email
+      id: req.session.id
     })
       .then(dbCommentData => res.json(dbCommentData))
       .catch(err => {
