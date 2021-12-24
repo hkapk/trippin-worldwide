@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const { Post, } = require('../models');
 
-//include model below:
-//const { } = require('../models');
-const withAuth = require('../utils/auth');
 
 router.get('/',  (req, res) => {
     Post.findAll({
@@ -18,7 +16,7 @@ router.get('/',  (req, res) => {
       .then(dbPostData => {
         // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        res.render('homepage', { posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -45,9 +43,8 @@ router.get('/',  (req, res) => {
           const post = dbPostData.get({ plain: true });
     
           // pass data to template
-          res.render('edit-post', 
-          { post,
-            loggedIn: req.session.loggedIn
+          res.render('single-blog', 
+          { post
            });
         })
         .catch(err => {

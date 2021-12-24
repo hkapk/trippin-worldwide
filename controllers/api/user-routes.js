@@ -1,7 +1,5 @@
 const router = require('express').Router();
-
-//include models here: 
-// const { MODEL NAMES GO HERE } = require('../../models');
+const { User, Post, Comment} = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -24,11 +22,17 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        attributes: [`
+        'id', 
+        'title', 
+        'description', 
+        'created_at'`]
       },
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'created_at'],
+        attributes: [`'id', 
+        'comment_text', 
+        'created_at'`],
         include: {
           model: Post,
           attributes: ['title']
@@ -50,16 +54,17 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  
   User.create({
-    username: req.body.username,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     email: req.body.email,
     password: req.body.password
   })
   .then(dbUserData => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
   
       res.json(dbUserData);
@@ -91,8 +96,8 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.id = dbUserData.id;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
@@ -112,9 +117,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  //expects {"username":"username", "email":"email", "password":"password"}
 
-  // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
     where: {
