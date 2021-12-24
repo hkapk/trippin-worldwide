@@ -7,7 +7,7 @@ const seedActivities = require('./activity-seeds');
 const seedPostActivities = require('./post-activity-seeds');
 const seedCuisine = require('./cuisine-seeds');
 const seedPostCuisine = require('./post-cuisine-seeds');
-const seedComments = require('./comment-seeds';)
+const seedComments = require('./comment-seeds');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
