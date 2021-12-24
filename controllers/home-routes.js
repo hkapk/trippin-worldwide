@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const res = require('express/lib/response');
 const sequelize = require('../config/connection');
 //include models below
 const {User, PostLocation, PostCuisine, PostActivity, Post, Location, Cuisine, Comment, Activity } = require('../models');
@@ -23,7 +22,8 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         
         res.render('homepage', 
-        { posts
+        { posts,
+          loggedIn: req.session.loggedIn
       }
       );
       })
