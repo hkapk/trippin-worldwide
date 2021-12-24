@@ -1,24 +1,24 @@
 <div class="home">
-  <h4 class="link-title">Trip Blogs</h4>
+  <h4 class="sub-heading">Trip Blogs</h4>
   <ol class="post-list">
-
+{{#each posts as |post|}}
     <li>
       <article class="post">
         <div class="post-card">
-          <a href="/single-blog/2" class="blog-title" target="_blank">Fun at the
-            Grand Canyon - 15 comments</a>
+          <h5 class="blog-title" target="_blank">{{post.title}}</h5>
           <span class="list-item"><strong>Posted by:</strong>
             Sam Davenport</span>
           <span class="list-item"><strong>Description:</strong>
-            We spent a week camping, hiking, and taking in many amazing views.</span>
+           {{post.description}}</span>
           <span class="list-item"><strong>Location:</strong> Arizona, USA</span>
-          <span class="list-item"><strong>Start Date:</strong> 2020-08-15</span>
-          <span class="list-item"><strong>End Date:</strong> 2020-08-22</span>
+          <span class="list-item"><strong>Start Date:</strong> {{post.start_date}}</span>
+          <span class="list-item"><strong>End Date:</strong> {{post.end_date}}</span>
           <a href="/single-blog/2">More Details</a>
         </div>
       </article>
     </li>
-    <li>
+    {{/each}}
+ <!--   <li>
       <article class="post">
         <div class="post-card">
           <a href="/single-blog/2" class="blog-title" target="_blank">My London
@@ -84,7 +84,7 @@
           <a href="/single-blog/2">More Details</a>
         </div>
       </article>
-    </li>
+    </li> -->
 
   </ol>
 
