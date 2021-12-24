@@ -2,8 +2,8 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 
 //include models here: 
-//const {  } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { Post, Comment, User } = require('../../models');
+
 
 // get all users
 router.get('/', (req, res) => {
@@ -11,24 +11,19 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_content',
+      'user_id',
       'title',
-      'created_at',
+      'description',
+      'start_date',
+      'end_date'
     ],
     order: [['created_at', 'DESC']],
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ['email']
       },
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'created_at'],
-      //   include: {
-      //     model: Post,
-      //     attributes: ['title']
-      //   },
-      //}
+
     ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -69,12 +64,14 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/',   (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+router.post('/', (req, res) => {
+  
   Post.create({
+    user_id: req.body.user_id,
     title: req.body.title,
-    post_content: req.body.post_content,
-    user_id: req.session.user_id
+    description: req.body.description,
+    start_date: req.body.start_date,
+    end_date: req.body.end_date
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -84,14 +81,17 @@ router.post('/',   (req, res) => {
 });
 
 
-router.put('/:id', withAuth,  (req, res) => {
+router.put('/:id', (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      title: req.body.title,
+      description: req.body.description,
+      start_date: req.body.start_date,
+      end_date: req.body.end_date
     },
     {
       where: {
-        id: req.params.id
+        user_id: req.params.user_id
       }
     }
   )
@@ -108,7 +108,7 @@ router.put('/:id', withAuth,  (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id',  (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id

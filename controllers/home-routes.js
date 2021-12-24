@@ -1,21 +1,28 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 //include models below
-//const { } = require('../models');
+const {User, PostLocation, PostCuisine, PostActivity, Post, Location, Cuisine, Comment, Activity } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
     console.log('req.session');
     Post.findAll({
-//attributes to include go below      
+//attributes to include go below  
+        attributes: [
+          'id',
+          'user_id',
+          'title',
+          'description',
+          'start_date',
+          'end_date'
+        ]
 
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
   
         res.render('homepage', 
-        { posts,
-        loggedIn: req.session.loggedIn
+        { posts
       }
       );
       })
@@ -54,7 +61,7 @@ router.get('/post/:id', (req, res) => {
         const post = dbPostData.get({ plain: true });
   
         // pass data to template
-        res.render('single-post', 
+        res.render('single-blog', 
         { post,
           loggedIn: req.session.loggedIn
          });
