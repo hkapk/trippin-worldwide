@@ -67,9 +67,11 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   
   Post.create({
+    user_id: req.body.user_id,
     title: req.body.title,
-    post_content: req.body.post_content,
-    email: req.session.email
+    description: req.body.description,
+    start_date: req.body.start_date,
+    end_date: req.body.end_date
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -82,11 +84,14 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      title: req.body.title,
+      description: req.body.description,
+      start_date: req.body.start_date,
+      end_date: req.body.end_date
     },
     {
       where: {
-        id: req.params.id
+        user_id: req.params.user_id
       }
     }
   )
