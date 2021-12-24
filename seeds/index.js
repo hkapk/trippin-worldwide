@@ -1,13 +1,13 @@
+const sequelize = require('../config/connection');
 const seedUsers = require('./user-seeds');
 const seedPosts = require('./post-seeds');
 const seedLocations = require('./location-seeds');
 const seedPostLocations = require('./post-location-seeds');
-
-const sequelize = require('../config/connection');
 const seedActivities = require('./activity-seeds');
 const seedPostActivities = require('./post-activity-seeds');
 const seedCuisine = require('./cuisine-seeds');
 const seedPostCuisine = require('./post-cuisine-seeds');
+const seedComments = require('./comment-seeds';)
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
@@ -36,6 +36,9 @@ const seedAll = async () => {
 
     await seedPostCuisine();
     console.log('POST-CUISINE SEEDED');
+
+    await seedComments();
+    console.log('COMMENTS SEEDED');
 
     process.exit(0);
 };
