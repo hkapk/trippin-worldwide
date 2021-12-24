@@ -24,7 +24,7 @@ main {
   height: 100%;
 }
 .page {
-  height: fit-content;
+  height: 100%;
   flex: 1 1 auto;
   margin: 0;
 }
@@ -49,7 +49,6 @@ h2 {
   text-align: end;
   color: whitesmoke;
   padding: 21px;
-  /*border-bottom: 2px solid whitesmoke;*/
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 2.4rem;
 }
@@ -106,9 +105,19 @@ footer {
   font-size: 1.6rem;
   text-align: center;
   color: darkblue;
-  background-color: rgb(192, 192, 192, 0.8);
   margin: 0 auto;
-  width: 275px;
+  max-width: inherit;
+  border-radius: 7px;
+  padding: 10px;
+  font-weight: 700;
+}
+.blog-heading {
+  font-size: 1.6rem;
+  text-align: center;
+  color: darkblue;
+  background-color: rgb(192, 192, 192, 0.8);
+  margin: 25px 20px;
+  max-width: inherit;
   border-radius: 7px;
   padding: 10px;
   font-weight: 700;
@@ -116,7 +125,7 @@ footer {
 .form {
   background-color: rgb(192, 192, 192, 0.8);
   margin: 0 auto;
-  width: 275px;
+  max-width: 275px;
   border-radius: 10px;
   font-weight: 500;
 }
