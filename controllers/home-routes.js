@@ -20,9 +20,11 @@ router.get('/', (req, res) => {
         include: [
           {
             model: User,
-            attributes: ['first_name']
+            attributes: ['first_name', 'last_name']
           },
-          'locations'
+          'locations',
+          'activities',
+          'cuisine'
         ]
     })
       .then(dbPostData => {
@@ -60,8 +62,23 @@ router.get('/post/:id', (req, res) => {
       where: {
         id: req.params.id
       },
- //attributes will go here: 
- 
+      attributes: [
+        'id',
+        'user_id',
+        'title',
+        'description',
+        'start_date',
+        'end_date'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        },
+        'locations',
+        'activities',
+        'cuisine'
+      ]
     })
       .then(dbPostData => {
         if (!dbPostData) {
