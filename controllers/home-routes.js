@@ -15,19 +15,19 @@ router.get('/', (req, res) => {
           'description',
           'start_date',
           'end_date',
-          'created_at'
         ],
         order: [['end_date', 'DESC']],
         include: [
           {
             model: User,
             attributes: ['first_name']
-          }
-        ],
+          },
+          'locations'
+        ]
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        // console.log(posts);
+        console.log(posts);
         res.render('homepage', 
         { posts,
           loggedIn: req.session.loggedIn

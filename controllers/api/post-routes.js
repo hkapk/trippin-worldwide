@@ -18,13 +18,13 @@ router.get('/', (req, res) => {
       'start_date',
       'end_date'
     ],
-    order: [['created_at', 'DESC']],
+    order: [['end_date', 'DESC']],
     include: [
       {
         model: User,
-        attributes: ['email']
+        attributes: ['first_name']
       },
-
+      'locations'
     ]
   })
     .then(dbPostData => res.json(dbPostData))
