@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const res = require('express/lib/response');
 const sequelize = require('../config/connection');
 //include models below
 const {User, PostLocation, PostCuisine, PostActivity, Post, Location, Cuisine, Comment, Activity } = require('../models');
@@ -42,6 +43,10 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//signup route
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
 
 router.get('/post/:id', (req, res) => {
     Post.findOne({
