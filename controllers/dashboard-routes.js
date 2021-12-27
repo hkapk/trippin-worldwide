@@ -1,6 +1,7 @@
 const router = require('express').Router();
+const res = require('express/lib/response');
 const sequelize = require('../config/connection');
-const { Post, } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
@@ -9,14 +10,28 @@ router.get('/', withAuth, (req, res) => {
         // use the ID from the session
         user_id: req.session.user_id
       },
-//attributes will go here: 
-
-//
+      attributes: [
+        'id',
+        'user_id',
+        'title',
+        'description',
+        'start_date',
+        'end_date'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        },
+        'locations',
+        'activities',
+        'cuisine'
+      ]
     })
       .then(dbPostData => {
         // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { posts, loggedIn: true });
+        res.render('dashboard', { posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -29,9 +44,23 @@ router.get('/', withAuth, (req, res) => {
         where: {
           id: req.params.id
         },
-       // attributes will go here: 
-
-       //
+        attributes: [
+          'id',
+          'user_id',
+          'title',
+          'description',
+          'start_date',
+          'end_date'
+        ],
+        include: [
+          {
+            model: User,
+            attributes: ['first_name', 'last_name']
+          },
+          'locations',
+          'activities',
+          'cuisine'
+        ]
       })
         .then(dbPostData => {
           if (!dbPostData) {
@@ -43,7 +72,7 @@ router.get('/', withAuth, (req, res) => {
           const post = dbPostData.get({ plain: true });
     
           // pass data to template
-          res.render('single-blog', 
+          res.render('edit-blog', 
           { post
            });
         })
@@ -53,5 +82,8 @@ router.get('/', withAuth, (req, res) => {
         });
     });
 
+router.get('/create', withAuth, (req, res) => {
+  res.render('create-blog');
+});
 
 module.exports = router;

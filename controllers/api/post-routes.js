@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 const { Post, Comment, User } = require('../../models');
 
 
-// get all users
+// get all posts
 router.get('/', (req, res) => {
   //console.log('======================');
   Post.findAll({
@@ -18,13 +18,15 @@ router.get('/', (req, res) => {
       'start_date',
       'end_date'
     ],
-    order: [['created_at', 'DESC']],
+    order: [['end_date', 'DESC']],
     include: [
       {
         model: User,
-        attributes: ['email']
+        attributes: ['first_name', 'last_name']
       },
-
+      'locations',
+      'activities',
+      'cuisine'
     ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -41,15 +43,20 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_content',
+      'user_id',
       'title',
-      'created_at',
+      'description',
+      'start_date',
+      'end_date'
     ],
     include: [
       {
         model: User,
-        attributes: ['username']
-      }
+        attributes: ['first_name', 'last_name']
+      },
+      'locations',
+      'activities',
+      'cuisine'
     ]
   })
     .then(dbPostData => {

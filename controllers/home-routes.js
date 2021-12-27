@@ -15,19 +15,20 @@ router.get('/', (req, res) => {
           'description',
           'start_date',
           'end_date',
-          'created_at'
         ],
         order: [['end_date', 'DESC']],
         include: [
           {
             model: User,
-            attributes: ['first_name']
-          }
-        ],
+            attributes: ['first_name', 'last_name']
+          },
+          'locations',
+          'activities',
+          'cuisine'
+        ]
     })
       .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        // console.log(posts);
         res.render('homepage', 
         { posts,
           loggedIn: req.session.loggedIn
@@ -60,8 +61,23 @@ router.get('/post/:id', (req, res) => {
       where: {
         id: req.params.id
       },
- //attributes will go here: 
- 
+      attributes: [
+        'id',
+        'user_id',
+        'title',
+        'description',
+        'start_date',
+        'end_date'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        },
+        'locations',
+        'activities',
+        'cuisine'
+      ]
     })
       .then(dbPostData => {
         if (!dbPostData) {
