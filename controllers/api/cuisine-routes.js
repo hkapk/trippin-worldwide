@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { Location } = require('../../models');
+const { Cuisine } = require('../../models');
 
 router.get('/', (req, res) => {
-    Location.findAll({
+    Cuisine.findAll({
         include: [
             'posts'
         ],
-        order: [['country', 'ASC']],
+        order: [['name', 'ASC']],
     })
-    .then(dbLocationData => res.json(dbLocationData))
+    .then(dbCuisineData => res.json(dbCuisineData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Location.findOne({
+    Cuisine.findOne({
         where: {
             id: req.params.id
         },
@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
             'posts'
         ]
     })
-    .then(dbLocationData => res.json(dbLocationData))
+    .then(dbCuisineData => res.json(dbCuisineData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);

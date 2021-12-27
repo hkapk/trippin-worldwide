@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { Location } = require('../../models');
+const { Activity } = require('../../models');
 
 router.get('/', (req, res) => {
-    Location.findAll({
+    Activity.findAll({
         include: [
             'posts'
         ],
-        order: [['country', 'ASC']],
+        order: [['name', 'ASC']],
     })
-    .then(dbLocationData => res.json(dbLocationData))
+    .then(dbActivityData => res.json(dbActivityData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Location.findOne({
+    Activity.findOne({
         where: {
             id: req.params.id
         },
@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
             'posts'
         ]
     })
-    .then(dbLocationData => res.json(dbLocationData))
+    .then(dbActivityData => res.json(dbActivityData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
