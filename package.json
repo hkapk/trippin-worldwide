@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"@googlemaps/google-maps-services-js": "^3.3.5",
 		"bcrypt": "^5.0.1",
 		"connect-session-sequelize": "^7.1.2",
 		"dotenv": "^10.0.0",
@@ -7,6 +8,7 @@
 		"express-handlebars": "^6.0.2",
 		"express-session": "^1.17.2",
 		"mysql2": "^2.3.3",
+		"require": "^0.4.4",
 		"sequelize": "^6.12.2"
 	},
 	"scripts": {

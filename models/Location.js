@@ -20,6 +20,9 @@ Location.init(
         country: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        country_code: {
+            type: DataTypes.CHAR(2)
         }
     },
     {

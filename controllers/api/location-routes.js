@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Sequelize } = require('sequelize/dist');
 const { Location } = require('../../models');
 
 router.get('/', (req, res) => {
@@ -8,11 +9,11 @@ router.get('/', (req, res) => {
             'posts'
         ]
     })
-    .then(dbLocationData => res.json(dbLocationData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbLocationData => res.json(dbLocationData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/:id', (req, res) => {
@@ -24,11 +25,11 @@ router.get('/:id', (req, res) => {
             'posts'
         ]
     })
-    .then(dbLocationData => res.json(dbLocationData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbLocationData => res.json(dbLocationData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
