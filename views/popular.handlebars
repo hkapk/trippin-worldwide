@@ -1,33 +1,39 @@
-<a href="/popular/locations">Locations</a>
-<a href="/popular/activities">Activities</a>
-<a href="/popular/cuisine">Cuisine</a>
+<div>
+    <a href="/popular/locations">Locations</a>
+    <a href="/popular/activities">Activities</a>
+    <a href="/popular/cuisine">Cuisine</a>
+</div>
 
-{{#if locations}}
-<h1>Popular locations</h1>
-{{#each locations}}
-<li>
-    {{city}}, {{country}}
-</li>
-{{/each}}
-{{/if}}
+<div>
+    {{#if locations}}
+    <h1>Popular locations</h1>
+    {{#each locations}}
+    <li>
+        {{city}}, {{country}}
+    </li>
+    {{/each}}
+    {{/if}}
 
-{{#if activities }}
-<h1>Popular activities</h1>
-{{#each activities}}
-<li>
-    {{name}}
-</li>
-{{/each}}
-{{/if}}
+    {{#if activities }}
+    <h1>Popular activities</h1>
+    {{#each activities}}
+    <li>
+        {{name}}
+    </li>
+    {{/each}}
+    {{/if}}
 
-{{#if cuisine}}
-<h1>Popular cuisine</h1>
-{{#each cuisine}}
-<li>
-    {{name}}
-</li>
-{{/each}}
-{{/if}}
+    {{#if cuisine}}
+    <h1>Popular cuisine</h1>
+    {{#each cuisine}}
+    <li>
+        {{name}}
+    </li>
+    {{/each}}
+    {{/if}}
+</div>
+
+<script></script>
 
 
 
