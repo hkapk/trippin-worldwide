@@ -14,6 +14,7 @@ router.get('/', withAuth, (req, res) => {
         'user_id',
         'title',
         'description',
+        'content',
         'start_date',
         'end_date'
       ],
@@ -48,6 +49,7 @@ router.get('/', withAuth, (req, res) => {
           'user_id',
           'title',
           'description',
+          'content',
           'start_date',
           'end_date'
         ],

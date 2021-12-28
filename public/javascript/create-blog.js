@@ -12,7 +12,7 @@ async function newBlogHandler(event) {
             title,
             description,
             start_date,
-            end_date
+            end_date,
         }),
         headers: {
             'Content-Type': 'application/json'

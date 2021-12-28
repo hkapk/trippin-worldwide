@@ -28,6 +28,10 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         start_date: {
             type: DataTypes.DATEONLY,
             allowNull: false

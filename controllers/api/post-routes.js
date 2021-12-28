@@ -77,6 +77,7 @@ router.post('/', withAuth, (req, res) => {
     user_id: req.session.user_id,
     title: req.body.title,
     description: req.body.description,
+    content: req.body.content,
     start_date: req.body.start_date,
     end_date: req.body.end_date
   })
