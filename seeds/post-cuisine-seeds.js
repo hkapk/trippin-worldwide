@@ -28,6 +28,14 @@ const postCuisineData = [
     {
         post_id: 11,
         cuisine_id: 6
+    },
+    {
+        post_id: 13,
+        cuisine_id: 5
+    },
+    {
+        post_id: 13,
+        cuisine_id: 7
     }
 ]
 

@@ -34,6 +34,10 @@ const postActivityData = [
         activity_id: 7
     },
     {
+        post_id: 5,
+        activity_id: 6
+    },
+    {
         post_id: 6,
         activity_id: 1
     },
@@ -79,6 +83,18 @@ const postActivityData = [
     },
     {
         post_id: 12,
+        activity_id: 8
+    },
+    {
+        post_id: 13,
+        activity_id: 1
+    },
+    {
+        post_id: 13,
+        activity_id: 2
+    },
+    {
+        post_id: 13,
         activity_id: 8
     }
 ]
