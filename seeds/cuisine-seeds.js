@@ -18,6 +18,9 @@ const cuisineData = [
     },
     {
         name: 'Polenta'
+    },
+    {
+        name: 'Pizza'
     }
 ]
 

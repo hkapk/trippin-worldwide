@@ -1,19 +1,18 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Location } = require('../../models');
+const { Cuisine } = require('../../models');
 
 router.get('/', (req, res) => {
-    Location.findAll({
+    Cuisine.findAll({
         attributes: [
-            'city',
-            'country',
-            [sequelize.literal('(SELECT COUNT(location_id) FROM post_location WHERE location_id=location.id)'), 'count']
+            'name',
+            [sequelize.literal('(SELECT COUNT(cuisine_id) FROM post_cuisine WHERE cuisine_id=cuisine.id)'), 'count']
         ],
         include: [
             'posts'
-        ]
+        ],
+        order: [['name', 'ASC']],
     })
-    .then(dbLocationData => res.json(dbLocationData))
+    .then(dbCuisineData => res.json(dbCuisineData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -21,7 +20,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Location.findOne({
+    Cuisine.findOne({
         where: {
             id: req.params.id
         },
@@ -29,7 +28,7 @@ router.get('/:id', (req, res) => {
             'posts'
         ]
     })
-    .then(dbLocationData => res.json(dbLocationData))
+    .then(dbCuisineData => res.json(dbCuisineData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
