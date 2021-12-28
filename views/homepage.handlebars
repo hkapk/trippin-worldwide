@@ -1,44 +1,50 @@
 <div class="home">
   <h4 class="sub-heading">Trip Blogs</h4>
   <ol class="post-list">
-{{#each posts as |post|}}
-    <li>
-      <article class="post">
-        <div class="post-card">
-          <h5 class="blog-title">{{title}}</h5>
-          <span class="list-item"><strong>Posted by:</strong>
-            {{user.first_name}} {{user.last_name}}</span>
-          <span class="list-item"><strong>Description:</strong>
-          {{description}}</span>
-          <span class="list-item"><strong>Location: </strong>
-           {{#each locations}}
-           {{city}}, 
-           {{country}}
-           {{/each}}
-          </span>
-          {{!-- let's consider displaying the information below only on the 'single blog post' page --}}
-          {{#if activities}}
-          <span class="list-item"><strong>Activities: </strong>
-           {{#each activities}}
-           {{name}}
-           {{/each}}
-          </span>
-          {{/if}}
-          {{#if cuisine}}
-          <span class="list-item"><strong>Cuisine: </strong>
-           {{#each cuisine}}
-           {{name}}
-           {{/each}}
-          </span>
-          {{/if}}
-          <span class="list-item"><strong>Start Date: </strong>{{start_date}}</span>
-          <span class="list-item"><strong>End Date: </strong>{{end_date}}</span>
-          <a href="/post/{{id}}">More Details</a>
-        </div>
-      </article>
-    </li>
+    {{#each posts as |post|}}
+      <li>
+        <article class="post">
+          <div class="post-card">
+            <h5 class="blog-title">{{title}}</h5>
+            <span class="list-item"><strong>Posted by:</strong>
+              {{user.first_name}}
+              {{user.last_name}}</span>
+            <span class="list-item"><strong>Description:</strong>
+              {{description}}</span>
+            <span class="list-item"><strong>Location: </strong>
+              {{#each locations}}
+                {{city}},
+                {{country}}
+              {{/each}}
+            </span>
+            {{! let's consider displaying the information below only on the 'single blog post' page }}
+            {{#if activities}}
+              <span class="list-item"><strong>Activities: </strong>
+                {{#each activities}}
+                  {{name}}
+                {{/each}}
+              </span>
+            {{/if}}
+            {{#if cuisine}}
+              <span class="list-item"><strong>Cuisine: </strong>
+                {{#each cuisine}}
+                  {{name}}
+                {{/each}}
+              </span>
+            {{/if}}
+            <span class="list-item"><strong>Start Date:
+              </strong>{{start_date}}</span>
+            <span class="list-item"><strong>End Date:
+              </strong>{{end_date}}</span>
+            <a href="/post/{{id}}">More Details</a>
+          </div>
+        </article>
+      </li>
     {{/each}}
- <!--   <li>
+  </ol>
+</div>
+
+<!--   <li>
       <article class="post">
         <div class="post-card">
           <a href="/single-blog/2" class="blog-title" target="_blank">My London
@@ -105,7 +111,3 @@
         </div>
       </article>
     </li> -->
-
-  </ol>
-
-</div>
