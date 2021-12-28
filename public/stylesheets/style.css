@@ -24,7 +24,6 @@ main {
   height: 100%;
 }
 .page {
-  height: 100%;
   flex: 1 1 auto;
   margin: 0;
 }
@@ -100,8 +99,18 @@ footer {
   padding: 10px;
   z-index: -1;
 }
+.blog-title {
+    background-color: rgb(245,245,245,0.8);
+    margin:10px;
+    border-radius: 15px;
+    color: darkblue;
+    text-align: center;
+    font-weight: 700;
+    padding: 2rem;
+    font-size: 2.2rem;
+}
 .sub-heading {
-  font-size: 1.6rem;
+  font-size: 2.0rem;
   text-align: center;
   color: darkblue;
   margin: 0 auto;
@@ -109,6 +118,7 @@ footer {
   border-radius: 7px;
   padding: 10px;
   font-weight: 700;
+  background-color: rgb(245,245,245,0.8);
 }
 .blog-heading {
   font-size: 1.6rem;
@@ -200,11 +210,15 @@ ol {
   max-width: 600px;
   margin: 0 auto;
 }
-h5 {
+h4 {
+    background-color: rgb(245,245,245,0.8);
+    margin:10px;
+    border-radius: 15px;
   color: darkblue;
   text-align: center;
   font-weight: 700;
   padding: 2rem;
+  font-size: 1.8rem;
 }
 
 @media only screen and (max-width: 575px) {
