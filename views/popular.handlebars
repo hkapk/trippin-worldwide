@@ -1,12 +1,14 @@
-<div>
-    <a href="/popular/locations">Locations</a>
-    <a href="/popular/activities">Activities</a>
-    <a href="/popular/cuisine">Cuisine</a>
+<div class="container">
+    <div class="row align-items-start popular-nav">
+    <a href="/popular/locations" class="popular-btn-nav col text-center">Locations</a>
+    <a href="/popular/activities" class="popular-btn-nav col text-center">Activities</a>
+    <a href="/popular/cuisine" class="popular-btn-nav col text-center">Cuisine</a>
+    </div>
 </div>
 
 <div>
     {{#if locations}}
-    <h1>Popular locations</h1>
+    <h5 class="blog-title p-5">Top Locations</h5>
     {{#each locations}}
     <li>
         {{city}}, {{country}}
@@ -15,7 +17,7 @@
     {{/if}}
 
     {{#if activities }}
-    <h1>Popular activities</h1>
+    <h5 class="blog-title">Top Activities</h5>
     {{#each activities}}
     <li>
         {{name}}
@@ -24,7 +26,7 @@
     {{/if}}
 
     {{#if cuisine}}
-    <h1>Popular cuisine</h1>
+    <h5 class="blog-title">Top Cuisine</h5>
     {{#each cuisine}}
     <li>
         {{name}}
