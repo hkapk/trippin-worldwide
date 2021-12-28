@@ -6,7 +6,8 @@ router.get('/locations', (req, res) => {
     Location.findAll({
         attributes: [
             'city',
-            'country'
+            'country',
+            [sequelize.literal('(SELECT COUNT(location_id) FROM post_location WHERE location_id=location.id)'), 'count']
         ],
         include: [
             'posts'
@@ -59,16 +60,5 @@ router.get('/cuisine', (req, res) => {
         res.status(500).json(err);
     });
 });
-
-// router.get('/', (req, res) => {
-//     sequelize.query(
-//         '(SELECT COUNT(DISTINCT city) FROM location)'
-//     )
-//     .then(dbLocationData => res.json(dbLocationData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
 
 module.exports = router;
