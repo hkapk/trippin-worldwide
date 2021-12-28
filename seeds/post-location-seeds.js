@@ -56,6 +56,10 @@ const postLocationData = [
     {
         post_id: 12,
         location_id: 7
+    },
+    {
+        post_id: 13,
+        location_id: 10
     }
 ];
 
