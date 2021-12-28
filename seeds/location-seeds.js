@@ -3,63 +3,51 @@ const { Location } = require('../models');
 const locationData = [
     {
         city: 'New York City',
-        country: 'United States of America',
-        countryCode: 'US'
+        country: 'United States of America'
     },
     {
         city: 'London',
-        country: 'England',
-        countryCode: 'GB'
+        country: 'England'
     },
     {
         city: 'Paris',
-        country: 'France',
-        countryCode: 'FR'
+        country: 'France'
     },
     {
         city: 'Sydney',
-        country: 'Australia',
-        countryCode: 'AU'
+        country: 'Australia'
     },
     {
         city: 'Cancun',
-        country: 'Mexico',
-        countryCode: 'MX'
+        country: 'Mexico'
     },
     {
         city: 'Tokyo',
-        country: 'Japan',
-        countryCode: 'JP'
+        country: 'Japan'
     },
     {
         city: 'San Francisco',
-        country: 'United States of America',
-        countryCode: 'US'
+        country: 'United States of America'
     },
     {
         city: 'Barcelona',
-        country: 'Spain',
-        countryCode: 'ES'
+        country: 'Spain'
     },
     {
         city: 'Ocho Rios',
-        country: 'Jamaica',
-        countryCode: 'JM'
+        country: 'Jamaica'
     },
     {
         city: 'Rome',
-        country: 'Italy',
-        countryCode: 'IT'
+        country: 'Italy'
     },
     {
         city: 'Venice',
-        country: 'Italy',
-        countryCode: 'IT'
+        country: 'Italy'
     },
     {
         city: 'Florence',
-        country: 'Italy',
-        countryCode: 'IT'
+        country: 'Italy'
     },
 ]
 

@@ -50,7 +50,7 @@ initMap().then(citymap => {
 });
 
 async function getCitymapData(city, country) {
-    let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${country}key=AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ`;
+    let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${country}&key=AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ`;
 
     try {
         const response = await fetch(url);
@@ -59,4 +59,4 @@ async function getCitymapData(city, country) {
     } catch (error) {
         console.log(error);
     }
-}
+};
