@@ -3,6 +3,10 @@ const { Activity } = require('../../models');
 
 router.get('/', (req, res) => {
     Activity.findAll({
+        attributes: [
+            'name',
+            [sequelize.literal('(SELECT COUNT(activity_id) FROM post_activity WHERE activity_id=activity.id)'), 'count']
+        ],
         include: [
             'posts'
         ],

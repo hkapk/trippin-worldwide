@@ -11,7 +11,8 @@ router.get('/locations', (req, res) => {
         ],
         include: [
             'posts'
-        ]
+        ],
+        order: [[sequelize.literal('count DESC')]]
     })
     .then(dbLocationData => {
         const locations = dbLocationData.map(location => location.get({ plain: true }));
@@ -31,7 +32,8 @@ router.get('/activities', (req, res) => {
         ],
         include: [
             'posts'
-        ]
+        ],
+        order: [[sequelize.literal('count DESC')]]
     })
     .then(dbActivityData => {
         const activities = dbActivityData.map(activity => activity.get({ plain: true }));
@@ -51,7 +53,8 @@ router.get('/cuisine', (req, res) => {
         ],
         include: [
             'posts'
-        ]
+        ],
+        order: [[sequelize.literal('count DESC')]]
     })
     .then(dbCuisineData => {
         const cuisine = dbCuisineData.map(cuisine => cuisine.get({ plain: true }));

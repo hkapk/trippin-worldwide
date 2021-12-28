@@ -1,44 +1,61 @@
 <div class="home">
-<div class="container">
-    <div class="row align-items-start popular-nav">
-    <a href="/popular/locations" class="popular-btn-nav col text-center">Locations</a>
-    <a href="/popular/activities" class="popular-btn-nav col text-center">Activities</a>
-    <a href="/popular/cuisine" class="popular-btn-nav col text-center">Cuisine</a>
+    <div class="container">
+        <div class="row align-items-start popular-nav">
+        <a href="/popular/locations" class="popular-btn-nav col text-center">Locations</a>
+        <a href="/popular/activities" class="popular-btn-nav col text-center">Activities</a>
+        <a href="/popular/cuisine" class="popular-btn-nav col text-center">Cuisine</a>
+        </div>
     </div>
-</div>
 
-<div class="post">
-    <div class="post-card">
-        {{#if locations}}
-        <h5 class="blog-title">Top Locations</h5>
-        {{#each locations}}
-        <li class="list-item">
-            {{count}} -- {{city}}, {{country}}
-        </li>
-        {{/each}}
-        {{/if}}
+    <div class="post">
+        <div class="post-card">
+            {{#if locations}}
+            <h5 class="blog-title">Top Locations</h5>
+            {{#each locations}}
+            <li class="list-item text-start">
+                {{count}} blogs | {{city}}, {{country}}
+                <br>
+                {{#each posts}}
+                <a href="/post/{{id}}">{{title}}</a>
+                <br>
+                {{/each}}
+            </li>
+            {{/each}}
+            {{/if}}
+        </div>
+
+        <div class="post-card">
+            {{#if activities }}
+            <h5 class="blog-title">Top Activities</h5>
+            {{#each activities}}
+            <li class="list-item text-start">
+                {{count}} blogs | {{name}}
+                <br>
+                {{#each posts}}
+                <a href="/post/{{id}}">{{title}}</a>
+                <br>
+                {{/each}}
+            </li>
+            {{/each}}
+            {{/if}}
+        </div>
+
+        <div class="post-card">
+            {{#if cuisine}}
+            <h5 class="blog-title">Top Cuisine</h5>
+            {{#each cuisine}}
+            <li class="list-item text-start">
+                {{count}} blogs | {{name}}
+                <br>
+                {{#each posts}}
+                <a href="/post/{{id}}">{{title}}</a>
+                <br>
+                {{/each}}
+            </li>
+            {{/each}}
+            {{/if}}
+        </div>
     </div>
-    <div class="post-card">
-        {{#if activities }}
-        <h5 class="blog-title">Top Activities</h5>
-        {{#each activities}}
-        <li class="list-item">
-            {{count}} -- {{name}}
-        </li>
-        {{/each}}
-        {{/if}}
-    </div>
-    <div class="post-card">
-        {{#if cuisine}}
-        <h5 class="blog-title">Top Cuisine</h5>
-        {{#each cuisine}}
-        <li class="list-item">
-            {{count}} -- {{name}}
-        </li>
-        {{/each}}
-        {{/if}}
-    </div>
-</div>
 </div>
 
 
