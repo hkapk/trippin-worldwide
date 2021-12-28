@@ -100,5 +100,8 @@ router.get('/post/:id', (req, res) => {
       });
   });
 
+  router.get('/popular', (req, res) => {
+    res.render('popular');
+  });
 
 module.exports = router;
