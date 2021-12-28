@@ -39,9 +39,8 @@ main {
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  height: 700px;
+  height: max-content;
   text-align: center;
-  margin-top: 82px;
   z-index: 1;
   padding-right: 0;
 }
@@ -58,7 +57,7 @@ h2 {
   color: darkblue;
   font-weight: bold;
   transition: color 0.1s;
-  padding-top: 33%;
+  padding-top: 25%;
   height: 100px;
 }
 .nav-choice:hover {
@@ -164,7 +163,7 @@ input:focus {
 }
 .list-item {
   padding: 1%;
-  margin: 0 20px;
+  margin: .5% 5%;
   background-color: rgba(158, 205, 247, 0.8);
   border-radius: 10px;
   font-size: 1rem;
