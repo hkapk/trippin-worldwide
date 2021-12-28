@@ -26,7 +26,8 @@ router.get('/locations', (req, res) => {
 router.get('/activities', (req, res) => {
     Activity.findAll({
     attributes: [
-            'name'
+            'name',
+            [sequelize.literal('(SELECT COUNT(activity_id) FROM post_activity WHERE activity_id=activity.id)'), 'count']
         ],
         include: [
             'posts'
@@ -45,7 +46,8 @@ router.get('/activities', (req, res) => {
 router.get('/cuisine', (req, res) => {
     Cuisine.findAll({
     attributes: [
-            'name'
+            'name',
+            [sequelize.literal('(SELECT COUNT(cuisine_id) FROM post_cuisine WHERE cuisine_id=cuisine.id)'), 'count']
         ],
         include: [
             'posts'

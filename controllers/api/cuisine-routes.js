@@ -3,6 +3,10 @@ const { Cuisine } = require('../../models');
 
 router.get('/', (req, res) => {
     Cuisine.findAll({
+        attributes: [
+            'name',
+            [sequelize.literal('(SELECT COUNT(cuisine_id) FROM post_cuisine WHERE cuisine_id=cuisine.id)'), 'count']
+        ],
         include: [
             'posts'
         ],
