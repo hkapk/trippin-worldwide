@@ -171,6 +171,7 @@ input:focus {
   color: rgb(29, 37, 37);
   text-align: center;
   font-weight: 500;
+  list-style: none;
 }
 
 .list-item:nth-child(odd) {

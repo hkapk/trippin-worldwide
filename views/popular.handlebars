@@ -6,36 +6,41 @@
     </div>
 </div>
 
-<div>
-    {{#if locations}}
-    <h5 class="blog-title p-5">Top Locations</h5>
-    {{#each locations}}
-    <li>
-        {{city}}, {{country}}
-    </li>
-    {{/each}}
-    {{/if}}
-
-    {{#if activities }}
-    <h5 class="blog-title">Top Activities</h5>
-    {{#each activities}}
-    <li>
-        {{name}}
-    </li>
-    {{/each}}
-    {{/if}}
-
-    {{#if cuisine}}
-    <h5 class="blog-title">Top Cuisine</h5>
-    {{#each cuisine}}
-    <li>
-        {{name}}
-    </li>
-    {{/each}}
-    {{/if}}
+<div class="post">
+    <div class="post-card">
+        {{#if locations}}
+        <h5 class="blog-title">Top Locations</h5>
+        {{#each locations}}
+        <li class="list-item">
+            {{city}}, {{country}}
+        </li>
+        {{/each}}
+        {{/if}}
+    </div>
+    <div class="post-card">
+        {{#if activities }}
+        <h5 class="blog-title">Top Activities</h5>
+        {{#each activities}}
+        <li class="list-item">
+            {{name}}
+        </li>
+        {{/each}}
+        {{/if}}
+    </div>
+    <div class="post-card">
+        {{#if cuisine}}
+        <h5 class="blog-title">Top Cuisine</h5>
+        {{#each cuisine}}
+        <li class="list-item">
+            {{name}}
+        </li>
+        {{/each}}
+        {{/if}}
+    </div>
 </div>
 
-<script></script>
+
+
 
 
 
