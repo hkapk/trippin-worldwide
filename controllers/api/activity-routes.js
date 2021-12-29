@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { Activity } = require('../../models');
 
 router.get('/', (req, res) => {
