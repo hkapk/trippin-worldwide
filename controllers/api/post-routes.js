@@ -3,8 +3,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 //include models here: 
-const { Post, Comment, User } = require('../../models');
-
+const { Post, Comment, User, Location, Activity, Cuisine, PostLocation } = require('../../models');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -79,7 +78,7 @@ router.post('/', withAuth, (req, res) => {
     description: req.body.description,
     content: req.body.content,
     start_date: req.body.start_date,
-    end_date: req.body.end_date
+    end_date: req.body.end_date,
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
