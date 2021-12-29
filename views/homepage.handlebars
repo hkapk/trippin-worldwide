@@ -1,12 +1,5 @@
-<head>
-	<script
-		src="https://polyfill.io/v3/polyfill.min.js?features=default"
-	></script>
-	<script src="./javascript/location.js"></script>
-</head>
 <div class="home">
 	<h4 class="sub-heading">Trip Blogs</h4>
-	<div id="map"></div>
 	<ol class="post-list">
 		{{#each posts as |post|}}
 			<li>
@@ -51,10 +44,4 @@
 			</li>
 		{{/each}}
 	</ol>
-
-	<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ&callback=initMap&v=weekly"
-		async
-	></script>
 </div>

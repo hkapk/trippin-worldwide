@@ -2,6 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Location = require('./Location');
+const CountryCode = require('./CountryCode');
 const Activity = require('./Activity');
 const Cuisine = require('./Cuisine');
 const PostLocation = require('./PostLocation');
@@ -44,6 +45,18 @@ Location.belongsToMany(Post, {
     foreignKey: 'location_id'
 });
 
+Post.belongsToMany(CountryCode, {
+    through: PostLocation,
+    as: 'locations',
+    foreignKey: 'post_id'
+});
+
+CountryCode.belongsToMany(Post, {
+    through: PostLocation,
+    as: 'posts',
+    foreignKey: 'location_id'
+});
+
 Post.belongsToMany(Activity, {
     through: PostActivity,
     as: 'activities',
@@ -68,14 +81,15 @@ Cuisine.belongsToMany(Post, {
     foreignKey: 'cuisine_id'
 });
 
-module.exports = { 
-    User, 
-    Post, 
-    Comment, 
-    Location, 
-    Activity, 
+module.exports = {
+    User,
+    Post,
+    Comment,
+    Location,
+    CountryCode,
+    Activity,
     Cuisine,
     PostLocation,
     PostActivity,
     PostCuisine
-}
+};

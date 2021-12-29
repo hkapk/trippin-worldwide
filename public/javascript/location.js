@@ -1,8 +1,8 @@
-//require('dotenv').config();
-//const db = require('../../config/connection/');
-
+// dummy number for circle size, cityCount will be per city
+// more times a city has been traveled to, larger the circle
 let cityCount = 100000;
 
+// Fetch map data
 async function initMap() {
     try {
         const response = await fetch('/api/locations');
@@ -13,9 +13,15 @@ async function initMap() {
     }
 };
 
+// Initialize the map
 initMap().then(citymap => {
     citymap; // fetched locations
 
+    // Add the map and markers
+    constructCircles(citymap);
+});
+
+function constructCircles(citymap) {
     // Create the map.
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 10,
@@ -23,10 +29,6 @@ initMap().then(citymap => {
         mapTypeId: "terrain",
     });
 
-    constructCircles(citymap, map);
-});
-
-async function constructCircles(citymap, map) {
     citymap.forEach(location => {
         // Add the circle for this city to the map.
         let city = location.city;

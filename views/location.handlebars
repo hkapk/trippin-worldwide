@@ -1,0 +1,19 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="./javascript/location.js"></script>
+<div class="home">
+	<a href="/locations">
+		<h4 class="sub-heading" id="locations">Most Visited Cities</h4>
+		<!--The div element for the map -->
+		<div id="map">
+			{{#each locations}}
+				{{city}},
+				{{country}}
+			{{/each}}
+		</div>
+	</a>
+</div>
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=process.env.GOOGLE_MAP_API_KEY&callback=initMap&libraries=&v=weekly"
+	async
+></script>
