@@ -6,8 +6,10 @@ async function newBlogHandler(event) {
     const content = document.querySelector('textarea[name="blog-content"]').value;
     const start_date = document.querySelector('input[name="start-date"]');
     const end_date = document.querySelector('input[name="end-date"]');
-    const city = document.querySelector('input[name="city"]');
-    const country = document.querySelector('input[name="country"]');
+    const city = document.querySelector('input[name="city"]').value;
+    const country = document.querySelector('input[name="country"]').value;
+    const activity = document.querySelector('textarea[name="activity-name"]').value;
+    const cuisine = document.querySelector('textarea[name="cuisine-name"]').value;
 
     const response = await fetch('/api/posts', {
         method: 'POST',
@@ -17,6 +19,10 @@ async function newBlogHandler(event) {
             content,
             start_date,
             end_date,
+            city,
+            country,
+            activity,
+            cuisine
         }),
         headers: {
             'Content-Type': 'application/json'

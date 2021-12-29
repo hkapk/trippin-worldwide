@@ -79,6 +79,17 @@ router.post('/', withAuth, (req, res) => {
     content: req.body.content,
     start_date: req.body.start_date,
     end_date: req.body.end_date,
+    locations: [ 
+      {city: req.body.city, country: req.body.country }
+    ],
+    activities: [
+      { name: req.body.activity }
+    ],
+    cuisine: [
+      { name: req.body.cuisine }
+    ]
+  }, {
+    include: [ 'locations', 'activities', 'cuisine' ]
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
