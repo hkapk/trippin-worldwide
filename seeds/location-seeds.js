@@ -4,62 +4,62 @@ const locationData = [
     {
         city: 'New York City',
         country: 'United States of America',
-        countryCode: 'US'
+        country_code: 'US'
     },
     {
         city: 'London',
         country: 'England',
-        countryCode: 'GB'
+        country_code: 'GB'
     },
     {
         city: 'Paris',
         country: 'France',
-        countryCode: 'FR'
+        country_code: 'FR'
     },
     {
         city: 'Sydney',
         country: 'Australia',
-        countryCode: 'AU'
+        country_code: 'AU'
     },
     {
         city: 'Cancun',
         country: 'Mexico',
-        countryCode: 'MX'
+        country_code: 'MX'
     },
     {
         city: 'Tokyo',
         country: 'Japan',
-        countryCode: 'JP'
+        country_code: 'JP'
     },
     {
         city: 'San Francisco',
         country: 'United States of America',
-        countryCode: 'US'
+        country_code: 'US'
     },
     {
         city: 'Barcelona',
         country: 'Spain',
-        countryCode: 'ES'
+        country_code: 'ES'
     },
     {
         city: 'Ocho Rios',
         country: 'Jamaica',
-        countryCode: 'JM'
+        country_code: 'JM'
     },
     {
         city: 'Rome',
         country: 'Italy',
-        countryCode: 'IT'
+        country_code: 'IT'
     },
     {
         city: 'Venice',
         country: 'Italy',
-        countryCode: 'IT'
+        country_code: 'IT'
     },
     {
         city: 'Florence',
         country: 'Italy',
-        countryCode: 'IT'
+        country_code: 'IT'
     },
 ]
 

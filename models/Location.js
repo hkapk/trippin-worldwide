@@ -22,7 +22,7 @@ Location.init(
             allowNull: false
         },
         country_code: {
-            type: DataTypes.CHAR(2)
+            type: DataTypes.STRING,
         }
     },
     {

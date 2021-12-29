@@ -1,5 +1,5 @@
-
-// require('dotenv').config();
+//require('dotenv').config();
+//const db = require('../../config/connection/');
 
 async function initMap() {
     try {
@@ -13,7 +13,6 @@ async function initMap() {
 
 initMap().then(citymap => {
     citymap; // fetched locations
-    console.log(citymap);
 
     // Create the map.
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -22,41 +21,55 @@ initMap().then(citymap => {
         mapTypeId: "terrain",
     });
 
-    // Construct the circle for each value in citymap.
-    // Note: We scale the area of the circle based on the population.    
-    let i = 0;
-    let cities = [];
-
-    citymap.forEach(location => {
-        // Add the circle for this city to the map.        
-        let city = location.city;
-        let country = location.country;
-        let cityData = getCitymapData(city, country);
-        console.log(cityData);
-        cities.push(cityData);
-        let uniqueCities = [...new Set(cities)];
-        cityCount = i++;
-        const cityCircle = new google.maps.Circle({
-            strokeColor: "#FF0000",
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: "#FF0000",
-            fillOpacity: 0.35,
-            map,
-            center: { lat: cityData.lat, lng: cityData.lng },
-            radius: Math.sqrt(cityCount) * 100,
-        });
-    })
+    constructCircles(citymap);
 });
 
+async function constructCircles(citymap) {
+    citymap.forEach(location => {
+        // Add the circle for this city to the map.
+        let city = location.city;
+        let country = location.country;
+        getCitymapData(city, country)
+            .then((response) => {
+                let cityData = response;
+                let lat = cityData.cityLat;
+                let lng = cityData.cityLng;
+                console.log(lat, lng);
+                const cityCircle = new google.maps.Circle({
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: "#FF0000",
+                    fillOpacity: 0.35,
+                    map,
+                    center: { lat: lat, lng: lng },
+                    radius: Math.sqrt(cityCount) * 100,
+                });
+            });
+    });
+};
+
 async function getCitymapData(city, country) {
-    let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${country}key=AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ`;
+    console.log(city, country);
+    //let countryCode = await getCountryCode(country);
+    let countryCode = 'US';
+    // let gMapKey = process.env.GOOGLE_MAP_API_KEY;
+    let gMapKey = 'AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ';
+    let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${countryCode}&key=${gMapKey}`;
 
     try {
         const response = await fetch(url);
         const cityData = await response.json();
-        return cityData;
+        const cityLat = cityData.results[0].geometry.location.lat;
+        const cityLng = cityData.results[0].geometry.location.lng;
+        const singleCityData = { city, cityLat, cityLng };
+        return singleCityData;
     } catch (error) {
         console.log(error);
     }
+}
+
+async function getCountryCode(country) {
+
+
 }

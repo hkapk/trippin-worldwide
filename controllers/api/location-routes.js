@@ -1,10 +1,15 @@
 const router = require('express').Router();
-const { Sequelize } = require('sequelize/dist');
+const sequelize = require('../../config/connection');
 const { Location } = require('../../models');
 
 router.get('/', (req, res) => {
     Location.findAll({
-        order: [['country', 'ASC']],
+        attributes: [
+            'city',
+            'country',
+            'country_code',
+            [sequelize.literal('(SELECT COUNT(location_id) FROM post_location WHERE location_id=location.id)'), 'count']
+        ],
         include: [
             'posts'
         ]
