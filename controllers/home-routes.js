@@ -106,4 +106,8 @@ router.get('/post/:id', (req, res) => {
     res.render('popular');
   });
 
+  router.get('/users', (req, res) => {
+    res.render('users');
+});
+
 module.exports = router;
