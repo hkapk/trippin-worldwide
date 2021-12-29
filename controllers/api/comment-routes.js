@@ -4,7 +4,42 @@ const { Comment, User, Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Comment.findAll()
+  Post.findAll({
+      attributes: [
+          'id',
+          'title',
+          'description',
+          'start_date'
+      ],
+      include: [
+          {
+              model: Comment,
+              attributes:['id','comment_text', 'post_id', 'created_at'],
+              include: {
+                  model: User,
+                  attributes: ['id', 'first_name', 'last_name']
+              }
+          },
+          {model: User,
+          attributes:['first_name', 'last_name']
+      }
+      ]
+  })
+  .then(dbPostData => res.json(dbPostData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+
+});
+
+
+
+router.get('/', (req, res) => {
+    Comment.findAll(
+      {
+    }
+    )
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
       console.log(err);
@@ -12,14 +47,14 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/',  (req, res) => {
   // check the session
   if (req.session) {
     Comment.create({
       comment_text: req.body.comment_text,
       post_id: req.body.post_id,
       // use the id from the session
-      user_id: req.session.id
+      user_id: req.session.user_id
     })
       .then(dbCommentData => res.json(dbCommentData))
       .catch(err => {
@@ -29,7 +64,7 @@ router.post('/', withAuth, (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id',  (req, res) => {
     Comment.destroy({
       where: {
         id: req.params.id
