@@ -1,6 +1,8 @@
 //require('dotenv').config();
 //const db = require('../../config/connection/');
 
+let cityCount = 100000;
+
 async function initMap() {
     try {
         const response = await fetch('/api/locations');
@@ -21,10 +23,10 @@ initMap().then(citymap => {
         mapTypeId: "terrain",
     });
 
-    constructCircles(citymap);
+    constructCircles(citymap, map);
 });
 
-async function constructCircles(citymap) {
+async function constructCircles(citymap, map) {
     citymap.forEach(location => {
         // Add the circle for this city to the map.
         let city = location.city;
@@ -34,7 +36,6 @@ async function constructCircles(citymap) {
                 let cityData = response;
                 let lat = cityData.cityLat;
                 let lng = cityData.cityLng;
-                console.log(lat, lng);
                 const cityCircle = new google.maps.Circle({
                     strokeColor: "#FF0000",
                     strokeOpacity: 0.8,
@@ -50,11 +51,11 @@ async function constructCircles(citymap) {
 };
 
 async function getCitymapData(city, country) {
-    console.log(city, country);
+    //console.log(city, country);
     //let countryCode = await getCountryCode(country);
     let countryCode = 'US';
-    // let gMapKey = process.env.GOOGLE_MAP_API_KEY;
-    let gMapKey = 'AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ';
+    let gMapKey = process.env.GOOGLE_MAP_API_KEY;
+    //let gMapKey = 'AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ';
     let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${countryCode}&key=${gMapKey}`;
 
     try {
