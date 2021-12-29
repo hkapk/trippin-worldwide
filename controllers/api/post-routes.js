@@ -3,8 +3,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 //include models here: 
-const { Post, Comment, User } = require('../../models');
-
+const { Post, Comment, User, Location, Activity, Cuisine, PostLocation } = require('../../models');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -73,13 +72,24 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  
   Post.create({
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
     title: req.body.title,
     description: req.body.description,
+    content: req.body.content,
     start_date: req.body.start_date,
-    end_date: req.body.end_date
+    end_date: req.body.end_date,
+    locations: [ 
+      {city: req.body.city, country: req.body.country }
+    ],
+    activities: [
+      { name: req.body.activity }
+    ],
+    cuisine: [
+      { name: req.body.cuisine }
+    ]
+  }, {
+    include: [ 'locations', 'activities', 'cuisine' ]
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {

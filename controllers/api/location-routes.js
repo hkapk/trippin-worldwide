@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Location } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Location.findAll({
@@ -28,6 +29,18 @@ router.get('/:id', (req, res) => {
         include: [
             'posts'
         ]
+    })
+    .then(dbLocationData => res.json(dbLocationData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+router.post('/', withAuth, (req, res) => {
+    Location.create({
+        city: req.body.city,
+        country: req.body.country
     })
     .then(dbLocationData => res.json(dbLocationData))
     .catch(err => {
