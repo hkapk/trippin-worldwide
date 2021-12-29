@@ -12,11 +12,11 @@ router.get('/', (req, res) => {
         ],
         order: [['name', 'ASC']],
     })
-    .then(dbActivityData => res.json(dbActivityData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbActivityData => res.json(dbActivityData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/:id', (req, res) => {
@@ -28,11 +28,11 @@ router.get('/:id', (req, res) => {
             'posts'
         ]
     })
-    .then(dbActivityData => res.json(dbActivityData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbActivityData => res.json(dbActivityData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
