@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'user_id',
       'title',
       'description',
+      'content',
       'start_date',
       'end_date'
     ],
@@ -51,9 +51,9 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'user_id',
       'title',
       'description',
+      'content',
       'start_date',
       'end_date'
     ],
@@ -118,7 +118,7 @@ router.put('/:id', withAuth, (req, res) => {
     },
     {
       where: {
-        user_id: req.params.user_id
+        id: req.params.id
       }
     }
   )

@@ -11,7 +11,6 @@ router.get('/', withAuth, (req, res) => {
       },
       attributes: [
         'id',
-        'user_id',
         'title',
         'description',
         'content',
@@ -46,7 +45,6 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
           'id',
-          'user_id',
           'title',
           'description',
           'content',
@@ -73,8 +71,9 @@ router.get('/', withAuth, (req, res) => {
           const post = dbPostData.get({ plain: true });
     
           // pass data to template
-          res.render('edit-blog', 
-          { post
+          res.render('edit-blog', {
+            post,
+            loggedIn: true
            });
         })
         .catch(err => {
