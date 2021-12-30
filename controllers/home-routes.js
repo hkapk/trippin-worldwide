@@ -112,4 +112,8 @@ router.get('/metrics', (req, res) => {
   res.render('metric');
 });
 
+  router.get('/users', (req, res) => {
+    res.render('users');
+});
+
 module.exports = router;
