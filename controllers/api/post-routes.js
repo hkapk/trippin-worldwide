@@ -26,6 +26,7 @@ router.get('/', (req, res) => {
       'locations',
       'activities',
       'cuisine',
+
       { model: Comment,
       attributes: ['id','comment_text', 'post_id', 'created_at']
     }
