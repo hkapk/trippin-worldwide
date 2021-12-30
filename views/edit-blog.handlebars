@@ -5,36 +5,42 @@
 <section>
     <h4 class="sub-heading mx-auto" style="width: 40%">Edit blog</h4>
 
-    <form class="edit-blog-form">
+    <form class="blog-form" id="edit-blog-form">
         <div>
-            <p>Edit title</p>
-            <input type="text" name="blog-title" value="{{post.title}}">
+            <label for="blog-title">Blog title</label>
+            <input type="text" name="blog-title" class="form-control" value="{{post.title}}">
         </div>
         <div>
-            <p>Edit description</p>
-            <textarea name="blog-description" value="{{post.description}}">{{post.description}}</textarea>
+            <label for="blog-description">A short description</label>
+            <textarea name="blog-description" class="form-control" value="{{post.description}}">{{post.description}}</textarea>
         </div>
         <div>
-            <p>Edit content</p>
-            <textarea name="blog-content" value="{{post.content}}">{{post.content}}</textarea>
+            <label for="blog-content">Tell more about your trip</label>
+            <textarea name="blog-content" class="form-control" style="height: 150px" value="{{post.content}}">{{post.content}}</textarea>
+        </div>
+        <div class="col-md-4 mx-auto">
+            <label for="start-date">Start date:</label>
+            <input type="date" name="start-date" class="form-control" value="{{post.start_date}}">
+        </div>
+        <div class="col-md-4 mx-auto">
+            <label for="start-date">End date:</label>
+            <input type="date" name="end-date" class="form-control" value="{{post.end_date}}">
+        </div>
+        <div class="col-md-6 mx-auto">
+            <label for="city">City:</label>
+            <input type="text" name="city" class="form-control" value="{{post.locations.[0].city}}">
+        </div>
+        <div class="col-md-6 mx-auto">
+            <label for="city">Country:</label>
+            <input type="text" name="country" class="form-control" value="{{post.locations.[0].country}}">
         </div>
         <div>
-            <p>Edit dates</p>
-            <input type="date" name="start-date" value="{{post.start_date}}">
-            <input type="date" name="end-date" value="{{post.end_date}}">
+            <label for="activity-name">Activities</label>
+            <textarea name="activity-name" class="form-control" value="{{post.activities.[0].name}}">{{post.activities.[0].name}}</textarea>
         </div>
         <div>
-            <p>Edit location</p>
-            <input type="text" name="city" value="{{post.locations.[0].city}}">
-            <input type="text" name="country" value="{{post.locations.[0].country}}">
-        </div>
-        <div>
-            <p>Edit activities</p>
-            <textarea name="activity-name" value="{{post.activities.[0].name}}">{{post.activities.[0].name}}</textarea>
-        </div>
-        <div>
-            <p>Edit cuisine</p>
-            <textarea name="cuisine-name" value="{{post.cuisine.[0].name}}">{{post.cuisine.[0].name}}</textarea>
+            <label for="cuisine-name">Cuisine</label>
+            <textarea name="cuisine-name" class="form-control" value="{{post.cuisine.[0].name}}">{{post.cuisine.[0].name}}</textarea>
         </div>
     </form>
 </section>

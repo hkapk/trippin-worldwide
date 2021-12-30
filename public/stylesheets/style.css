@@ -294,20 +294,22 @@ input {
 .large-btn-nav:hover {
 	color: skyblue;
 }
-.create-blog-form {
+.blog-form {
 	background-color: rgb(192, 192, 192, 0.8);
-	margin: 0 auto;
+	margin: 3% auto;
 	width: 60%;
 	border-radius: 10px;
 	font-weight: 500;
   padding: .5rem;
 }
-.create-blog-form input {
+.blog-form input {
   margin-left: 0;
+  margin-bottom: 3%;
   flex-direction: row;
 }
-.create-blog-form textarea {
+.blog-form textarea {
   margin-left: 0;
+  margin-bottom: 3%;
 }
 
 @media only screen and (max-width: 575px) {
