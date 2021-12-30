@@ -13,7 +13,7 @@ CountryCode.init(
             primaryKey: true,
             autoIncrement: true
         },
-        country_name: {
+        country_code_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
