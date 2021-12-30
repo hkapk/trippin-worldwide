@@ -222,6 +222,11 @@ input:focus {
 .post-card a {
   text-align: center;
 }
+	
+#map {
+	height: 400px; /* The height of div element containing map */
+	width: 100%; /* The width of web page */
+	
 ol {
   padding: 0;
 }
