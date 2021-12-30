@@ -131,6 +131,7 @@ footer {
   background-color: rgb(245, 245, 245, 0.8);
   margin-top: 10px;
   margin-left: 25%;
+  list-style: none;
 }
 .blog-heading {
   font-size: 1.6rem;
@@ -215,10 +216,10 @@ input:focus {
 .post-card a {
   text-align: center;
 }
-	
+
 #map {
-	height: 400px; /* The height of div element containing map */
-	width: 100%; /* The width of web page */
+  height: 400px; /* The height of div element containing map */
+  width: 100%; /* The width of web page */
 }
 ol {
   padding: 0;
@@ -278,21 +279,21 @@ input {
   color: skyblue;
 }
 .large-btn-nav {
-	color: whitesmoke;
-	border-radius: 6px;
-	padding: 1rem;
-	font-size: 1rem;
-	text-decoration: none;
-	color: whitesmoke;
-	font-weight: bold;
-	transition: color 0.1s;
-	border: none;
-	border: 0px;
-	background-color: rgb(0, 0, 139, 0.8);
-	margin: 5px 20px;
+  color: whitesmoke;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  transition: color 0.1s;
+  border: none;
+  border: 0px;
+  background-color: rgb(0, 0, 139, 0.8);
+  margin: 5px 20px;
 }
 .large-btn-nav:hover {
-	color: skyblue;
+  color: skyblue;
 }
 .blog-form {
 	background-color: rgb(192, 192, 192, 0.8);
@@ -353,4 +354,3 @@ input {
     text-align: center;
   }
 }
-
