@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require("../config/connection");
 
-class PostCuisine extends Model {
+class PostCountryCode extends Model {
 
 }
 
-PostCuisine.init(
+PostCountryCode.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -20,10 +20,10 @@ PostCuisine.init(
                 key: 'id'
             }
         },
-        cuisine_id: {
+        country_code_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'cuisine',
+                model: 'countrycode',
                 key: 'id'
             }
         }
@@ -33,8 +33,8 @@ PostCuisine.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post_cuisine'
+        modelName: 'post_country_code'
     }
 );
 
-module.exports = PostCuisine;
+module.exports = PostCountryCode;

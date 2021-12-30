@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { Cuisine } = require('../../models');
 
 router.get('/', (req, res) => {
@@ -12,11 +13,11 @@ router.get('/', (req, res) => {
         ],
         order: [['name', 'ASC']],
     })
-    .then(dbCuisineData => res.json(dbCuisineData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbCuisineData => res.json(dbCuisineData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/:id', (req, res) => {
@@ -28,11 +29,11 @@ router.get('/:id', (req, res) => {
             'posts'
         ]
     })
-    .then(dbCuisineData => res.json(dbCuisineData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbCuisineData => res.json(dbCuisineData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
