@@ -16,7 +16,7 @@
           {{#if post.activities}}
           <span class="list-item"><strong>Activities: </strong>
            {{#each post.activities}}
-           {{name}}
+           {{name}},
            {{/each}}
           </span>
           {{/if}}
@@ -33,8 +33,20 @@
         </div>
       </article>
 
+      <div class="comments">
+     <p class="list-item">Comments</p>
+    <ul class= "comments">
+          
+          {{#if post.comments}}
+          <span class="list-item">
+           {{#each post.comments}}
+           {{comment_text}} posted by {{user.first_name}}
+           {{/each}}
+          </span>
+          {{/if}}
+  </ul>
+</div>
 
-{{> comments }}
 
 {{#if loggedIn}}
 <form class="comment-form">

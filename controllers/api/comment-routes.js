@@ -4,15 +4,48 @@ const { Comment, User, Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Comment.findAll(
+    Comment.findAll({
+      attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+      include: [
+        {model: Post,
+        attributes: ['title']
+      },
       {
-    }
-    )
+        model: User,
+        attributes: ['first_name', 'last_name']
+      }
+      ]
+    })
+
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.get('/:id', (req, res) => {
+  Comment.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+    include: [
+      {model: Post,
+      attributes: ['title']
+    },
+    {
+      model: User,
+      attributes: ['first_name', 'last_name']
+    }
+    ]
+  })
+
+  .then(dbCommentData => res.json(dbCommentData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.post('/', withAuth,  (req, res) => {

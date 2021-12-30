@@ -64,7 +64,15 @@ router.get('/:id', (req, res) => {
       },
       'locations',
       'activities',
-      'cuisine'
+      'cuisine',
+      { 
+        model: Comment,
+        attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        }
+      },
     ]
   })
     .then(dbPostData => {
