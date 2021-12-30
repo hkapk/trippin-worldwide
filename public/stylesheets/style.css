@@ -149,7 +149,7 @@ footer {
 	width: 40%;
 	border-radius: 10px;
 	font-weight: 500;
-
+}
 .form {
   background-color: rgb(192, 192, 192, 0.8);
   margin: 0 auto;
@@ -226,7 +226,7 @@ input:focus {
 #map {
 	height: 400px; /* The height of div element containing map */
 	width: 100%; /* The width of web page */
-	
+}
 ol {
   padding: 0;
 }
@@ -264,7 +264,43 @@ input {
   margin-top: 10px;
   border-radius: 15px;
 }
-
+.popular-nav {
+  height: 10%;
+}
+.popular-btn-nav {
+  color: whitesmoke;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  transition: color 0.1s;
+  border: none;
+  border: 0px;
+  background-color: rgb(0, 0, 139, 0.8);
+  margin: 5px 20px;
+}
+.popular-btn-nav:hover {
+  color: skyblue;
+}
+.large-btn-nav {
+	color: whitesmoke;
+	border-radius: 6px;
+	padding: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	color: whitesmoke;
+	font-weight: bold;
+	transition: color 0.1s;
+	border: none;
+	border: 0px;
+	background-color: rgb(0, 0, 139, 0.8);
+	margin: 5px 20px;
+}
+.large-btn-nav:hover {
+	color: skyblue;
+}
 @media only screen and (max-width: 575px) {
   h2 {
     font-size: 1.9rem;
@@ -306,23 +342,4 @@ input {
     text-align: center;
   }
 }
-.popular-nav {
-  height: 10%;
-}
-.popular-btn-nav {
-  color: whitesmoke;
-  border-radius: 6px;
-  padding: 1rem;
-  font-size: 1rem;
-  text-decoration: none;
-  color: whitesmoke;
-  font-weight: bold;
-  transition: color 0.1s;
-  border: none;
-  border: 0px;
-  background-color: rgb(0, 0, 139, 0.8);
-  margin: 5px 20px;
-}
-.popular-btn-nav:hover {
-  color: skyblue;
-}
+
