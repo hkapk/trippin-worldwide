@@ -25,7 +25,8 @@ router.get('/', (req, res) => {
       },
       'locations',
       'activities',
-      'cuisine'
+      'cuisine',
+      'metric'
     ]
   })
     .then(dbPostData => res.json(dbPostData))
