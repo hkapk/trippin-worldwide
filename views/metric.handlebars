@@ -1,0 +1,19 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="/javascript/metric.js"></script>
+
+<a href="/metrics"></a>
+
+<div class="home">
+	<h4 class="sub-heading mx-auto" style="width: 40%">Most Visited Cities</h4>
+	<!--The div element for the map -->
+	<div id="map" class="map"></div>
+</div>
+
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script>
+	let gMapKey = process.env.GOOGLE_MAP_API_KEY;
+</script>
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=gMapKey&callback=initMap&v=weekly"
+	async
+></script>

@@ -1,291 +1,312 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
 html {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .hero-image {
-  background-image: url("../images/beach.jpg"); /* The image used */
-  background-color: #cccccc; /* Used if the image is unavailable */
-  height: fit-content; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: repeat-y; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+	background-image: url("../images/beach.jpg"); /* The image used */
+	background-color: #cccccc; /* Used if the image is unavailable */
+	height: fit-content; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: repeat-y; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
 }
 main {
-  height: 100%;
+	height: 100%;
 }
 .page {
-  flex: 1 1 auto;
-  margin: 0;
+	flex: 1 1 auto;
+	margin: 0;
 }
 .row {
-  height: 90%;
-  margin-top: 3%;
-  padding-bottom: 10px;
-  padding-right: 0px;
+	height: 90%;
+	margin-top: 3%;
+	padding-bottom: 10px;
+	padding-right: 0px;
 }
 .sidebar {
-  background-color: rgba(158, 205, 247, 0.8);
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-  height: max-content;
-  text-align: center;
-  z-index: 1;
-  padding-right: 0;
+	background-color: rgba(158, 205, 247, 0.8);
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	height: max-content;
+	text-align: center;
+	z-index: 1;
+	padding-right: 0;
 }
 h2 {
-  text-align: end;
-  color: whitesmoke;
-  padding: 21px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 2.4rem;
+	text-align: end;
+	color: whitesmoke;
+	padding: 21px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 2.4rem;
 }
 .nav-choice {
-  text-decoration: none;
-  color: darkblue;
-  font-weight: bold;
-  transition: color 0.1s;
-  padding-top: 25%;
-  height: 100px;
+	text-decoration: none;
+	color: darkblue;
+	font-weight: bold;
+	transition: color 0.1s;
+	padding-top: 25%;
+	height: 100px;
 }
 .nav-choice:hover {
-  color: whitesmoke;
-  background-color: rgb(0, 0, 139, 0.5);
+	color: whitesmoke;
+	background-color: rgb(0, 0, 139, 0.5);
 }
 a {
-  text-decoration: none;
-  color: darkblue;
-  font-weight: bold;
-  transition: color 0.1s;
-  padding: 3px;
+	text-decoration: none;
+	color: darkblue;
+	font-weight: bold;
+	transition: color 0.1s;
+	padding: 3px;
 }
 a:hover {
-  color: whitesmoke;
+	color: whitesmoke;
 }
 .btn-nav {
-  color: whitesmoke;
-  border-radius: 6px;
-  padding: 3px 6px;
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: whitesmoke;
-  font-weight: bold;
-  transition: color 0.1s;
-  border: none;
-  border: 0px;
-  background-color: rgb(0, 0, 139, 0.8);
-  margin: 5px 20px;
+	color: whitesmoke;
+	border-radius: 6px;
+	padding: 3px 6px;
+	font-size: 0.8rem;
+	text-decoration: none;
+	color: whitesmoke;
+	font-weight: bold;
+	transition: color 0.1s;
+	border: none;
+	border: 0px;
+	background-color: rgb(0, 0, 139, 0.8);
+	margin: 5px 20px;
 }
 .btn-nav:hover {
-  color: skyblue;
+	color: skyblue;
 }
 footer {
-  text-align: center;
-  color: darkblue;
-  align-content: flex-end;
-  background-color: rgba(158, 205, 247, 0.8);
-  position: sticky;
-  top: 100vh;
-  padding: 10px;
-  z-index: -1;
+	text-align: center;
+	color: darkblue;
+	align-content: flex-end;
+	background-color: rgba(158, 205, 247, 0.8);
+	position: sticky;
+	top: 100vh;
+	padding: 10px;
+	z-index: -1;
 }
 .blog-title {
-    background-color: rgb(245,245,245,0.8);
-    margin:10px;
-    border-radius: 15px;
-    color: darkblue;
-    text-align: center;
-    font-weight: 700;
-    padding: 2rem;
-    font-size: 2.2rem;
+	background-color: rgb(245, 245, 245, 0.8);
+	margin: 10px;
+	border-radius: 15px;
+	color: darkblue;
+	text-align: center;
+	font-weight: 700;
+	padding: 2rem;
+	font-size: 2.2rem;
 }
 .sub-heading {
-  font-size: 2.0rem;
-  text-align: center;
-  color: darkblue;
-  margin: 0 auto;
-  max-width: inherit;
-  border-radius: 7px;
-  padding: 10px;
-  font-weight: 700;
-  background-color: rgb(245,245,245,0.8);
+	font-size: 2rem;
+	text-align: center;
+	color: darkblue;
+	margin: 0 auto;
+	max-width: inherit;
+	border-radius: 7px;
+	padding: 10px;
+	font-weight: 700;
+	background-color: rgb(245, 245, 245, 0.8);
 }
 .blog-heading {
-  font-size: 1.6rem;
-  text-align: center;
-  color: darkblue;
-  background-color: rgb(192, 192, 192, 0.8);
-  margin: 25px 20px;
-  max-width: inherit;
-  border-radius: 7px;
-  padding: 10px;
-  font-weight: 700;
+	font-size: 1.6rem;
+	text-align: center;
+	color: darkblue;
+	background-color: rgb(192, 192, 192, 0.8);
+	margin: 25px 20px;
+	max-width: inherit;
+	border-radius: 7px;
+	padding: 10px;
+	font-weight: 700;
 }
 .form {
-  background-color: rgb(192, 192, 192, 0.8);
-  margin: 0 auto;
-  max-width: 275px;
-  border-radius: 10px;
-  font-weight: 500;
+	background-color: rgb(192, 192, 192, 0.8);
+	margin: 0 auto;
+	max-width: 275px;
+	border-radius: 10px;
+	font-weight: 500;
 }
 .create-blog-form {
-  background-color: rgb(192, 192, 192, 0.8);
-  margin: 0 auto;
-  width: 40%;
-  border-radius: 10px;
-  font-weight: 500;
+	background-color: rgb(192, 192, 192, 0.8);
+	margin: 0 auto;
+	width: 40%;
+	border-radius: 10px;
+	font-weight: 500;
 }
 .field {
-  text-align: center;
-  padding: 4px;
+	text-align: center;
+	padding: 4px;
 }
 input {
-  padding: 0.5%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+	padding: 0.5%;
+	border-radius: 5px;
+	border: 1px solid #ccc;
 }
 
 input:focus {
-  outline: none;
-  border: 1px solid #3486eb;
+	outline: none;
+	border: 1px solid #3486eb;
 }
 .btn {
-  background-color: darkblue;
-  transition: background-color 0.1s;
-  color: whitesmoke;
-  border-radius: 6px;
-  padding: 2px 6px;
-  font-size: 1rem;
+	background-color: darkblue;
+	transition: background-color 0.1s;
+	color: whitesmoke;
+	border-radius: 6px;
+	padding: 2px 6px;
+	font-size: 1rem;
 }
 
 .btn:hover {
-  background-color: rgb(85, 169, 243);
+	background-color: rgb(85, 169, 243);
 }
 .top-nav {
-  text-align: end;
-  width: 100%;
+	text-align: end;
+	width: 100%;
 }
 .post {
-  background-color: rgb(192, 192, 192, 0.8);
-  color: whitesmoke;
-  border-radius: 15px;
-  margin: 20px;
+	background-color: rgb(192, 192, 192, 0.8);
+	color: whitesmoke;
+	border-radius: 15px;
+	margin: 20px;
 }
 .link-title {
-  font-size: 1.5rem;
-  font-weight: bolder;
-  color: whitesmoke;
-  text-align: center;
+	font-size: 1.5rem;
+	font-weight: bolder;
+	color: whitesmoke;
+	text-align: center;
 }
 .list-item {
-  padding: 1%;
-  margin: .5% 5%;
-  background-color: rgba(158, 205, 247, 0.8);
-  border-radius: 10px;
-  font-size: 1rem;
-  color: rgb(29, 37, 37);
-  text-align: center;
-  font-weight: 500;
-  list-style: none;
+	padding: 1%;
+	margin: 0.5% 5%;
+	background-color: rgba(158, 205, 247, 0.8);
+	border-radius: 10px;
+	font-size: 1rem;
+	color: rgb(29, 37, 37);
+	text-align: center;
+	font-weight: 500;
+	list-style: none;
 }
 
 .list-item:nth-child(odd) {
-  background-color: rgb(192, 192, 192, 0.8);
+	background-color: rgb(192, 192, 192, 0.8);
 }
 .post-card {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
 }
 .post-card a {
-  text-align: center;
+	text-align: center;
 }
 ol {
-  padding: 0;
+	padding: 0;
 }
 .home {
-  max-width: 600px;
-  margin: 0 auto;
+	max-width: 600px;
+	margin: 0 auto;
 }
 h4 {
-    background-color: rgb(245,245,245,0.8);
-    margin:10px;
-    border-radius: 15px;
-  color: darkblue;
-  text-align: center;
-  font-weight: 700;
-  padding: 2rem;
-  font-size: 1.8rem;
+	background-color: rgb(245, 245, 245, 0.8);
+	margin: 10px;
+	border-radius: 15px;
+	color: darkblue;
+	text-align: center;
+	font-weight: 700;
+	padding: 2rem;
+	font-size: 1.8rem;
+}
+#map {
+	height: 400px; /* The height of div element containing map */
+	width: 100%; /* The width of web page */
 }
 .popular-nav {
-  height: 10%;
+	height: 10%;
+}
+.popular-btn-nav {
+	color: whitesmoke;
+	border-radius: 6px;
+	padding: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	color: whitesmoke;
+	font-weight: bold;
+	transition: color 0.1s;
+	border: none;
+	border: 0px;
+	background-color: rgb(0, 0, 139, 0.8);
+	margin: 5px 20px;
+}
+.popular-btn-nav:hover {
+	color: skyblue;
 }
 .large-btn-nav {
-  color: whitesmoke;
-  border-radius: 6px;
-  padding: 1rem;
-  font-size: 1rem;
-  text-decoration: none;
-  color: whitesmoke;
-  font-weight: bold;
-  transition: color 0.1s;
-  border: none;
-  border: 0px;
-  background-color: rgb(0, 0, 139, 0.8);
-  margin: 5px 20px;
+	color: whitesmoke;
+	border-radius: 6px;
+	padding: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	color: whitesmoke;
+	font-weight: bold;
+	transition: color 0.1s;
+	border: none;
+	border: 0px;
+	background-color: rgb(0, 0, 139, 0.8);
+	margin: 5px 20px;
 }
 .large-btn-nav:hover {
-  color: skyblue;
+	color: skyblue;
 }
 
 @media only screen and (max-width: 575px) {
-  h2 {
-    font-size: 1.9rem;
-    text-align: center;
-  }
-  .sidebar {
-    background-color: rgba(158, 205, 247, 0.8);
-    display: flex;
-    flex-direction: column;
-    height: 250px;
-    align-content: space-around;
-    text-align: center;
-    margin: 0 auto;
-    z-index: 1;
-    margin-top: 0;
-  }
-  .nav-choice {
-    text-decoration: none;
-    color: darkblue;
-    font-weight: bold;
-    transition: color 0.1s;
-    border-bottom: 1px solid whitesmoke;
-    padding: 4px 0;
-    height: 35px;
-  }
-  .sub-heading {
-    margin: 25px auto;
-  }
-  .form {
-    margin: auto;
-  }
-  .sidebar {
-    height: 50%;
-  }
-  .row {
-    height: fit-content;
-  }
-  .top-nav {
-    text-align: center;
-  }
+	h2 {
+		font-size: 1.9rem;
+		text-align: center;
+	}
+	.sidebar {
+		background-color: rgba(158, 205, 247, 0.8);
+		display: flex;
+		flex-direction: column;
+		height: 250px;
+		align-content: space-around;
+		text-align: center;
+		margin: 0 auto;
+		z-index: 1;
+		margin-top: 0;
+	}
+	.nav-choice {
+		text-decoration: none;
+		color: darkblue;
+		font-weight: bold;
+		transition: color 0.1s;
+		border-bottom: 1px solid whitesmoke;
+		padding: 4px 0;
+		height: 35px;
+	}
+	.sub-heading {
+		margin: 25px auto;
+	}
+	.form {
+		margin: auto;
+	}
+	.sidebar {
+		height: 50%;
+	}
+	.row {
+		height: fit-content;
+	}
+	.top-nav {
+		text-align: center;
+	}
 }

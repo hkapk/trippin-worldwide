@@ -2,6 +2,7 @@ const sequelize = require('../config/connection');
 const seedUsers = require('./user-seeds');
 const seedPosts = require('./post-seeds');
 const seedLocations = require('./location-seeds');
+const seedCountryCodes = require('./country-codes-seeds');
 const seedPostLocations = require('./post-location-seeds');
 const seedActivities = require('./activity-seeds');
 const seedPostActivities = require('./post-activity-seeds');
@@ -21,6 +22,9 @@ const seedAll = async () => {
 
     await seedLocations();
     console.log('LOCATIONS SEEDED');
+
+    await seedCountryCodes();
+    console.log('COUNTRY CODES SEEDED');
 
     await seedPostLocations();
     console.log('POST-LOCATIONS SEEDED');
@@ -43,4 +47,4 @@ const seedAll = async () => {
     process.exit(0);
 };
 
- seedAll();
+seedAll();
