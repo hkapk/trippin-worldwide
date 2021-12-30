@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const res = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
@@ -15,6 +14,7 @@ router.get('/', withAuth, (req, res) => {
         'user_id',
         'title',
         'description',
+        'content',
         'start_date',
         'end_date'
       ],
@@ -49,6 +49,7 @@ router.get('/', withAuth, (req, res) => {
           'user_id',
           'title',
           'description',
+          'content',
           'start_date',
           'end_date'
         ],

@@ -46,15 +46,15 @@ Location.belongsToMany(Post, {
 });
 
 Post.belongsToMany(CountryCode, {
-    through: PostLocation,
-    as: 'locations',
+    through: PostCountryCode,
+    as: 'codes',
     foreignKey: 'post_id'
 });
 
 CountryCode.belongsToMany(Post, {
-    through: PostLocation,
+    through: PostCountryCode,
     as: 'posts',
-    foreignKey: 'location_id'
+    foreignKey: 'country_code_id'
 });
 
 Post.belongsToMany(Activity, {
