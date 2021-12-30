@@ -26,7 +26,11 @@ router.get('/', (req, res) => {
       'locations',
       'activities',
       'cuisine',
-      'metric'
+      'codes'
+
+      { model: Comment,
+      attributes: ['id','comment_text', 'post_id', 'created_at']
+    }
     ]
   })
     .then(dbPostData => res.json(dbPostData))

@@ -1,36 +1,55 @@
-<article class="single-post">
-	<div class="post-card">
-		<h5 class="blog-title">{{post.title}}</h5>
-		<img src="/images/wine.jpg" width="fit content" class="single-img" />
-		<span class="list-item"><strong>Posted by:</strong>
-			{{post.user.first_name}}
-			{{post.user.last_name}}</span>
-		<span class="list-item"><strong>Description:</strong>
-			{{post.description}}</span>
-		<span class="list-item"><strong>Location: </strong>
-			{{#each post.locations}}
-				{{city}},
-				{{country}}
-			{{/each}}
-		</span>
-		{{! let's consider displaying the information below only on the 'single blog post' page }}
-		{{#if post.activities}}
-			<span class="list-item"><strong>Activities: </strong>
-				{{#each post.activities}}
-					{{name}}
-				{{/each}}
-			</span>
-		{{/if}}
-		{{#if post.cuisine}}
-			<span class="list-item"><strong>Cuisine: </strong>
-				{{#each post.cuisine}}
-					{{name}}
-				{{/each}}
-			</span>
-		{{/if}}
-		<span class="list-item"><strong>Start Date:
-			</strong>{{post.start_date}}</span>
-		<span class="list-item"><strong>End Date: </strong>{{post.end_date}}</span>
+ <article class="single-post">
+        <div class="post-card">
+          <h5 class="blog-title">{{post.title}}</h5>
+        <img src="/images/wine.jpg" width="fit content" class="single-img">
+          <span class="list-item"><strong>Posted by:</strong>
+            {{post.user.first_name}} {{post.user.last_name}}</span>
+          <span class="list-item"><strong>Description:</strong>
+          {{post.description}}</span>
+          <span class="list-item"><strong>Location: </strong>
+           {{#each post.locations}}
+           {{city}}, 
+           {{country}}
+           {{/each}}
+          </span>
+          {{!-- let's consider displaying the information below only on the 'single blog post' page --}}
+          {{#if post.activities}}
+          <span class="list-item"><strong>Activities: </strong>
+           {{#each post.activities}}
+           {{name}}
+           {{/each}}
+          </span>
+          {{/if}}
+          {{#if post.cuisine}}
+          <span class="list-item"><strong>Cuisine: </strong>
+           {{#each post.cuisine}}
+           {{name}}
+           {{/each}}
+          </span>
+          {{/if}}
+          <span class="list-item"><strong>Start Date: </strong>{{post.start_date}}</span>
+          <span class="list-item"><strong>End Date: </strong>{{post.end_date}}</span>
+          
+        </div>
+      </article>
 
-	</div>
-</article>
+
+{{> comments }}
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button class= "submit-btn" type="submit">add comment</button>
+  </div>
+</form>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
+
+
