@@ -143,13 +143,6 @@ footer {
   padding: 10px;
   font-weight: 700;
 }
-.create-blog-form {
-	background-color: rgb(192, 192, 192, 0.8);
-	margin: 0 auto;
-	width: 40%;
-	border-radius: 10px;
-	font-weight: 500;
-}
 .form {
   background-color: rgb(192, 192, 192, 0.8);
   margin: 0 auto;
@@ -301,6 +294,22 @@ input {
 .large-btn-nav:hover {
 	color: skyblue;
 }
+.create-blog-form {
+	background-color: rgb(192, 192, 192, 0.8);
+	margin: 0 auto;
+	width: 60%;
+	border-radius: 10px;
+	font-weight: 500;
+  padding: .5rem;
+}
+.create-blog-form input {
+  margin-left: 0;
+  flex-direction: row;
+}
+.create-blog-form textarea {
+  margin-left: 0;
+}
+
 @media only screen and (max-width: 575px) {
   h2 {
     font-size: 1.9rem;
