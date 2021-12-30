@@ -2,3 +2,41 @@
 
 <a href="/dashboard" class="large-btn-nav">&larr; Return to My Trips</a>
 
+<section>
+    <h4 class="sub-heading mx-auto" style="width: 40%">Edit blog</h4>
+
+    <form class="edit-blog-form">
+        <div>
+            <p>Edit title</p>
+            <input type="text" name="blog-title" value="{{post.title}}">
+        </div>
+        <div>
+            <p>Edit description</p>
+            <textarea name="blog-description" value="{{post.description}}">{{post.description}}</textarea>
+        </div>
+        <div>
+            <p>Edit content</p>
+            <textarea name="blog-content" value="{{post.content}}">{{post.content}}</textarea>
+        </div>
+        <div>
+            <p>Edit dates</p>
+            <input type="date" name="start-date" value="{{post.start_date}}">
+            <input type="date" name="end-date" value="{{post.end_date}}">
+        </div>
+        <div>
+            <p>Edit location</p>
+            <input type="text" name="city" value="{{post.locations.[0].city}}">
+            <input type="text" name="country" value="{{post.locations.[0].country}}">
+        </div>
+        <div>
+            <p>Edit activities</p>
+            <textarea name="activity-name" value="{{post.activities.[0].name}}">{{post.activities.[0].name}}</textarea>
+        </div>
+        <div>
+            <p>Edit cuisine</p>
+            <textarea name="cuisine-name" value="{{post.cuisine.[0].name}}">{{post.cuisine.[0].name}}</textarea>
+        </div>
+    </form>
+</section>
+
+<script src="/javascript/edit-blog.js"></script>
