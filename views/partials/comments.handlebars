@@ -1,8 +1,8 @@
 <div class="comments">
   <p class="link-title">Comments</p>
-  <ul>
+  <section>
     {{#each this}}
-      <li class="list-item" >
+      <div class="list-item" >
         
           {{comment_text}}
           <sub><strong>posted by:</strong>
@@ -10,8 +10,8 @@
             {{user.last_name}}
             <strong>on {{format_date created_at}}</strong></sub><br />
         
-      </li>
+      </div>
     {{/each}}
 
-  </ul>
+  </section>
 </div>
