@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'user_id',
       'title',
       'description',
+      'content',
       'start_date',
       'end_date'
     ],
@@ -51,9 +51,9 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'user_id',
       'title',
       'description',
+      'content',
       'start_date',
       'end_date'
     ],
@@ -122,11 +122,21 @@ router.put('/:id', withAuth, (req, res) => {
       title: req.body.title,
       description: req.body.description,
       start_date: req.body.start_date,
-      end_date: req.body.end_date
-    },
+      end_date: req.body.end_date,
+      locations: [
+        { city: req.body.city, country: req.body.country }
+      ],
+      activities: [
+        { name: req.body.activity }
+      ],
+      cuisine: [
+        { name: req.body.cuisine }
+      ]
+    }, 
+    // TODO inclusion of updating location, activities, and cuisine for specific blog
     {
       where: {
-        user_id: req.params.user_id
+        id: req.params.id
       }
     }
   )

@@ -1,0 +1,51 @@
+{{!-- TODO add style classes to match rest of site --}}
+
+<a href="/dashboard" class="large-btn-nav">&larr; Return to My Trips</a>
+
+<section>
+    <h4 class="sub-heading mx-auto" style="width: 40%">Edit blog</h4>
+
+    <form class="blog-form" id="edit-blog-form">
+        <div>
+            <label for="blog-title">Blog title</label>
+            <input type="text" name="blog-title" class="form-control" value="{{post.title}}">
+        </div>
+        <div>
+            <label for="blog-description">A short description</label>
+            <textarea name="blog-description" class="form-control" value="{{post.description}}">{{post.description}}</textarea>
+        </div>
+        <div>
+            <label for="blog-content">Tell more about your trip</label>
+            <textarea name="blog-content" class="form-control" style="height: 150px" value="{{post.content}}">{{post.content}}</textarea>
+        </div>
+        <div class="col-md-4 mx-auto">
+            <label for="start-date">Start date:</label>
+            <input type="date" name="start-date" class="form-control" value="{{post.start_date}}">
+        </div>
+        <div class="col-md-4 mx-auto">
+            <label for="start-date">End date:</label>
+            <input type="date" name="end-date" class="form-control" value="{{post.end_date}}">
+        </div>
+        <div class="col-md-6 mx-auto">
+            <label for="city">City:</label>
+            <input type="text" name="city" class="form-control" value="{{post.locations.[0].city}}">
+        </div>
+        <div class="col-md-6 mx-auto">
+            <label for="city">Country:</label>
+            <input type="text" name="country" class="form-control" value="{{post.locations.[0].country}}">
+        </div>
+        <div>
+            <label for="activity-name">Activities</label>
+            <textarea name="activity-name" class="form-control" value="{{post.activities.[0].name}}">{{post.activities.[0].name}}</textarea>
+        </div>
+        <div>
+            <label for="cuisine-name">Cuisine</label>
+            <textarea name="cuisine-name" class="form-control" value="{{post.cuisine.[0].name}}">{{post.cuisine.[0].name}}</textarea>
+        </div>
+        <div class="field">
+            <button type="submit" class="btn">Save blog</button>
+        </div>
+    </form>
+</section>
+
+<script src="/javascript/edit-blog.js"></script>
