@@ -5,9 +5,7 @@
         <img src="/images/wine.jpg" width="fit content" class="single-img">
           <span class="list-item"><strong>Posted by:</strong>
             {{post.user.first_name}} {{post.user.last_name}}</span>
-          <span class="list-item"><strong>Description:</strong>
-          {{post.description}}</span>
-          <span class="list-item"><strong>Location: </strong>
+            <span class="list-item"><strong>Location: </strong>
            {{#each post.locations}}
            {{city}}, 
            {{country}}
@@ -30,7 +28,8 @@
           {{/if}}
           <span class="list-item"><strong>Start Date: </strong>{{post.start_date}}</span>
           <span class="list-item"><strong>End Date: </strong>{{post.end_date}}</span>
-          
+          <h6 class="blog-heading">{{post.description}}</h6>
+          <span class="blog-content">{{post.content}}</span>
         </div>
       </article>
 
