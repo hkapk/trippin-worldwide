@@ -21,7 +21,12 @@ router.get('/', (req, res) => {
       },
       {
         model: Comment ,
-        attributes: ['comment_text']
+        attributes: ['comment_text'],
+        include : {
+          model: Post,
+          attributes: ['title']
+
+        }
       }
     ]
   })
