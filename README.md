@@ -2,7 +2,9 @@
 
 ## Description
 
-This application will provide a user the ability to journalize information about their travels such as description, start and end dates, city and country, activities, and cuisine as well as provide an opportunity to review/comment on other users' adventures. In addition, the cities most traveled too will be displayed via a map to help plan any future journeys.
+This application will provide a user the ability to journalize information about their travels such as description, start and end dates, city and country, activities, and cuisine as well as provide an opportunity to review/comment on other users' adventures. In addition, the most visited cities will be displayed via a map to help plan any future journeys.
+
+The web application uses Node.js and Express.js to create a RESTful API, Handlebars.js as a templating engine, MySQL and Sequelize ORM for the database, dotenv and bcrypt for securing sensitive data, and bootstrap/CSS for styling.
 
 ## Table of Contents
 
@@ -14,6 +16,14 @@ To install necessary dependencies into the node_modules folder, run the followin
 
 ```
 npm i
+```
+
+To install the application clone the following Github repository to your computer. Create a .env file in the root of your directory and add the following:
+
+```
+DB_NAME='travel_blog_db'
+DB_USER='root'
+DB_PW= '<your password>'
 ```
 
 [back to top](#table-of-contents)

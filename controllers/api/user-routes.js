@@ -1,10 +1,29 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { User, Post, Comment} = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
-    attributes: { exclude: ['password'] }
+    attributes: { exclude: ['password'] },
+    attributes:[
+      'id',
+      'first_name',
+      'last_name',
+      'email',
+      'createdAt',
+      'updatedAt'
+    ],
+    include: [
+      {
+        model: Post,
+        attributes: ['title']
+      },
+      {
+        model: Comment ,
+        attributes: ['comment_text']
+      }
+    ]
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -19,26 +38,25 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
+    attributes:[
+      'id',
+      'first_name',
+      'last_name',
+      'email',
+      'createdAt',
+      'updatedAt'
+    ],
     include: [
       {
         model: Post,
-        attributes: [`
-        'id', 
-        'title', 
-        'description', 
-        'created_at'`]
+        attributes: ['title']
       },
       {
-        model: Comment,
-        attributes: [`'id', 
-        'comment_text', 
-        'created_at'`],
-        include: {
-          model: Post,
-          attributes: ['title']
-        }
-      },
+        model: Comment ,
+        attributes: ['comment_text']
+      }
     ]
+
   })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -96,7 +114,7 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.id = dbUserData.id;
+      req.session.user_id = dbUserData.id;
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
@@ -155,5 +173,7 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;

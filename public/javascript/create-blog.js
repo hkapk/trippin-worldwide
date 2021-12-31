@@ -35,4 +35,4 @@ async function newBlogHandler(event) {
     }
 }
 
-document.querySelector('.create-blog-form').addEventListener('submit', newBlogHandler);
+document.querySelector('#create-blog-form').addEventListener('submit', newBlogHandler);

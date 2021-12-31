@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'user_id',
       'title',
       'description',
+      'content',
       'start_date',
       'end_date'
     ],
@@ -23,9 +23,18 @@ router.get('/', (req, res) => {
         model: User,
         attributes: ['first_name', 'last_name']
       },
+      { 
+        model: Comment,
+        attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        }
+      },
       'locations',
       'activities',
-      'cuisine'
+      'cuisine',
+      'codes'
     ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -42,9 +51,9 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'user_id',
       'title',
       'description',
+      'content',
       'start_date',
       'end_date'
     ],
@@ -55,7 +64,15 @@ router.get('/:id', (req, res) => {
       },
       'locations',
       'activities',
-      'cuisine'
+      'cuisine',
+      { 
+        model: Comment,
+        attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        }
+      },
     ]
   })
     .then(dbPostData => {
@@ -105,11 +122,21 @@ router.put('/:id', withAuth, (req, res) => {
       title: req.body.title,
       description: req.body.description,
       start_date: req.body.start_date,
-      end_date: req.body.end_date
-    },
+      end_date: req.body.end_date,
+      locations: [
+        { city: req.body.city, country: req.body.country }
+      ],
+      activities: [
+        { name: req.body.activity }
+      ],
+      cuisine: [
+        { name: req.body.cuisine }
+      ]
+    }, 
+    // TODO inclusion of updating location, activities, and cuisine for specific blog
     {
       where: {
-        user_id: req.params.user_id
+        id: req.params.id
       }
     }
   )
