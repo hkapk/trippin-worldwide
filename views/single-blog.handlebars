@@ -32,23 +32,17 @@
         </div>
       </article>
 
-    {{#if post.comments}}
-        {{> comments post.comments}}
-    {{/if}}
-
-
 {{#if loggedIn}}
 <form class="comment-form">
-  <div>
+    <p class="link-title">Add Your Comment Below</p>
     <textarea name="comment-body" class="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button class= "submit-btn" type="submit">add comment</button>
-  </div>
+    <button class= "comment-btn" type="submit">Add Comment</button>
 </form>
 {{/if}}
 
+    {{#if post.comments}}
+        {{> comments post.comments}}
+    {{/if}}
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
