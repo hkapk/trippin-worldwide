@@ -16,7 +16,8 @@ router.get('/locations', (req, res) => {
     })
     .then(dbLocationData => {
         const locations = dbLocationData.map(location => location.get({ plain: true }));
-        res.render('popular', { locations })
+        res.render('popular', { locations,
+            loggedIn: req.session.loggedIn })
     })
     .catch(err => {
         console.log(err);
@@ -37,7 +38,8 @@ router.get('/activities', (req, res) => {
     })
     .then(dbActivityData => {
         const activities = dbActivityData.map(activity => activity.get({ plain: true }));
-        res.render('popular', { activities })
+        res.render('popular', { activities, 
+            loggedIn: req.session.loggedIn})
     })
     .catch(err => {
         console.log(err);
@@ -58,7 +60,8 @@ router.get('/cuisine', (req, res) => {
     })
     .then(dbCuisineData => {
         const cuisine = dbCuisineData.map(cuisine => cuisine.get({ plain: true }));
-        res.render('popular', { cuisine })
+        res.render('popular', { cuisine,
+            loggedIn: req.session.loggedIn})
     })
     .catch(err => {
         console.log(err);
