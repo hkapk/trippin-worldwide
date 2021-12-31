@@ -1,10 +1,17 @@
 <div class="comments">
-     <p class="list-item">Comments</p>
-    <ul class= "comments">
-  {{#each posts as |post|}}
-  {{#if comments}} 
-  <li>{{comment_text}} posted by {{user.first_name}} {{user.last_name}}<li>
-  {{/if}}
-  {{/each}}
+  <p class="link-title">Comments</p>
+  <ul>
+    {{#each this}}
+      <li class="list-item" >
+        
+          {{comment_text}}
+          <sub><strong>posted by:</strong>
+            {{user.first_name}}
+            {{user.last_name}}
+            <strong>on {{format_date created_at}}</strong></sub><br />
+        
+      </li>
+    {{/each}}
+
   </ul>
 </div>

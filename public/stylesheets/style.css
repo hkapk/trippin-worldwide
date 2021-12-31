@@ -122,15 +122,14 @@ footer {
 }
 
 .comments {
-  font-size: 16px;
+  font-size: 1.0rem;
   text-align: center;
-  color: darkblue;
+  color: black;
   border-radius: 7px;
-  width: 50%;
+  max-width: 900px;
   padding: 10px;
-  background-color: rgb(245, 245, 245, 0.8);
-  margin-top: 10px;
-  margin-left: 25%;
+  background-color: rgb(0, 0, 139, 0.8);
+  margin: 5px auto;
   list-style: none;
 }
 .blog-heading {
@@ -318,6 +317,10 @@ input {
 .blog-form textarea {
   margin-left: 0;
   margin-bottom: 3%;
+}
+sub {
+    vertical-align:5px;
+    font-size: smaller;
 }
 
 @media only screen and (max-width: 575px) {
