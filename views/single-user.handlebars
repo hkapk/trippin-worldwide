@@ -1,0 +1,15 @@
+<div class="home">
+  <h4 class="sub-heading">Single-User Page</h4>
+  <ol class="user-list">
+{{#each users as |user|}}
+    <li>
+      <article class="users">
+        <div class="user-card">
+            <span class="list-item"><strong>Name:</span>
+          <h4>{{user.first_name}} {{user.last_name}}</h4>
+          <span class="list-item"><strong>Email:</span>
+          <h4>{{user.email}}</h4>
+{{/each}}
+          </span>
+         <ol>
+</div>

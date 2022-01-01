@@ -119,8 +119,46 @@ router.get('/metrics', (req, res) => {
   res.render('metric');
 });
 
-  router.get('/users', (req, res) => {
-    res.render('users');
+router.get('/users', (req, res) => {
+  User.findAll({
+    attributes: { exclude: ['password'] },
+    attributes:[
+      'id',
+      'first_name',
+      'last_name',
+      'email',
+      'createdAt',
+      'updatedAt'
+    ],
+    include: [
+      {
+        model: Post,
+        attributes: ['title']
+      },
+      {
+        model: Comment ,
+        attributes: ['comment_text'],
+        include : {
+          model: Post,
+          attributes: ['title']
+
+        }
+      }
+    ]
+  })
+  .then(dbUserData => {
+      const users = dbUserData.map(user => user.get({ plain: true }));
+      res.render('users', { users,
+          loggedIn: req.session.loggedIn })
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
+
+router.get('/users/:id', (req, res) => {
+  res.render('single-user');
+});
 module.exports = router;
