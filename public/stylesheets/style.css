@@ -122,7 +122,7 @@ footer {
 }
 
 .comments {
-  font-size: 1.0rem;
+  font-size: 1rem;
   text-align: center;
   color: black;
   border-radius: 7px;
@@ -144,11 +144,11 @@ footer {
   font-weight: 700;
 }
 .blog-content {
-    color:black;
-    background-color: whitesmoke;
-    border-radius: 15px;
-    margin:10px;
-    padding: 15px;
+  color: black;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 15px;
 }
 .form {
   background-color: rgb(192, 192, 192, 0.8);
@@ -215,6 +215,7 @@ input:focus {
 .list-item:nth-child(odd) {
   background-color: rgb(192, 192, 192, 0.8);
 }
+
 .post-card {
   display: flex;
   flex-direction: column;
@@ -251,7 +252,7 @@ h4 {
   margin: 10px auto;
   border-radius: 10px;
   max-width: 900px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(0, 0, 139, 0.8);
@@ -271,7 +272,7 @@ h4 {
   font-weight: 500;
 }
 .comment-btn:hover {
-  background-color: skyblue ;
+  background-color: skyblue;
 }
 .popular-nav {
   height: 10%;
@@ -311,12 +312,12 @@ h4 {
   color: skyblue;
 }
 .blog-form {
-	background-color: rgb(192, 192, 192, 0.8);
-	margin: 3% auto;
-	width: 60%;
-	border-radius: 10px;
-	font-weight: 500;
-  padding: .5rem;
+  background-color: rgb(192, 192, 192, 0.8);
+  margin: 3% auto;
+  width: 60%;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 0.5rem;
 }
 .blog-form input {
   margin-left: 0;
@@ -328,8 +329,8 @@ h4 {
   margin-bottom: 3%;
 }
 sub {
-    vertical-align:5px;
-    font-size: smaller;
+  vertical-align: 5px;
+  font-size: smaller;
 }
 
 @media only screen and (max-width: 575px) {

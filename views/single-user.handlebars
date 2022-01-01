@@ -1,15 +1,33 @@
 <div class="home">
-  <h4 class="sub-heading">Single-User Page</h4>
-  <ol class="user-list">
-{{#each users as |user|}}
-    <li>
-      <article class="users">
-        <div class="user-card">
-            <span class="list-item"><strong>Name:</span>
-          <h4>{{user.first_name}} {{user.last_name}}</h4>
-          <span class="list-item"><strong>Email:</span>
-          <h4>{{user.email}}</h4>
+  <h4 class="sub-heading">{{user.first_name}} {{user.last_name}}'s Posts</h4>
+
+ 
+{{#if user.posts}}
+{{#each user.posts}}
+<li class="list-item">
+  <a href="/post/{{id}}">{{title}}</a> | {{format_date created_at}}
+</li>
 {{/each}}
-          </span>
-         <ol>
+{{else}}
+<li class="list-item ">
+  <a href="/users">No Posts!</a>
+</li>
+{{/if}}
+
+ <h4 class="sub-heading">{{user.first_name}} {{user.last_name}}'s Comments</h4>
+
+{{#if user.comments}}
+{{#each user.comments}}
+<li class="list-item ">
+  {{comment_text}} |
+  <a href="/post/{{post.id}}">{{post.title}}</a>
+  | {{format_date created_at}}
+</li>
+{{/each}}
+{{else}}
+<li class="list-item text-start">
+  <a href="/users">No Comments!</a>
+</li>
+{{/if}}
+
 </div>
