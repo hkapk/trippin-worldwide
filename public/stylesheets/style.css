@@ -227,6 +227,7 @@ input:focus {
 .list-item:nth-child(odd) {
 	background-color: rgb(192, 192, 192, 0.8);
 }
+
 .post-card {
 	display: flex;
 	flex-direction: column;
