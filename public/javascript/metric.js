@@ -58,8 +58,8 @@ async function getCitymapData(city, country) {
   //let countryCode = await getCountryCode(country);
   let countryCode = 'US';
   //let gMapKey = process.env.GOOGLE_MAP_API_KEY;
-  //let gMapKey = 'AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ';
-  let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${countryCode}&key=AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ`;
+  let gMapKey = 'AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ';
+  let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${countryCode}&key=${gMapKey}`;
 
   try {
     const response = await fetch(url);
