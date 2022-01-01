@@ -1,6 +1,17 @@
-* {
+html {
 	box-sizing: border-box;
 }
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+.map {
+	box-sizing: initial;
+}
+
 html,
 body {
 	height: 100%;
@@ -9,6 +20,7 @@ html {
 	display: flex;
 	flex-direction: column;
 }
+
 .hero-image {
 	background-image: url("../images/beach.jpg"); /* The image used */
 	background-color: #cccccc; /* Used if the image is unavailable */
@@ -255,6 +267,10 @@ h4 {
 #map {
 	height: 500px; /* The height of div element containing map */
 	width: 100%; /* The width of web page */
+}
+
+#map img {
+	max-width: none;
 }
 
 .comment-form {
