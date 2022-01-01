@@ -1,3 +1,4 @@
+
 // dummy number for circle size, cityCount will be per city
 // more times a city has been traveled to, larger the circle
 let cityCount = 100000;
@@ -24,9 +25,9 @@ initMap().then(citymap => {
 function constructCircles(citymap) {
   // Create the map.
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 10,
+    zoom: 5,
     center: { lat: 37.09, lng: -95.712 },
-    mapTypeId: "terrain",
+    mapTypeId: "terrain"
   });
 
   citymap.forEach(location => {
@@ -56,8 +57,8 @@ async function getCitymapData(city, country) {
   //console.log(city, country);
   //let countryCode = await getCountryCode(country);
   let countryCode = 'US';
-  let gMapKey = process.env.GOOGLE_MAP_API_KEY;
-  //let gMapKey = 'AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ';
+  //let gMapKey = process.env.GOOGLE_MAP_API_KEY;
+  let gMapKey = 'AIzaSyAR4BrHtt6FMtMUXzvCiTuVPiDyg0rTvCQ';
   let url = `https://maps.googleapis.com/maps/api/geocode/json?components=locality:${city}|country:${countryCode}&key=${gMapKey}`;
 
   try {
@@ -77,4 +78,4 @@ async function getCitymapData(city, country) {
 
 // }
 
-document.querySelector('.map').addEventListener('submit', initMap);
+//document.querySelector('.map').addEventListener('submit', initMap);
