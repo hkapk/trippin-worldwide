@@ -23,7 +23,7 @@ PostCountryCode.init(
         country_code_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'countrycode',
+                model: 'code',
                 key: 'id'
             }
         }

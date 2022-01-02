@@ -1,4 +1,4 @@
-const { CountryCode } = require('../models');
+const { Code } = require('../models');
 
 const countryCodeData = [
     {
@@ -999,6 +999,6 @@ const countryCodeData = [
     },
 ]
 
-const seedCountryCodes = () => CountryCode.bulkCreate(countryCodeData);
+const seedCountryCodes = () => Code.bulkCreate(countryCodeData);
 
 module.exports = seedCountryCodes;

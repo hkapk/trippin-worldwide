@@ -8,6 +8,7 @@
 		"express-handlebars": "^6.0.2",
 		"express-session": "^1.17.2",
 		"mysql2": "^2.3.3",
+		"requirejs": "^2.3.6",
 		"sequelize": "^6.12.2"
 	},
 	"scripts": {
