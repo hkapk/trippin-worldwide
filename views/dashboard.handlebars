@@ -1,5 +1,6 @@
-<a href="/dashboard/create" class="large-btn-nav text-center">Create a new blog</a>
-
+<div class="nav-mini">
+  <a href="/dashboard/create" class="large-btn-nav">Create a new blog</a>
+</div>
 {{!-- TODO edit this to match single-blog post layout --}}
 
 <div class="home">
@@ -22,8 +23,12 @@
                 {{country}}
               {{/each}}
             </span>
-            <a href="/post/{{id}}">More Details</a>
-            <a href="/dashboard/edit/{{id}}">Edit Trip</a>
+            <span class="list-item"><strong>Date:
+							</strong>{{end_date}}</span>
+            <div class="list-item">
+              <a href="/post/{{id}}" class="dash-link">More Details</a>
+              <a href="/dashboard/edit/{{id}}" class="dash-link">Edit Trip</a>
+            </div>
           </div>
         </article>
       </li>

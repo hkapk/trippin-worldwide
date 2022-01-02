@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+        setTimeout(() => {document.location.replace('/dashboard')}, 100);
     } else {
       alert(response.statusText);
     }

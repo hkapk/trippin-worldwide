@@ -94,10 +94,11 @@ router.post('/', (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
-  
+
       res.json(dbUserData);
-    });
+    })
   })
+ 
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -128,9 +129,13 @@ router.post('/login', (req, res) => {
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json(dbUserData);
+    })
+  })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  });
 });
 
 router.post('/logout', (req, res) => {

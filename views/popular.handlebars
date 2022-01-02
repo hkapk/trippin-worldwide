@@ -23,7 +23,7 @@
 				{{#each locations}}
 					<li class="list-item text-start">
 						{{count}}
-						blogs |
+						{{format_plural "blog" count}} |
 						{{city}},
 						{{country}}
 						<br />
@@ -42,7 +42,7 @@
 				{{#each activities}}
 					<li class="list-item text-start">
 						{{count}}
-						blogs |
+						{{format_plural "blog" count}} |
 						{{name}}
 						<br />
 						{{#each posts}}
@@ -60,7 +60,7 @@
 				{{#each cuisine}}
 					<li class="list-item text-start">
 						{{count}}
-						blogs |
+						{{format_plural "blog" count}} |
 						{{name}}
 						<br />
 						{{#each posts}}
