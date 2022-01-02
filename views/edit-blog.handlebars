@@ -26,22 +26,6 @@
             <label for="start-date">End date:</label>
             <input type="text" name="end-date" class="form-control" id="end-date-edit" value="{{post.end_date}}">
         </div>
-        <div class="col-md-6 mx-auto">
-            <label for="city">City:</label>
-            <input type="text" name="city" class="form-control" value="{{post.locations.[0].city}}">
-        </div>
-        <div class="col-md-6 mx-auto">
-            <label for="city">Country:</label>
-            <input type="text" name="country" class="form-control" value="{{post.locations.[0].country}}">
-        </div>
-        <div>
-            <label for="activity-name">Activities</label>
-            <textarea name="activity-name" class="form-control" value="{{post.activities.[0].name}}">{{post.activities.[0].name}}</textarea>
-        </div>
-        <div>
-            <label for="cuisine-name">Cuisine</label>
-            <textarea name="cuisine-name" class="form-control" value="{{post.cuisine.[0].name}}">{{post.cuisine.[0].name}}</textarea>
-        </div>
         <div class="field">
             <button type="submit" class="button">Save blog</button>
             <button type="button" class="button" id="delete-blog-btn">Delete blog</button>
