@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 //include models here: 
-const { Post, Comment, User, Location, Activity, Cuisine, PostLocation } = require('../../models');
+const { Post, Comment, User, Location, PostLocation } = require('../../models');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -105,7 +105,8 @@ router.post('/', withAuth, (req, res) => {
     cuisine: [
       { name: req.body.cuisine }
     ]
-  }, {
+  },
+  {
     include: [ 'locations', 'activities', 'cuisine' ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -115,25 +116,15 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
       description: req.body.description,
+      content: req.body.content,
       start_date: req.body.start_date,
       end_date: req.body.end_date,
-      locations: [
-        { city: req.body.city, country: req.body.country }
-      ],
-      activities: [
-        { name: req.body.activity }
-      ],
-      cuisine: [
-        { name: req.body.cuisine }
-      ]
     }, 
-    // TODO inclusion of updating location, activities, and cuisine for specific blog
     {
       where: {
         id: req.params.id

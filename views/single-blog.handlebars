@@ -10,18 +10,21 @@
            {{country}}
            {{/each}}
           </span>
-          {{!-- let's consider displaying the information below only on the 'single blog post' page --}}
           {{#if post.activities}}
           <span class="list-item"><strong>Activities: </strong>
            {{#each post.activities}}
-           {{name}}
+           <li>
+             {{name}}
+           </li>
            {{/each}}
           </span>
           {{/if}}
           {{#if post.cuisine}}
           <span class="list-item"><strong>Cuisine: </strong>
            {{#each post.cuisine}}
-           {{name}}
+           <li>
+             {{name}}
+           </li>
            {{/each}}
           </span>
           {{/if}}
