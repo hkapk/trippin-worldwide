@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require("../config/connection");
 
-class CountryCode extends Model {
+class Code extends Model {
 
 }
 
-CountryCode.init(
+Code.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -30,8 +30,8 @@ CountryCode.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'country_code'
+        modelName: 'code'
     }
 );
 
-module.exports = CountryCode;
+module.exports = Code;
