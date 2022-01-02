@@ -363,6 +363,9 @@ sub {
 	vertical-align: 5px;
 	font-size: smaller;
 }
+.dash-link {
+  margin: 0 35px;
+}
 
 @media only screen and (max-width: 575px) {
 	h2 {
