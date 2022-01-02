@@ -1,12 +1,34 @@
 const router = require('express').Router();
-
-//include models here: 
-// const { MODEL NAMES GO HERE } = require('../../models');
+const sequelize = require('../../config/connection');
+const { User, Post, Comment} = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
-    attributes: { exclude: ['password'] }
+    attributes: { exclude: ['password'] },
+    attributes:[
+      'id',
+      'first_name',
+      'last_name',
+      'email',
+      'createdAt',
+      'updatedAt'
+    ],
+    include: [
+      {
+        model: Post,
+        attributes: ['title']
+      },
+      {
+        model: Comment ,
+        attributes: ['comment_text'],
+        include : {
+          model: Post,
+          attributes: ['title']
+
+        }
+      }
+    ]
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -21,20 +43,30 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
+    attributes:[
+      'id',
+      'first_name',
+      'last_name',
+      'email',
+      'createdAt',
+      'updatedAt'
+    ],
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        attributes: ['title']
       },
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'created_at'],
-        include: {
+        model: Comment ,
+        attributes: ['comment_text'],
+        include : {
           model: Post,
           attributes: ['title']
+          
         }
-      },
+      }
     ]
+
   })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -50,21 +82,23 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  
   User.create({
-    username: req.body.username,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     email: req.body.email,
     password: req.body.password
   })
   .then(dbUserData => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
-  
+
       res.json(dbUserData);
-    });
+    })
   })
+ 
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -92,12 +126,16 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       // declare session variables
       req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json(dbUserData);
+    })
+  })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  });
 });
 
 router.post('/logout', (req, res) => {
@@ -112,9 +150,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  //expects {"username":"username", "email":"email", "password":"password"}
 
-  // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -152,5 +188,7 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;

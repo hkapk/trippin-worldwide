@@ -1,24 +1,37 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-
-//include model below:
-//const { } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/',  (req, res) => {
+router.get('/', (req, res) => {
     Post.findAll({
       where: {
         // use the ID from the session
         user_id: req.session.user_id
       },
-//attributes will go here: 
-
-//
+      attributes: [
+        'id',
+        'title',
+        'description',
+        'content',
+        'start_date',
+        'end_date'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        },
+        'locations',
+        'activities',
+        'cuisine'
+      ]
     })
       .then(dbPostData => {
         // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        res.render('dashboard', { posts,
+          loggedIn: req.session.loggedIn});
       })
       .catch(err => {
         console.log(err);
@@ -26,14 +39,28 @@ router.get('/',  (req, res) => {
       });
   });
 
-  router.get('/edit/:id', (req, res) => {
+  router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
           id: req.params.id
         },
-       // attributes will go here: 
-
-       //
+        attributes: [
+          'id',
+          'title',
+          'description',
+          'content',
+          'start_date',
+          'end_date'
+        ],
+        include: [
+          {
+            model: User,
+            attributes: ['first_name', 'last_name']
+          },
+          'locations',
+          'activities',
+          'cuisine'
+        ]
       })
         .then(dbPostData => {
           if (!dbPostData) {
@@ -45,8 +72,8 @@ router.get('/',  (req, res) => {
           const post = dbPostData.get({ plain: true });
     
           // pass data to template
-          res.render('edit-post', 
-          { post,
+          res.render('edit-blog', {
+            post,
             loggedIn: req.session.loggedIn
            });
         })
@@ -56,5 +83,8 @@ router.get('/',  (req, res) => {
         });
     });
 
+router.get('/create', withAuth, (req, res) => {
+  res.render('create-blog', { loggedIn: req.session.loggedIn });
+});
 
 module.exports = router;

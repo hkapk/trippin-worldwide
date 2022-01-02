@@ -1,0 +1,51 @@
+{{!-- TODO add style classes to match rest of site --}}
+<div class="nav-mini">
+    <a href="/dashboard" class="large-btn-nav">🠔 Return to My Trips</a>
+</div>
+<section>
+    <h4 class="sub-heading mx-auto" style="width: 40%">Create a new blog</h4>
+
+    <form class="blog-form" id="create-blog-form">
+        <div class="form-floating">
+            <input type="text" id="blog-title" name="blog-title" placeholder="Blog title" class="form-control"/>
+            <label for="blog-title">Blog title</label>  
+        </div>
+        <div class="form-floating">
+            <textarea name="blog-description" id="blog-description" placeholder="A short description" class="form-control"></textarea>
+            <label for="blog-description">A short description</label>  
+        </div>
+        <div class="form-floating">
+            <textarea name="blog-content" id="blog-content" placeholder="Tell us about your trip" class="form-control" style="height: 150px"></textarea>
+            <label for="blog-content">Tell more about your trip</label>  
+        </div>
+        <div class="col-md-4 mx-auto">
+            <label for="start-date">Start date:</label>   
+            <input type="text" id="start-date" name="start-date" class="form-control" />
+        </div>
+        <div class="col-md-4 mx-auto">
+            <label for="end-date">End date:</label>  
+            <input type="text" id="end-date" name="end-date" class="form-control" />
+        </div>
+        <div class="col-md-6 mx-auto">
+            <label for="city">City:</label>  
+            <input type="text" id="city" name="city" class="form-control" />
+        </div>
+        <div class="col-md-6 mx-auto">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" class="form-control" />
+        </div>
+        <div class="form-floating">
+            <textarea name="activity-name" id="activity-name" placeholder="Activities" class="form-control"></textarea>
+            <label for="activity-name">List activities (optional)</label>
+        </div>
+        <div class="form-floating">
+            <textarea name="cuisine-name" id="cuisine-name" placeholder="Cuisine" class="form-control"></textarea>
+            <label for="cuisine-name">List cuisine (optional)</label>
+        </div>
+        <div class="field">
+            <button type="submit" class="button">Create blog</button>
+        </div>
+    </form>
+</section>
+
+<script src="/javascript/create-blog.js"></script>

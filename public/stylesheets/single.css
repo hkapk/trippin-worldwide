@@ -1,0 +1,11 @@
+.single-post {
+	background-color: rgb(192, 192, 192, 0.5);
+	color: whitesmoke;
+	border-radius: 15px;
+	margin: auto;
+	max-width: 900px;
+}
+.single-img {
+	margin: 10px;
+	border-radius: 15px;
+}

@@ -1,34 +1,40 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-
-//include models here: 
-//const {  } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all users
+//include models here: 
+const { Post, Comment, User, Location, PostLocation } = require('../../models');
+
+// get all posts
 router.get('/', (req, res) => {
   //console.log('======================');
   Post.findAll({
     attributes: [
       'id',
-      'post_content',
       'title',
-      'created_at',
+      'description',
+      'content',
+      'start_date',
+      'end_date'
     ],
-    order: [['created_at', 'DESC']],
+    order: [['end_date', 'DESC']],
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ['first_name', 'last_name']
       },
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'created_at'],
-      //   include: {
-      //     model: Post,
-      //     attributes: ['title']
-      //   },
-      //}
+      { 
+        model: Comment,
+        attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        }
+      },
+      'locations',
+      'activities',
+      'cuisine',
+      'codes'
     ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -45,15 +51,28 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_content',
       'title',
-      'created_at',
+      'description',
+      'content',
+      'start_date',
+      'end_date'
     ],
     include: [
       {
         model: User,
-        attributes: ['username']
-      }
+        attributes: ['first_name', 'last_name']
+      },
+      'locations',
+      'activities',
+      'cuisine',
+      { 
+        model: Comment,
+        attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['first_name', 'last_name']
+        }
+      },
     ]
   })
     .then(dbPostData => {
@@ -69,12 +88,26 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/',   (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+router.post('/', withAuth, (req, res) => {
   Post.create({
+    user_id: req.session.user_id,
     title: req.body.title,
-    post_content: req.body.post_content,
-    user_id: req.session.user_id
+    description: req.body.description,
+    content: req.body.content,
+    start_date: req.body.start_date,
+    end_date: req.body.end_date,
+    locations: [ 
+      {city: req.body.city, country: req.body.country }
+    ],
+    activities: [
+      { name: req.body.activity }
+    ],
+    cuisine: [
+      { name: req.body.cuisine }
+    ]
+  },
+  {
+    include: [ 'locations', 'activities', 'cuisine' ]
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -83,12 +116,15 @@ router.post('/',   (req, res) => {
     });
 });
 
-
-router.put('/:id', withAuth,  (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title
-    },
+      title: req.body.title,
+      description: req.body.description,
+      content: req.body.content,
+      start_date: req.body.start_date,
+      end_date: req.body.end_date,
+    }, 
     {
       where: {
         id: req.params.id

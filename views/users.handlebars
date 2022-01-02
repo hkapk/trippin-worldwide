@@ -1,0 +1,17 @@
+<div class="home">
+  <h4 class="sub-heading">Meet our Users</h4>
+{{#each users as |user|}}
+    <li>
+      <article class="users">
+        <div class="post-card">
+ <span class="list-item"><strong>Name:</strong>
+           <a href="/users/{{id}}">{{first_name}} {{last_name}}</span></a>
+          <span class="list-item"><strong>Email: </strong>
+       <a href = "mailto: {{email}}">{{email}}</a> 
+        </div>
+{{/each}}
+          </span>
+        </div>
+      </article>
+    </ol>
+</div>

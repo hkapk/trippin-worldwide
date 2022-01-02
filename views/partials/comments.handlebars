@@ -1,0 +1,17 @@
+<div class="comments">
+  <p class="link-title">Comments</p>
+  <section>
+    {{#each this}}
+      <div class="list-item" >
+        
+          {{comment_text}}
+          <sub><strong>posted by:</strong>
+            {{user.first_name}}
+            {{user.last_name}}
+            <strong>on {{format_date created_at}}</strong></sub><br />
+        
+      </div>
+    {{/each}}
+
+  </section>
+</div>
