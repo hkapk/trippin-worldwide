@@ -32,12 +32,29 @@ html {
 	display: flex;
 	flex-direction: column;
 }
+header {
+  position:fixed;
+  width: 100%;
+  background-color: rgb(0,0,0,0.8);
+  z-index: 3;
+}
+.top-nav {
+	text-align: end;
+	width: 100%;
+  position: fixed;
+  top: 98.06px;
+  background-color: rgb(0,0,0,0.8);
+  z-index: 3;
+}
 main {
 	height: 100%;
 }
 .page {
 	flex: 1 1 auto;
 	margin: 0;
+  position: relative;
+  top: 131.27px;
+  z-index: 1;
 }
 .row {
 	height: 90%;
@@ -52,8 +69,13 @@ main {
 	align-content: space-around;
 	height: max-content;
 	text-align: center;
-	z-index: 1;
+	z-index: 2;
 	padding-right: 0;
+  position:fixed;
+}
+.main {
+  position: relative;
+  left:8.33%
 }
 h2 {
 	text-align: end;
@@ -61,6 +83,9 @@ h2 {
 	padding: 21px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 2.4rem;
+  position: relative;
+  right: 0;
+  margin-bottom: 10px;
 }
 .nav-choice {
 	text-decoration: none;
@@ -110,12 +135,11 @@ a:hover {
 footer {
 	text-align: center;
 	color: darkblue;
-	align-content: flex-end;
 	background-color: rgba(158, 205, 247, 0.8);
-	position: sticky;
-	top: 100vh;
+	position: relative;
+  bottom: 0;
+	top: 15vh;
 	padding: 10px;
-	z-index: -1;
 }
 .blog-title {
 	background-color: rgb(245, 245, 245, 0.8);
@@ -202,10 +226,7 @@ input:focus {
 .button:hover {
 	background-color: rgb(85, 169, 243);
 }
-.top-nav {
-	text-align: end;
-	width: 100%;
-}
+
 .post {
 	background-color: rgb(192, 192, 192, 0.5);
 	color: whitesmoke;
@@ -371,9 +392,13 @@ sub {
 	h2 {
 		font-size: 1.9rem;
 		text-align: center;
+    margin-bottom: 20px;
 	}
+  header, .top-nav {
+    background-color: rgb(0,0,0,1);
+  }
 	.sidebar {
-		background-color: rgba(158, 205, 247, 0.8);
+		background-color: rgba(158, 205, 247, 1);
 		display: flex;
 		flex-direction: column;
 		height: 250px;
@@ -382,7 +407,13 @@ sub {
 		margin: 0 auto;
 		z-index: 1;
 		margin-top: 0;
+    position:sticky;
+    position:-webkit-sticky;
+    top: 133.67;
 	}
+  .main {
+    position:static;
+  }
 	.nav-choice {
 		text-decoration: none;
 		color: darkblue;
@@ -410,4 +441,17 @@ sub {
   .large-btn-nav {
     margin: 0 auto;
   }
+}
+
+@media only screen and (max-width: 330px) {
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 33px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+.main {
+  left: 16.66%;
+}
 }
