@@ -1,3 +1,4 @@
+// Country code data
 let countryCodeData = [
   {
     "country_name": "Afghanistan",
@@ -1020,10 +1021,11 @@ function constructCircles(citymap) {
 
   // Create the map.
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 1,
+    zoom: 1.5,
     center: { lat: 37.09, lng: -95.712 },
-    mapTypeId: "terrain"
-  });
+    mapTypeId: "terrain",
+    clickable: true
+  })
 
   citymap.forEach(location => {
     // Add the circle for this city to the map.
@@ -1036,6 +1038,28 @@ function constructCircles(citymap) {
         let cityData = response;
         let lat = cityData.cityLat;
         let lng = cityData.cityLng;
+        
+        const cityLatLng = { lat: lat, lng: lng };
+
+        const contentString = `
+        <div id="content">
+        <div id="siteNotice"></div>
+        <h5 id="fifthHeading" class="fifthHeading">${city}</h5>
+        <div id="bodyContent">
+          <p>Number of Visits: ${cityCount}</p>
+        </div>
+      </div>
+        `;
+      
+        const infowindow = new google.maps.InfoWindow({
+          content: contentString,
+        });
+
+        const marker = new google.maps.Marker({
+          position: cityLatLng,
+          map,
+          title: city
+        });
 
         const cityCircle = new google.maps.Circle({
           strokeColor: "#FF0000",
@@ -1046,6 +1070,15 @@ function constructCircles(citymap) {
           map,
           center: { lat: lat, lng: lng },
           radius: Math.sqrt(cityCount) * 100000,
+          title: city,          
+        });
+        
+        cityCircle.addListener("click", () => {
+          infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+          });
         });
       });
   });
@@ -1095,4 +1128,3 @@ function getCountryCode(country) {
     return countryCode;
   }
 };
-
