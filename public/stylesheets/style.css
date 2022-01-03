@@ -72,6 +72,8 @@ main {
 	z-index: 2;
 	padding-right: 0;
   position:fixed;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 .main {
   position: relative;
@@ -131,6 +133,24 @@ a:hover {
   background-color: rgb(245, 245, 245, 0.8);
   margin-bottom: 25px;
   display: flex;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  position:fixed;
+  height: 30px;
+  width: 100%;
+  z-index: 3;
+}
+.nav-mini-pop {
+  background-color: rgb(245, 245, 245, 0.8);
+  margin-bottom: 25px;
+  display: flex;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  position:fixed;
+  height: 30px;
+  width: 100%;
+  z-index: 3;
+  justify-content: center;
 }
 footer {
 	text-align: center;
@@ -275,6 +295,9 @@ ol {
 	max-width: 600px;
 	height: 100%;
 	margin: 0 auto;
+  position:relative;
+  top:75px;
+  z-index: 2;
 }
 
 h4 {
@@ -333,22 +356,16 @@ h4 {
 	height: 10%;
 }
 .popular-btn-nav {
-	color: whitesmoke;
-	border-radius: 6px;
-	padding: 1rem;
+	color: darkblue;
 	font-size: 1rem;
 	text-decoration: none;
-	color: whitesmoke;
 	font-weight: bold;
 	transition: color 0.1s;
-	border: none;
 	border: 0px;
-	background-color: rgb(0, 0, 139, 0.8);
-	margin: 5px 20px;
 }
 .popular-btn-nav:hover {
-	color: darkblue;
-  background-color: rgb(245, 245, 245, 0.8);
+  color: whitesmoke;
+  background-color: rgb(0, 0, 139, 0.8);
 
 }
 .large-btn-nav {
@@ -425,6 +442,7 @@ sub {
 	}
 	.sub-heading {
 		margin: 25px auto;
+    font-size: 1.6rem;
 	}
 	.form {
 		margin: auto;
