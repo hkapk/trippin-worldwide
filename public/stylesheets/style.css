@@ -45,11 +45,9 @@ header {
   top: 98.06px;
   background-color: rgb(0,0,0,0.8);
   z-index: 3;
-  padding-bottom: 24px;
+  padding-bottom: 0.5rem;
 }
-main {
-	height: 100%;
-}
+
 .page {
 	flex: 1 1 auto;
 	margin: 0;
@@ -59,7 +57,6 @@ main {
 }
 .row {
 	height: 90%;
-	margin-top: 1%;
 	padding-bottom: 10px;
 	padding-right: 0px;
 }
@@ -70,7 +67,7 @@ main {
 	align-content: space-around;
 	height: max-content;
 	text-align: center;
-	z-index: 2;
+	z-index: 3;
 	padding-right: 0;
   position:fixed;
   border-top-right-radius: 7px;
@@ -78,7 +75,8 @@ main {
 }
 .main {
   position: relative;
-  left:8.33%
+  left:8.33%;
+  z-index: 2;
 }
 h2 {
 	text-align: end;
@@ -423,23 +421,29 @@ sub {
 	}
   header, .top-nav {
     background-color: rgb(0,0,0,1);
+    position:absolute;
   }
 	.sidebar {
 		background-color: rgba(158, 205, 247, 1);
 		display: flex;
-		flex-direction: column;
-		height: 250px;
+		flex-direction: row;
+    	flex-wrap: wrap;
+		height: 125px;
 		align-content: space-around;
 		text-align: center;
 		margin: 0 auto;
-		z-index: 1;
-		margin-top: 0;
-    position:sticky;
-    position:-webkit-sticky;
-    top: 133.67;
+		z-index: 3;
+    	position:sticky;
+    	position:-webkit-sticky;
+    	top: 0;
 	}
   .main {
     position:static;
+  }
+  .nav-mini {
+	  position:sticky;
+	  position:-webkit-sticky;
+	  top:105px;
   }
 	.nav-choice {
 		text-decoration: none;
@@ -449,6 +453,7 @@ sub {
 		border-bottom: 1px solid whitesmoke;
 		padding: 4px 0;
 		height: 35px;
+    flex: 50%;
 	}
 	.sub-heading {
 		margin: 25px auto;
@@ -472,6 +477,9 @@ sub {
   .nav-mini-pop {
     justify-content: center;
     padding-right: 0;
+	position: sticky;
+	position:-webkit-sticky;
+	top:105px;
   }
 }
 
