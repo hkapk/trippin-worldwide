@@ -290,6 +290,7 @@ input:focus {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
+	padding: 5px;
 }
 .post-card a {
 	text-align: center;
@@ -421,6 +422,19 @@ sub {
 }
 #error {
 	color: red;
+}
+.users-title {
+	background-color: whitesmoke;
+	text-align: center;
+	font-size: 1.2rem;
+	color:darkblue;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+}
+.users-title:hover {
+	background-color: rgb(0, 0, 139, 0.6);
+	color: whitesmoke;
 }
 
 @media only screen and (max-width: 575px) {

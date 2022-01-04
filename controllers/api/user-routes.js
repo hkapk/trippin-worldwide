@@ -5,14 +5,14 @@ const { User, Post, Comment} = require('../../models');
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
-    attributes: { exclude: ['password'] },
+    // attributes: { exclude: ['password'] },
     attributes:[
       'id',
       'first_name',
       'last_name',
       'email',
-      'createdAt',
-      'updatedAt'
+      'created_at',
+      'updated_at'
     ],
     include: [
       {
@@ -48,8 +48,8 @@ router.get('/:id', (req, res) => {
       'first_name',
       'last_name',
       'email',
-      'createdAt',
-      'updatedAt'
+      'created_at',
+      'updated_at'
     ],
     include: [
       {

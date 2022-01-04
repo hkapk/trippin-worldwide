@@ -4,18 +4,21 @@
 
 <div class="home">
   <h4 class="sub-heading">Meet our Users</h4>
+  <ol class="post-list">
 {{#each users as |user|}}
     <li>
-      <article class="users">
+      <article class="post">
         <div class="post-card">
- <span class="list-item"><strong>Name:</strong>
-           <a href="/users/{{id}}">{{first_name}} {{last_name}}</span></a>
+           <a href="/users/{{id}}"class="users-title">{{first_name}} {{last_name}}</a>
+           <span class="list-item">User since: <strong>{{format_date createdAt}}</strong></span>
           <span class="list-item"><strong>Email: </strong>
        <a href = "mailto: {{email}}">{{email}}</a> 
-        </div>
-{{/each}}
           </span>
+          <span class="list-item">{{posts.length}} {{format_plural "trip" posts.length}} posted</span>
+          <span class="list-item">{{comments.length}} {{format_plural "comment" comments.length}} posted</span>
         </div>
       </article>
-    </ol>
+{{/each}}
+   </li>
+  </ol>
 </div>
