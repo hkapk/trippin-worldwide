@@ -135,10 +135,16 @@ router.post('/', withAuth, (req, res) => {
         end_date: req.body.end_date,
         locations: [ 
           { city: req.body.city, country: req.body.country }
+        ],
+        activities: [
+          { name: req.body.activity }
+        ],
+        cuisine: [
+          { name: req.body.cuisine }
         ]
     },
       {
-        include: [ 'locations' ]
+        include: [ 'locations', 'activities', 'cuisine' ]
       })
     } else if (foundLocation) {
       Post.create({
@@ -148,6 +154,15 @@ router.post('/', withAuth, (req, res) => {
         content: req.body.content,
         start_date: req.body.start_date,
         end_date: req.body.end_date,
+        activities: [
+          { name: req.body.activity }
+        ],
+        cuisine: [
+          { name: req.body.cuisine }
+        ]
+      },
+      {
+        include: [ 'activities', 'cuisine' ]
       })
       .then((post) => {
         const pair = [{
