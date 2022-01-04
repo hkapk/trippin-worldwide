@@ -56,7 +56,7 @@ header {
   z-index: 1;
 }
 .row {
-	height: 90%;
+	margin-top: 0.5rem;
 	padding-bottom: 10px;
 	padding-right: 0px;
 }
@@ -225,6 +225,12 @@ footer {
 .field {
 	text-align: center;
 	padding: 4px;
+}
+.error-field {
+	text-align: center;
+	padding: 4px;
+	background-color: whitesmoke;
+	display:none;
 }
 input {
 	padding: 0.5%;
@@ -411,6 +417,9 @@ sub {
 }
 .dash-link {
   margin: 0 35px;
+}
+#error {
+	color: red;
 }
 
 @media only screen and (max-width: 575px) {
