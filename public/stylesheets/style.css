@@ -164,7 +164,7 @@ footer {
 }
 .blog-title {
 	background-color: rgb(245, 245, 245, 0.8);
-	margin: 10px;
+	margin: 5px;
 	border-radius: 10px;
 	color: darkblue;
 	text-align: center;
@@ -262,7 +262,9 @@ input:focus {
 	background-color: rgb(192, 192, 192, 0.5);
 	color: whitesmoke;
 	border-radius: 15px;
-	margin: 20px;
+	margin: 20px auto;
+	padding: 1px;
+	max-width: 600px;
 }
 .link-title {
 	font-size: 1.5rem;
@@ -307,9 +309,17 @@ ol {
 	max-width: 600px;
 	height: 100%;
 	margin: 0 auto;
-  position:relative;
-  top:75px;
-  z-index: 2;
+  	position:relative;
+  	top:75px;
+  	z-index: 2;
+}
+.user-home {
+	max-width: 900px;
+	height: 100%;
+	margin: 0 auto;
+  	position:relative;
+  	top:75px;
+  	z-index: 2;
 }
 .create-section {
   position: relative;
@@ -368,6 +378,19 @@ h4 {
 .comment-btn:hover {
 	background-color: skyblue;
 }
+.comment {
+	margin: 0.5% 5%;
+	background-color: rgba(158, 205, 247, 0.8);
+	border-radius: 10px;
+	font-size: 1rem;
+	color: rgb(29, 37, 37);
+	text-align: center;
+	font-weight: 500;
+	list-style: none;
+}
+.comment:nth-child(odd) {
+	background-color: rgb(192, 192, 192, 0.8);
+}
 .popular-nav {
 	height: 10%;
 }
@@ -415,7 +438,7 @@ h4 {
 }
 sub {
 	vertical-align: 5px;
-	font-size: smaller;
+	font-size: 0.7rem;
 }
 .dash-link {
   margin: 0 35px;
