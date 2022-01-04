@@ -21,7 +21,7 @@ var badDataResult = function () {
 };
 
 var badPasswordResult = function () {
-  var error = "Password doesn't meet requirements!";
+  var error = "Invalid Password!";
   document.querySelector(".error-field").style.display = "block";
   errorEl.textContent = error;
   setTimeout(function () {
