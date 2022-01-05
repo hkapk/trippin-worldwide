@@ -4,7 +4,7 @@
 
 This application will provide a user the ability to journalize information about their travels such as description, start and end dates, city and country, activities, and cuisine as well as provide an opportunity to review/comment on other users' adventures. In addition, the most visited cities will be displayed via a map to help plan any future journeys.
 
-The web application uses Node.js and Express.js to create a RESTful API, Handlebars.js as a templating engine, MySQL and Sequelize ORM for the database, dotenv and bcrypt for securing sensitive data, and bootstrap/CSS for styling.
+The web application uses Node.js and Express.js to create a RESTful API, Handlebars.js as a templating engine, MySQL and Sequelize ORM for the database, dotenv and bcrypt for securing sensitive data, bootstrap/CSS for styling, AWS S3 Bucket for storage, and Google Maps Geocoding and JavaScript APIs for mapping locations visited within a map view.
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@ DB_PW= '<your password>'
 
 ## Requirements
 
-The requirements for this project ask you to use the skills and technologies you’ve learned over the past six weeks (server-side JavaScript, RESTful APIs, databases, object-relational mapping, environment variables, templating, and authentication).
+Requirements for this project use skills and technologies learned over the past six weeks (server-side JavaScript, RESTful APIs, databases, object-relational mapping, environment variables, templating, and authentication) as well as new technologies learned during the project (Google Maps API, AWS S3 Bucket Storage).
 
 ### Project Requirements:
 
@@ -68,7 +68,7 @@ The requirements for this project ask you to use the skills and technologies you
 
 ### Presentation Requirements
 
-You and your group will give a 10-minute presentation on your project, with about 7 minutes devoted to the presentation itself, followed by a 3-minute Question & Answer session. Use this Project Presentation Template (Links to an external site.) to address the following:
+Give a 10-minute presentation on project, with about 7 minutes devoted to the presentation itself, followed by a 3-minute Question & Answer session. Use this Project Presentation Template (Links to an external site.) to address the following:
 
 - Elevator pitch: A one-minute description of your application.
 
