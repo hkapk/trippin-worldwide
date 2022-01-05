@@ -158,8 +158,8 @@ footer {
 	color: darkblue;
 	background-color: rgba(158, 205, 247, 1);
 	position: relative;
-  bottom: 0;
-	top: 34vh;
+  	bottom: 0;
+	top: 39vh;
 	padding: 10px;
 }
 .blog-title {
@@ -387,6 +387,7 @@ h4 {
 	text-align: center;
 	font-weight: 500;
 	list-style: none;
+	padding-bottom: 10px;
 }
 .comment:nth-child(odd) {
 	background-color: rgb(192, 192, 192, 0.8);

@@ -10,7 +10,7 @@
 {{#if user.posts}}
 {{#each user.posts}}
 <li class="list-item">
-  <a href="/post/{{id}}">{{title}}</a> | {{format_date created_at}}
+  <a href="/post/{{id}}">{{title}}</a> | {{format_date end_date}}
 </li>
 {{/each}}
 {{else}}
