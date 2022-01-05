@@ -13,7 +13,7 @@ router.use('/api', apiRoutes);
 router.use('/popular', popularRoutes);
 router.use('/metric', metricRoutes);
 router.use('/users', userRoutes);
-router.use('/codes', codeRoutes);
+
 
 
 

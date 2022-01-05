@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
       'start_date',
       'end_date'
     ],
-    order: [['end_date', 'DESC']],
+      order: [['end_date', 'DESC']],
     include: [
       {
         model: User,
@@ -34,7 +34,6 @@ router.get('/', (req, res) => {
       'locations',
       'activities',
       'cuisine',
-      'codes'
     ]
   })
     .then(dbPostData => res.json(dbPostData))
