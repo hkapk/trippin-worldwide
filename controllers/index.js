@@ -5,7 +5,6 @@ const dashboardRoutes = require('./dashboard-routes.js');
 const popularRoutes = require('./popular-routes.js');
 const metricRoutes = require('./metric-routes.js');
 const userRoutes = require('./user-routes');
-const codeRoutes = require('./codes-routes');
 
 
 router.use('/dashboard', dashboardRoutes);
@@ -14,7 +13,6 @@ router.use('/api', apiRoutes);
 router.use('/popular', popularRoutes);
 router.use('/metric', metricRoutes);
 router.use('/user-routes', userRoutes);
-router.use('/codes', codeRoutes);
 
 
 module.exports = router;
