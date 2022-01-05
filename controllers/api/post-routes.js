@@ -89,25 +89,61 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  Post.create({
-    user_id: req.session.user_id,
-    title: req.body.title,
-    description: req.body.description,
-    content: req.body.content,
-    start_date: req.body.start_date,
-    end_date: req.body.end_date,
-    locations: [ 
-      {city: req.body.city, country: req.body.country }
-    ],
-    activities: [
-      { name: req.body.activity }
-    ],
-    cuisine: [
-      { name: req.body.cuisine }
-    ]
-  },
-  {
-    include: [ 'locations', 'activities', 'cuisine' ]
+  Location.findOne({
+    attributes: [ 'id' ],
+    where: {
+      city: req.body.city,
+      country: req.body.country
+    }
+  })
+  .then((foundLocation) => {
+    if (!foundLocation) {
+      Post.create({
+        user_id: req.session.user_id,
+        title: req.body.title,
+        description: req.body.description,
+        content: req.body.content,
+        start_date: req.body.start_date,
+        end_date: req.body.end_date,
+        locations: [ 
+          { city: req.body.city, country: req.body.country }
+        ],
+        activities: [
+          { name: req.body.activity }
+        ],
+        cuisine: [
+          { name: req.body.cuisine }
+        ]
+    },
+      {
+        include: [ 'locations', 'activities', 'cuisine' ]
+      })
+    } else if (foundLocation) {
+      Post.create({
+        user_id: req.session.user_id,
+        title: req.body.title,
+        description: req.body.description,
+        content: req.body.content,
+        start_date: req.body.start_date,
+        end_date: req.body.end_date,
+        activities: [
+          { name: req.body.activity }
+        ],
+        cuisine: [
+          { name: req.body.cuisine }
+        ]
+      },
+      {
+        include: [ 'activities', 'cuisine' ]
+      })
+      .then((post) => {
+        const pair = [{
+          post_id: post.id,
+          location_id: foundLocation.id
+        }]
+        PostLocation.bulkCreate(pair);
+      })
+    }
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
