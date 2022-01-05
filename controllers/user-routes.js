@@ -74,15 +74,20 @@ router.get('/:id', (req, res) => {
       res.status(404).json({ message: 'No user found with this id' });
       return;
     }
-
+    let activeUser;
     // serialize the data
     const user = dbUserData.get({ plain: true });
-
+    if (user.id === req.session.user_id) {
+      activeUser = true;
+    } else {
+      activeUser = false;
+    }
     // pass data to template
     res.render('single-user',
       {
         user,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        activeUser
       });
   })
   .catch(err => {

@@ -4,6 +4,8 @@
 	border-radius: 15px;
 	margin: auto;
 	max-width: 900px;
+	position: relative;
+	top:75px;
 }
 .single-img {
 	margin: 10px;

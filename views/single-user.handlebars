@@ -21,7 +21,29 @@
     </div>
   </article>
 
+{{#if activeUser}}
+<div class="comments">
+ <h5 class="link-title">{{user.first_name}} {{user.last_name}}'s Comments</h5>
+  <section> 
+  {{#if user.comments}}
+  {{#each user.comments}}
+    <li class="comment">
+      <button type="button" class="delete-btn" id="delete-btn" data-id={{id}}>✖</button>
+    {{comment_text}} - 
+      <a href="/post/{{post.id}}">{{post.title}}</a> 
+      </br>
+      <sub>comment posted on: {{format_date created_at}}</sub>
+    </li>
+  {{/each}}
+  {{else}}
+    <li class="list-item">
+    <a href="/users">No Comments!</a>
+    </li>
+  {{/if}}
+  </section>
+</div>
 
+ {{else}}
 <div class="comments">
  <h5 class="link-title">{{user.first_name}} {{user.last_name}}'s Comments</h5>
   <section> 
@@ -40,5 +62,10 @@
   {{/if}}
   </section>
 </div>
-
+{{/if}}
 </div>
+{{#if user.comments}}
+  {{#if activeUser}}
+<script src="/javascript/delete-comments.js"></script>
+  {{/if}}
+{{/if}}
