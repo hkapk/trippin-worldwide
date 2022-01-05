@@ -1,8 +1,9 @@
 async function deleteFormHandler(event) {
     event.preventDefault();
-
+debugger;
     const id = document.querySelector('.delete-btn').getAttribute('data-id');
-
+    console.log(id);
+    console.log('what?')
       const response = await fetch(`/api/comments/${id}`, {
         method: 'DELETE'
       });
@@ -13,4 +14,4 @@ async function deleteFormHandler(event) {
     }
    }
   
-  document.querySelector('#delete-btn').addEventListener('click', deleteFormHandler);
+  document.querySelector('#button-bubble').addEventListener('click', deleteFormHandler);
