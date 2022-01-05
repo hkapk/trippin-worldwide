@@ -1,13 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-//include models below
 const { User, PostLocation, PostCuisine, PostActivity, Post, Location, Cuisine, Comment, Activity } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
-  // console.log(req.session);
-  Post.findAll({
-    //attributes to include go below  
+  Post.findAll({ 
     attributes: [
       'id',
       'user_id',
@@ -113,95 +110,5 @@ router.get('/post/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-// router.get('/users', (req, res) => {
-//   User.findAll({
-//     attributes:[
-//       'id',
-//       'first_name',
-//       'last_name',
-//       'email',
-//       'createdAt',
-//       'updatedAt'
-//     ],
-//     include: [
-//       {
-//         model: Post,
-//         attributes: ['title', 'id',]
-//       },
-//       {
-//         model: Comment ,
-//         attributes: ['comment_text', 'id',],
-//         include : {
-//           model: Post,
-//           attributes: ['title', 'id']
-
-//         }
-//       }
-//     ]
-//   })
-//   .then(dbUserData => {
-//       const users = dbUserData.map(user => user.get({ plain: true }));
-//       res.render('users', { users,
-//           loggedIn: req.session.loggedIn })
-//   })
-//   .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//   });
-// });
-
-
-// router.get('/users/:id', (req, res) => {
-//   User.findOne({
-//     where: {
-//       id: req.params.id
-//     },
-//     attributes: { exclude: ['password'] },
-//     attributes:[
-//       'id',
-//       'first_name',
-//       'last_name',
-//       'email',
-//       'createdAt',
-//       'updatedAt'
-//     ],
-//     include: [
-//       {
-//         model: Post,
-//         attributes: ['title', 'id', 'created_at']
-//       },
-//       {
-//         model: Comment ,
-//         attributes: ['comment_text', 'id', 'created_at'],
-//         include : {
-//           model: Post,
-//           attributes: ['title', 'id']
-
-//         }
-//       }
-//     ]
-//   })
-//   .then(dbUserData => {
-//     if (!dbUserData) {
-//       res.status(404).json({ message: 'No user found with this id' });
-//       return;
-//     }
-
-//     // serialize the data
-//     const user = dbUserData.get({ plain: true });
-
-//     // pass data to template
-//     res.render('single-user',
-//       {
-//         user,
-//         loggedIn: req.session.loggedIn
-//       });
-//   })
-//   .catch(err => {
-//     console.log(err);
-//     res.status(500).json(err);
-//   });
-// });
 
 module.exports = router;

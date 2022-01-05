@@ -1,0 +1,222 @@
+/* containers, cards, forms, misc... */
+
+/* largest container within most .handlebars pages */
+.home {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 75px;
+    z-index: 2;
+  }
+  .user-home {
+    max-width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 75px;
+    z-index: 2;
+  }
+  .create-section {
+    position: relative;
+    top: 75px;
+  }
+  .blog-content {
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 15px;
+  }
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5px;
+  }
+  .post-card a {
+    text-align: center;
+  }
+  .post {
+    background-color: rgb(192, 192, 192, 0.5);
+    color: whitesmoke;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 1px;
+    max-width: 600px;
+  }
+  .single-post {
+	background-color: rgb(192, 192, 192, 0.5);
+	color: whitesmoke;
+	border-radius: 15px;
+	margin: auto;
+	max-width: 900px;
+	position: relative;
+	top:75px;
+}
+.single-img {
+	margin: 10px;
+	border-radius: 15px;
+}
+
+  /* forms */
+  .form {
+    background-color: rgb(192, 192, 192, 0.8);
+    margin: 0 auto;
+    max-width: 350px;
+    border-radius: 10px;
+    font-weight: 500;
+    padding-top: 3px;
+    position: relative;
+    top: 100px;
+  }
+  .field {
+    text-align: center;
+    padding: 4px;
+  }
+  /* log in and sign up pages */
+  .error-field {
+    text-align: center;
+    padding: 4px;
+    background-color: whitesmoke;
+    display: none;
+  }
+  #error {
+    color: red;
+  }
+  input {
+    padding: 0.5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+  }
+  
+  input:focus {
+    outline: none;
+    border: 1px solid #3486eb;
+  }
+  .list-item {
+    padding: 1%;
+    margin: 0.5% 5%;
+    background-color: rgba(158, 205, 247, 0.8);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: rgb(29, 37, 37);
+    text-align: center;
+    font-weight: 500;
+    list-style: none;
+  }
+  
+  .list-item:nth-child(odd) {
+    background-color: rgb(192, 192, 192, 0.8);
+  }
+  .blog-form {
+    background-color: rgb(192, 192, 192, 0.8);
+    margin: 3% auto;
+    width: 60%;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.5rem;
+  }
+  .blog-form input {
+    margin-left: 0;
+    margin-bottom: 3%;
+    flex-direction: row;
+  }
+  .blog-form textarea {
+    margin-left: 0;
+    margin-bottom: 3%;
+  }
+
+  /* comments */
+  .comment-form {
+    padding: 10px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 139, 0.8);
+    position: relative;
+    top: 75px;
+  }
+  .comment-body {
+    width: 75%;
+    border-radius: 10px;
+  }
+  .comment-btn {
+    background-color: whitesmoke;
+    transition: background-color 0.1s;
+    color: darkblue;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 1rem;
+    margin: 5px auto;
+    font-weight: 500;
+  }
+  .comment-btn:hover {
+    background-color: skyblue;
+  }
+  .comment {
+    margin: 0.5% 5%;
+    background-color: rgba(158, 205, 247, 0.8);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: rgb(29, 37, 37);
+    text-align: center;
+    font-weight: 500;
+    list-style: none;
+  }
+  .comment:nth-child(odd) {
+    background-color: rgb(192, 192, 192, 0.8);
+  }
+  .comments {
+    font-size: 1rem;
+    text-align: center;
+    color: black;
+    border-radius: 7px;
+    max-width: 900px;
+    padding: 10px;
+    background-color: rgb(0, 0, 139, 0.8);
+    margin: 5px auto;
+    list-style: none;
+  }
+  #comments {
+    position: relative;
+    top: 75px;
+  }
+  sub {
+    vertical-align: 5px;
+    font-size: 0.7rem;
+  }
+/* delete comment X on single user page */
+  .delete-btn {
+    font-size: 0.6rem;
+    background-color: inherit;
+    border: 0px;
+    margin: 0 auto;
+  }
+  .delete-btn:hover {
+    background-color: rgb(255, 0, 0, 0.6);
+  }
+
+  /* map */
+  #map {
+    height: 500px; /* The height of div element containing map */
+    width: 100%; /* The width of web page */
+  }
+  #map img {
+    max-width: none;
+  }
+
+/* misc */
+  .dash-link {
+    margin: 0 35px;
+  }
+  ol {
+    padding: 0;
+  }
+  .popular-nav {
+    height: 10%;
+  }
