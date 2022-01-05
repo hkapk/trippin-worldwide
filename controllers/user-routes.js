@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Post, Comment} = require('../models');
 
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
     User.findAll({
       // attributes: { exclude: ['password'] },
       attributes:[
@@ -16,14 +16,14 @@ router.get('/users', (req, res) => {
       include: [
         {
           model: Post,
-          attributes: ['title']
+          attributes: ['title', 'id', 'end_date']
         },
         {
           model: Comment ,
-          attributes: ['comment_text'],
+          attributes: ['comment_text', 'id'],
           include : {
             model: Post,
-            attributes: ['title']
+            attributes: ['title', 'id']
   
           }
         }
@@ -40,12 +40,11 @@ router.get('/users', (req, res) => {
     });
 });
   
-router.get('/users/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   User.findOne({
     where: {
       id: req.params.id
     },
-    attributes: { exclude: ['password'] },
     attributes:[
       'id',
       'first_name',
@@ -57,14 +56,14 @@ router.get('/users/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['title']
+        attributes: ['title', 'id', 'created_at', 'end_date']
       },
       {
         model: Comment ,
-        attributes: ['comment_text'],
+        attributes: ['comment_text', 'id', 'created_at'],
         include : {
           model: Post,
-          attributes: ['title']
+          attributes: ['title', 'id']
 
         }
       }
@@ -75,15 +74,20 @@ router.get('/users/:id', (req, res) => {
       res.status(404).json({ message: 'No user found with this id' });
       return;
     }
-
+    let activeUser;
     // serialize the data
     const user = dbUserData.get({ plain: true });
-
+    if (user.id === req.session.user_id) {
+      activeUser = true;
+    } else {
+      activeUser = false;
+    }
     // pass data to template
     res.render('single-user',
       {
         user,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        activeUser
       });
   })
   .catch(err => {

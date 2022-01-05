@@ -12,7 +12,11 @@ router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 router.use('/popular', popularRoutes);
 router.use('/metric', metricRoutes);
-router.use('/user-routes', userRoutes);
+router.use('/users', userRoutes);
+router.use('/codes', codeRoutes);
+
+
+
 
 
 module.exports = router;

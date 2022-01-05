@@ -1,5 +1,5 @@
 <div class="nav-mini">
-  
+
 </div>
 
 <div class="user-home">
@@ -7,38 +7,65 @@
   <article class="post">
     <h5 class="blog-title">{{user.first_name}} {{user.last_name}}'s Posts</h5>
     <div class="post-card">
-{{#if user.posts}}
-{{#each user.posts}}
-<li class="list-item">
-  <a href="/post/{{id}}">{{title}}</a> | {{format_date created_at}}
-</li>
-{{/each}}
-{{else}}
-<li class="list-item ">
-  <a href="/users">No Posts!</a>
-</li>
-{{/if}}
+      {{#if user.posts}}
+      {{#each user.posts}}
+      <li class="list-item">
+        <a href="/post/{{id}}">{{title}}</a> | {{format_date end_date}}
+      </li>
+      {{/each}}
+      {{else}}
+      <li class="list-item ">
+        <a href="/users">No Posts!</a>
+      </li>
+      {{/if}}
     </div>
   </article>
 
+  {{#if activeUser}}
+  <div class="comments" id="button-bubble">
+    <h5 class="link-title">{{user.first_name}} {{user.last_name}}'s Comments</h5>
+    <section>
+      {{#if user.comments}}
+      {{#each user.comments}}
+      <li class="comment">
+        <button type="button" class="delete-btn" id="delete-btn" data-id={{id}}>✖</button>
+        {{comment_text}} -
+        <a href="/post/{{post.id}}">{{post.title}}</a>
+        </br>
+        <sub>comment posted on: {{format_date created_at}}</sub>
+      </li>
+      {{/each}}
+      {{else}}
+      <li class="list-item">
+        <a href="/users">No Comments!</a>
+      </li>
+      {{/if}}
+    </section>
+  </div>
 
-<div class="comments">
- <h5 class="link-title">{{user.first_name}} {{user.last_name}}'s Comments</h5>
-  <section> 
-  {{#if user.comments}}
-  {{#each user.comments}}
-    <li class="comment">
-    {{comment_text}} -
-      <a href="/post/{{post.id}}">{{post.title}}</a></br>
-      <sub>comment posted on: {{format_date created_at}}</sub>
-    </li>
-  {{/each}}
   {{else}}
-    <li class="list-item">
-    <a href="/users">No Comments!</a>
-    </li>
+  <div class="comments">
+    <h5 class="link-title">{{user.first_name}} {{user.last_name}}'s Comments</h5>
+    <section>
+      {{#if user.comments}}
+      {{#each user.comments}}
+      <li class="comment">
+        {{comment_text}} -
+        <a href="/post/{{post.id}}">{{post.title}}</a></br>
+        <sub>comment posted on: {{format_date created_at}}</sub>
+      </li>
+      {{/each}}
+      {{else}}
+      <li class="list-item">
+        <a href="/users">No Comments!</a>
+      </li>
+      {{/if}}
+    </section>
+  </div>
   {{/if}}
-  </section>
 </div>
-
-</div>
+{{#if user.comments}}
+{{#if activeUser}}
+<script src="/javascript/delete-comments.js"></script>
+{{/if}}
+{{/if}}
