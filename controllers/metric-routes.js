@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Location } = require('../models');
 
-router.get('/metrics', (req, res) => {
+router.get('/', (req, res) => {
   Location.findAll({
     attributes: [
       'city',
@@ -11,7 +11,8 @@ router.get('/metrics', (req, res) => {
   })
     .then(dbMetricData => {
       const metrics = dbMetricData.map(metric => metric.get({ plain: true }));
-      res.render('metric', { metrics })
+      res.render('metric', { metrics,
+        loggedIn: req.session.loggedIn })
     })
     .catch(err => {
       console.log(err);

@@ -1,3 +1,26 @@
+var errorEl = document.querySelector("#error");
+
+var errorTextBlank = function () {
+  var error = "All fields are required!";
+  document.querySelector(".error-field").style.display = "block";
+  errorEl.textContent = error;
+  setTimeout(function () {
+    errorEl.textContent = "";
+    document.querySelector(".error-field").style.display = "none";
+  }, 2500);
+};
+
+var badDataResult = function () {
+  var error = "Email or Password incorrect!";
+  // console.log(err);
+  document.querySelector(".error-field").style.display = "block";
+  errorEl.textContent = error;
+  setTimeout(function () {
+    errorEl.textContent = "";
+    document.querySelector(".error-field").style.display = "none";
+  }, 2500);
+};
+
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -17,8 +40,10 @@ async function loginFormHandler(event) {
     if (response.ok) {
         setTimeout(() => {document.location.replace('/dashboard')}, 100);
     } else {
-      alert(response.statusText);
+      badDataResult();
     }
+  } else {
+    errorTextBlank();
   }
 }
 

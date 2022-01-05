@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
         // use the ID from the session
@@ -21,6 +21,14 @@ router.get('/', (req, res) => {
         {
           model: User,
           attributes: ['first_name', 'last_name']
+        },
+        { 
+          model: Comment,
+          attributes: ['id','comment_text', 'post_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['first_name', 'last_name']
+          }
         },
         'locations',
         'activities',

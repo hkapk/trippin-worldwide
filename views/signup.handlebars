@@ -1,5 +1,8 @@
+<div class="nav-mini">
+  
+</div>
 <form id="signup-form" class="form">
-	<h4 class="sub-heading">Create Your Account</h4>
+	<h4 class="blog-title">Create Your Account</h4>
 	<div class="field">
 		<label for="firstname-signup">First Name:</label><br />
 		<input type="text" id="firstname-signup" />
@@ -19,12 +22,15 @@
 	<div class="field">
 		<button class="button" type="submit">Sign Up</button>
 	</div>
+	<div class="error-field">
+		<p id="error" ></p>
+	</div>
 	<div id="message">
 		<h6>Password must contain the following:</h6>
 		<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
 		<p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
 		<p id="number" class="invalid">A <b>number</b></p>
-		<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+		<p id="length" class="invalid">Between <b>8 and 32 characters</b></p>
 	</div>
 	<div class="field">
 		<span>Already have an account?</span>

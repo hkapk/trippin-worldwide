@@ -1,7 +1,6 @@
 <div class="nav-mini">
   <a href="/dashboard/create" class="large-btn-nav">Create a new blog</a>
 </div>
-{{!-- TODO edit this to match single-blog post layout --}}
 
 <div class="home">
 {{#if posts.length}}
@@ -34,5 +33,7 @@
       </li>
     {{/each}}
   </ol>
+  {{> edit-comments}}
 </div>
 {{/if}}
+<script src="/javascript/delete-comment.js"></script>
