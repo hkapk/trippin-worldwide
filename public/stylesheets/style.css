@@ -32,16 +32,32 @@ html {
 	display: flex;
 	flex-direction: column;
 }
-main {
-	height: 100%;
+header {
+  position:fixed;
+  width: 100%;
+  background-color: rgb(0,0,0,0.8);
+  z-index: 3;
 }
+.top-nav {
+	text-align: end;
+	width: 100%;
+	height: 43px;
+  position: fixed;
+  top: 98.06px;
+  background-color: rgb(0,0,0,0.8);
+  z-index: 3;
+  padding-bottom: 0.5rem;
+}
+
 .page {
 	flex: 1 1 auto;
 	margin: 0;
+  position: relative;
+  top: 131.27px;
+  z-index: 1;
 }
 .row {
-	height: 90%;
-	margin-top: 1%;
+	margin-top: 0.5rem;
 	padding-bottom: 10px;
 	padding-right: 0px;
 }
@@ -52,8 +68,16 @@ main {
 	align-content: space-around;
 	height: max-content;
 	text-align: center;
-	z-index: 1;
+	z-index: 3;
 	padding-right: 0;
+  position:fixed;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.main {
+  position: relative;
+  left:8.33%;
+  z-index: 2;
 }
 h2 {
 	text-align: end;
@@ -61,6 +85,9 @@ h2 {
 	padding: 21px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 2.4rem;
+  position: relative;
+  right: 0;
+  margin-bottom: 10px;
 }
 .nav-choice {
 	text-decoration: none;
@@ -106,21 +133,39 @@ a:hover {
   background-color: rgb(245, 245, 245, 0.8);
   margin-bottom: 25px;
   display: flex;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  position:fixed;
+  height: 30px;
+  width: 100%;
+  z-index: 3;
+}
+.nav-mini-pop {
+  background-color: rgb(245, 245, 245, 0.8);
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  position:fixed;
+  height: 30px;
+  width: 100%;
+  z-index: 3;
+  justify-content: center;
 }
 footer {
 	text-align: center;
 	color: darkblue;
-	align-content: flex-end;
-	background-color: rgba(158, 205, 247, 0.8);
-	position: sticky;
-	top: 100vh;
+	background-color: rgba(158, 205, 247, 1);
+	position: relative;
+  bottom: 0;
+	top: 34vh;
 	padding: 10px;
-	z-index: -1;
 }
 .blog-title {
 	background-color: rgb(245, 245, 245, 0.8);
-	margin: 10px;
-	border-radius: 15px;
+	margin: 5px;
+	border-radius: 10px;
 	color: darkblue;
 	text-align: center;
 	font-weight: 700;
@@ -171,18 +216,28 @@ footer {
 .form {
 	background-color: rgb(192, 192, 192, 0.8);
 	margin: 0 auto;
-	max-width: 275px;
+	max-width: 350px;
 	border-radius: 10px;
 	font-weight: 500;
+  padding-top: 3px;
+  position: relative;
+  top: 100px;
 }
 .field {
 	text-align: center;
 	padding: 4px;
 }
+.error-field {
+	text-align: center;
+	padding: 4px;
+	background-color: whitesmoke;
+	display:none;
+}
 input {
 	padding: 0.5%;
 	border-radius: 5px;
 	border: 1px solid #ccc;
+  width:300px;
 }
 
 input:focus {
@@ -202,15 +257,14 @@ input:focus {
 .button:hover {
 	background-color: rgb(85, 169, 243);
 }
-.top-nav {
-	text-align: end;
-	width: 100%;
-}
+
 .post {
 	background-color: rgb(192, 192, 192, 0.5);
 	color: whitesmoke;
 	border-radius: 15px;
-	margin: 20px;
+	margin: 20px auto;
+	padding: 1px;
+	max-width: 600px;
 }
 .link-title {
 	font-size: 1.5rem;
@@ -238,6 +292,7 @@ input:focus {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
+	padding: 5px;
 }
 .post-card a {
 	text-align: center;
@@ -254,6 +309,21 @@ ol {
 	max-width: 600px;
 	height: 100%;
 	margin: 0 auto;
+  	position:relative;
+  	top:75px;
+  	z-index: 2;
+}
+.user-home {
+	max-width: 900px;
+	height: 100%;
+	margin: 0 auto;
+  	position:relative;
+  	top:75px;
+  	z-index: 2;
+}
+.create-section {
+  position: relative;
+  top:75px;
 }
 
 h4 {
@@ -308,26 +378,33 @@ h4 {
 .comment-btn:hover {
 	background-color: skyblue;
 }
+.comment {
+	margin: 0.5% 5%;
+	background-color: rgba(158, 205, 247, 0.8);
+	border-radius: 10px;
+	font-size: 1rem;
+	color: rgb(29, 37, 37);
+	text-align: center;
+	font-weight: 500;
+	list-style: none;
+}
+.comment:nth-child(odd) {
+	background-color: rgb(192, 192, 192, 0.8);
+}
 .popular-nav {
 	height: 10%;
 }
 .popular-btn-nav {
-	color: whitesmoke;
-	border-radius: 6px;
-	padding: 1rem;
+	color: darkblue;
 	font-size: 1rem;
 	text-decoration: none;
-	color: whitesmoke;
 	font-weight: bold;
 	transition: color 0.1s;
-	border: none;
 	border: 0px;
-	background-color: rgb(0, 0, 139, 0.8);
-	margin: 5px 20px;
 }
 .popular-btn-nav:hover {
-	color: darkblue;
-  background-color: rgb(245, 245, 245, 0.8);
+  color: whitesmoke;
+  background-color: rgb(0, 0, 139, 0.8);
 
 }
 .large-btn-nav {
@@ -361,28 +438,60 @@ h4 {
 }
 sub {
 	vertical-align: 5px;
-	font-size: smaller;
+	font-size: 0.7rem;
 }
 .dash-link {
   margin: 0 35px;
+}
+#error {
+	color: red;
+}
+.users-title {
+	background-color: whitesmoke;
+	text-align: center;
+	font-size: 1.2rem;
+	color:darkblue;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+}
+.users-title:hover {
+	background-color: rgb(0, 0, 139, 0.6);
+	color: whitesmoke;
 }
 
 @media only screen and (max-width: 575px) {
 	h2 {
 		font-size: 1.9rem;
 		text-align: center;
+    margin-bottom: 20px;
 	}
+  header, .top-nav {
+    background-color: rgb(0,0,0,1);
+    position:absolute;
+  }
 	.sidebar {
-		background-color: rgba(158, 205, 247, 0.8);
+		background-color: rgba(158, 205, 247, 1);
 		display: flex;
-		flex-direction: column;
-		height: 250px;
+		flex-direction: row;
+    	flex-wrap: wrap;
+		height: 125px;
 		align-content: space-around;
 		text-align: center;
 		margin: 0 auto;
-		z-index: 1;
-		margin-top: 0;
+		z-index: 3;
+    	position:sticky;
+    	position:-webkit-sticky;
+    	top: 0;
 	}
+  .main {
+    position:static;
+  }
+  .nav-mini {
+	  position:sticky;
+	  position:-webkit-sticky;
+	  top:105px;
+  }
 	.nav-choice {
 		text-decoration: none;
 		color: darkblue;
@@ -391,9 +500,11 @@ sub {
 		border-bottom: 1px solid whitesmoke;
 		padding: 4px 0;
 		height: 35px;
+    flex: 50%;
 	}
 	.sub-heading {
 		margin: 25px auto;
+    font-size: 1.6rem;
 	}
 	.form {
 		margin: auto;
@@ -410,4 +521,36 @@ sub {
   .large-btn-nav {
     margin: 0 auto;
   }
+  .nav-mini-pop {
+    justify-content: center;
+    padding-right: 0;
+	position: sticky;
+	position:-webkit-sticky;
+	top:105px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 33px;
+  }
+}
+
+@media only screen and (min-width:576px) {
+  .nav-mini-pop {
+    padding-right: 100px;
+  }
+}
+
+@media only screen and (min-width:800px) {
+  .nav-mini-pop {
+    padding-right: 150px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+.main {
+  left: 16.66%;
+}
 }
