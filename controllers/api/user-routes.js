@@ -2,10 +2,8 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { User, Post, Comment} = require('../../models');
 
-// get all users
 router.get('/', (req, res) => {
   User.findAll({
-    // attributes: { exclude: ['password'] },
     attributes:[
       'id',
       'first_name',
@@ -82,7 +80,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  
   User.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
@@ -94,11 +91,9 @@ router.post('/', (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
-
       res.json(dbUserData);
     })
   })
- 
     .catch(err => {
       console.log(err);
       res.status(500).json({msg: "User email already exists!"});
@@ -115,20 +110,16 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'No user with that email address!' });
       return;
     }
-
     const validPassword = dbUserData.checkPassword(req.body.password);
-
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
-
     req.session.save(() => {
       // declare session variables
       req.session.user_id = dbUserData.id;
       req.session.email = dbUserData.email;
       req.session.loggedIn = true;
-
       res.json(dbUserData);
     })
   })
@@ -150,7 +141,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -188,7 +178,5 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
 
 module.exports = router;

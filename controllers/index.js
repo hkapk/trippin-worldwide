@@ -6,17 +6,11 @@ const popularRoutes = require('./popular-routes.js');
 const metricRoutes = require('./metric-routes.js');
 const userRoutes = require('./user-routes');
 
-
 router.use('/dashboard', dashboardRoutes);
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 router.use('/popular', popularRoutes);
 router.use('/metric', metricRoutes);
 router.use('/users', userRoutes);
-
-
-
-
-
 
 module.exports = router;
