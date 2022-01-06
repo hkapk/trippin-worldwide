@@ -189,7 +189,7 @@ If you have any questions about the repo, open an issue or contact us directly a
 |  Kristin Gaito   |    kngurley25@gmail.com     |     [kngurley25](https://www.github.com/kngurley25)     |
 |  Sam Davenport   |   samueldavenport@att.net   | [steadysamwise4](https://www.github.com/steadysamwise4) |
 |     Raman TV     |     ramantv@outlook.com     |        [ramantv](https://www.github.com/ramantv)        |
-|    Hank Kapka    |     hankkapka@gmail.com     |          [hkapk](https://www.github.com hkapk)          |
+|    Hank Kapka    |     hankkapka@gmail.com     |          [hkapk](https://www.github.com/hkapk)          |
 | Christine Baxter | christine.d.baxter@live.com |  [baxters4karma](https://www.github.com/baxters4karma)  |
 
 [back to top](#table-of-contents)
