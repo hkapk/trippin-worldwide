@@ -1,17 +1,14 @@
-<div class="comments">
+<div class="comments" id="comments">
   <p class="link-title">Comments</p>
   <section>
     {{#each this}}
-      <div class="comment" >
-        
+      <li class="comment" >
           {{comment_text}} </br>
           <sub><strong>posted by:</strong>
-            {{user.first_name}}
-            {{user.last_name}}
-            <strong>on {{format_date created_at}}</strong></sub><br />
-        
-      </div>
+          {{user.first_name}}
+          {{user.last_name}}
+          <strong>on {{format_date created_at}}</strong></sub><br />
+      </li>
     {{/each}}
-
   </section>
 </div>

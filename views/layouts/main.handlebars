@@ -3,7 +3,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Trippin Worldwide</title>
-
+		<link rel="icon" 
+        type="image/png" 
+        href="/images/plane.png">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -14,11 +16,13 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<link rel="stylesheet" href="/stylesheets/main.css" />
+		<link rel="stylesheet" href="/stylesheets/content.css" />
 		<link rel="stylesheet" href="/stylesheets/password.css" />
-		<link rel="stylesheet" href="/stylesheets/single.css" />
+		
 	</head>
 	<header>
-		<h2>Trippin Worldwide</h2>
+		<h2 class="page-title">Trippin Worldwide</h2>
 	</header>
 	<div class="top-nav">
 		{{#if loggedIn}}
@@ -37,7 +41,7 @@
 					<a class="nav-choice" href="/metric">Locations</a>
 					<a class="nav-choice" href="/users">Users</a>
 					<a class="nav-choice" href="/popular/locations">Popular</a>
-					<a class="nav-choice" href="/photos">Photos</a>
+					{{!-- <a class="nav-choice" href="/photos">Photos</a> --}}
 					<a class="nav-choice" href="/dashboard">My Trips</a>
 				</nav>
 				<main class=" main col-12 col-sm-10 col-xl-11">
@@ -50,5 +54,14 @@
 		{{/if}}
 
 	</body>
-	<footer>Thanks for visiting!</footer>
+	<footer>
+		<p>Trippin Worldwide is an affiliate organization of Prestige Worldwide</p>
+		<div>Site created by: 
+			<a href="https://github.com/kngurley25">Kristin Gaito</a>
+			<a href="https://github.com/steadysamwise4">Sam Davenport</a>
+			<a href="https://github.com/ramantv">Raman TV</a>
+			<a href="https://github.com/hkapk">Hank Kapka</a>
+			<a href="https://github.com/baxters4karma">Christine Baxter</a>
+		</div>
+	</footer>
 </html>

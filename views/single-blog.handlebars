@@ -1,53 +1,63 @@
- <article class="single-post">
-        <div class="post-card">
-          <h5 class="blog-title">{{post.title}}</h5>
-        <img src="/images/wine.jpg" width="fit content" class="single-img">
-          <span class="list-item"><strong>Posted by:</strong>
-            {{post.user.first_name}} {{post.user.last_name}}</span>
-            <span class="list-item"><strong>Location: </strong>
-           {{#each post.locations}}
-           {{city}}, 
-           {{country}}
-           {{/each}}
-          </span>
-          {{#if post.activities}}
-          <span class="list-item"><strong>Activities: </strong>
-           {{#each post.activities}}
-           <li>
-             {{name}}
-           </li>
-           {{/each}}
-          </span>
-          {{/if}}
-          {{#if post.cuisine}}
-          <span class="list-item"><strong>Cuisine: </strong>
-           {{#each post.cuisine}}
-           <li>
-             {{name}}
-           </li>
-           {{/each}}
-          </span>
-          {{/if}}
-          <span class="list-item"><strong>Start Date: </strong>{{post.start_date}}</span>
-          <span class="list-item"><strong>End Date: </strong>{{post.end_date}}</span>
-          <h6 class="blog-heading">{{post.description}}</h6>
-          <span class="blog-content">{{post.content}}</span>
-        </div>
-      </article>
+<div class="nav-mini">
+
+</div>
+
+<article class="single-post">
+  <div class="post-card">
+    <h5 class="blog-title">{{post.title}}</h5>
+    {{#if post.photo_url}}
+    <span class="list-item">
+      <img id="blog-photo-preview" style="border:1px solid gray" class="single-img" src="{{post.photo_url}}">
+    </span>
+    {{else}}
+    <p class="image-tag">Stock Image: no image entered with this post</p>
+    <img src="/images/Stock.png" class="single-img">
+    {{/if}}
+    <span class="list-item"><strong>Posted by:</strong>
+      {{post.user.first_name}} {{post.user.last_name}}</span>
+    <span class="list-item"><strong>Location: </strong>
+      {{#each post.locations}}
+      {{city}},
+      {{country}}
+      {{/each}}
+    </span>
+    {{#if post.activities}}
+    <span class="list-item"><strong>Activities: </strong>
+      {{#each post.activities}}
+      <li>
+        {{name}}
+      </li>
+      {{/each}}
+    </span>
+    {{/if}}
+    {{#if post.cuisine}}
+    <span class="list-item"><strong>Cuisine: </strong>
+      {{#each post.cuisine}}
+      <li>
+        {{name}}
+      </li>
+      {{/each}}
+    </span>
+    {{/if}}
+    <span class="list-item"><strong>Start Date: </strong>{{post.start_date}}</span>
+    <span class="list-item"><strong>End Date: </strong>{{post.end_date}}</span>
+    <h6 class="blog-heading">{{post.description}}</h6>
+    <span class="blog-content">{{post.content}}</span>
+  </div>
+</article>
 
 {{#if loggedIn}}
 <form class="comment-form">
-    <p class="link-title">Add Your Comment Below</p>
-    <textarea name="comment-body" class="comment-body"></textarea>
-    <button class= "comment-btn" type="submit">Add Comment</button>
+  <p class="link-title">Add Your Comment Below</p>
+  <textarea name="comment-body" class="comment-body"></textarea>
+  <button class="comment-btn" type="submit">Add Comment</button>
 </form>
 {{/if}}
 
-    {{#if post.comments}}
-        {{> comments post.comments}}
-    {{/if}}
+{{#if post.comments}}
+{{> comments post.comments}}
+{{/if}}
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
-
 

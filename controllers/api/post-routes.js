@@ -2,12 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
-//include models here: 
 const { Post, Comment, User, Location, PostLocation } = require('../../models');
 
-// get all posts
 router.get('/', (req, res) => {
-  //console.log('======================');
   Post.findAll({
     attributes: [
       'id',
@@ -15,9 +12,10 @@ router.get('/', (req, res) => {
       'description',
       'content',
       'start_date',
-      'end_date'
+      'end_date',
+      'photo_url',
     ],
-    order: [['end_date', 'DESC']],
+      order: [['end_date', 'DESC']],
     include: [
       {
         model: User,
@@ -34,7 +32,6 @@ router.get('/', (req, res) => {
       'locations',
       'activities',
       'cuisine',
-      'codes'
     ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -55,7 +52,8 @@ router.get('/:id', (req, res) => {
       'description',
       'content',
       'start_date',
-      'end_date'
+      'end_date',
+      'photo_url',
     ],
     include: [
       {
@@ -83,7 +81,7 @@ router.get('/:id', (req, res) => {
       res.json(dbPostData);
     })
     .catch(err => {
-      console.log(err);
+      console.log(err)
       res.status(500).json(err);
     });
 });
@@ -105,6 +103,7 @@ router.post('/', withAuth, (req, res) => {
         content: req.body.content,
         start_date: req.body.start_date,
         end_date: req.body.end_date,
+        photo_url: req.body.photo_url,
         locations: [ 
           { city: req.body.city, country: req.body.country }
         ],
@@ -126,6 +125,7 @@ router.post('/', withAuth, (req, res) => {
         content: req.body.content,
         start_date: req.body.start_date,
         end_date: req.body.end_date,
+        photo_url: req.body.photo_url,
         activities: [
           { name: req.body.activity }
         ],
@@ -147,7 +147,7 @@ router.post('/', withAuth, (req, res) => {
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
-      console.log(err);
+      console.log(err)
       res.status(500).json(err);
     });
 });
@@ -160,6 +160,7 @@ router.put('/:id', withAuth, (req, res) => {
       content: req.body.content,
       start_date: req.body.start_date,
       end_date: req.body.end_date,
+      photo_url: req.body.photo_url,
     }, 
     {
       where: {
