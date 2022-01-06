@@ -2,6 +2,8 @@
 
 ## Description
 
+Our Application is live: [Click this link to visit our site](https://trippin-worldwide.herokuapp.com/)
+
 This application will provide a user the ability to journalize information about their travels such as description, start and end dates, city and country, activities, and cuisine as well as provide an opportunity to review/comment on other users' adventures. In addition, the most visited cities will be displayed via a map to help plan any future journeys.
 
 The web application uses Node.js and Express.js to create a RESTful API, Handlebars.js as a templating engine, MySQL and Sequelize ORM for the database, dotenv and bcrypt for securing sensitive data, bootstrap/CSS for styling, AWS S3 Bucket for storage, and Google Maps Geocoding and JavaScript APIs for mapping locations visited within a map view.
@@ -180,12 +182,12 @@ No tests created for this project.
 
 If you have any questions about the repo, open an issue or contact us directly at:
 
-|       Name       |            Email            |    GitHub     |
-| :--------------: | :-------------------------: | :-----------: |
-|  Kristin Gaito   |    kngurley25@gmail.com     |   kngurley25	 |
-|  Sam Davenport   |   samueldavenport@att.net   |               |
-|     Raman TV     |     ramantv@outlook.com     |    ramantv    |
-|    Hank Kapka    |     hankkapka@gmail.com     |     hkapk     |
-| Christine Baxter | christine.d.baxter@live.com | baxters4karma |
+|       Name       |            Email            |                         GitHub                          |
+| :--------------: | :-------------------------: | :-----------------------------------------------------: |
+|  Kristin Gaito   |    kngurley25@gmail.com     |     [kngurley25](https://www.github.com/kngurley25)     |
+|  Sam Davenport   |   samueldavenport@att.net   | [steadysamwise4](https://www.github.com/steadysamwise4) |
+|     Raman TV     |     ramantv@outlook.com     |        [ramantv](https://www.github.com/ramantv)        |
+|    Hank Kapka    |     hankkapka@gmail.com     |          [hkapk](https://www.github.com hkapk)          |
+| Christine Baxter | christine.d.baxter@live.com |  [baxters4karma](https://www.github.com/baxters4karma)  |
 
 [back to top](#table-of-contents)
