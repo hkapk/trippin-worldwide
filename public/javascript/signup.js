@@ -44,7 +44,7 @@ async function signupFormHandler(event) {
   var lowOk = low.test(password);
   var upOk = up.test(password);
   var numOk = num.test(password);
-  debugger;
+  
   if (password.length > 7 && password.length < 33 && lowOk && upOk && numOk) {
     
     if(first_name && last_name && email && password) {
@@ -66,10 +66,12 @@ async function signupFormHandler(event) {
       } else {
          badDataResult();
       }
+    } else {
+      errorTextBlank();
     }
   } else {
     badPasswordResult();
-  }
+  } 
 }
 
 document
