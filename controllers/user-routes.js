@@ -4,7 +4,6 @@ const { User, Post, Comment} = require('../models');
 
 router.get('/', (req, res) => {
     User.findAll({
-      // attributes: { exclude: ['password'] },
       attributes:[
         'id',
         'first_name',
@@ -24,7 +23,6 @@ router.get('/', (req, res) => {
           include : {
             model: Post,
             attributes: ['title', 'id']
-  
           }
         }
       ]
@@ -64,7 +62,6 @@ router.get('/:id', (req, res) => {
         include : {
           model: Post,
           attributes: ['title', 'id']
-
         }
       }
     ]
@@ -75,14 +72,12 @@ router.get('/:id', (req, res) => {
       return;
     }
     let activeUser;
-    // serialize the data
     const user = dbUserData.get({ plain: true });
     if (user.id === req.session.user_id) {
       activeUser = true;
     } else {
       activeUser = false;
     }
-    // pass data to template
     res.render('single-user',
       {
         user,
@@ -95,6 +90,5 @@ router.get('/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
-
 
 module.exports = router;

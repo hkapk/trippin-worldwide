@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, PostLocation, PostCuisine, PostActivity, Post, Location, Cuisine, Comment, Activity } = require('../models');
+const { User, Post, Comment } = require('../models');
 
-// get all posts for homepage
 router.get('/', (req, res) => {
   Post.findAll({ 
     attributes: [
@@ -13,6 +12,7 @@ router.get('/', (req, res) => {
       'content',
       'start_date',
       'end_date',
+      'photo_url'
     ],
     order: [['end_date', 'DESC']],
     include: [
@@ -40,7 +40,6 @@ router.get('/', (req, res) => {
     });
 });
 
-//login route
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -49,7 +48,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-//signup route
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -69,7 +67,8 @@ router.get('/post/:id', (req, res) => {
       'description',
       'content',
       'start_date',
-      'end_date'
+      'end_date',
+      'photo_url'
     ],
     include: [
       {
@@ -94,11 +93,7 @@ router.get('/post/:id', (req, res) => {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-
-      // serialize the data
       const post = dbPostData.get({ plain: true });
-
-      // pass data to template
       res.render('single-blog',
         {
           post,

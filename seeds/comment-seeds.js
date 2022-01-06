@@ -3,22 +3,22 @@ const { Comment } = require('../models');
 const commentData = [
     {
         comment_text: 'Sounds like a great trip!',
-        user_id: 1,
+        user_id: 5,
         post_id: 1
     },
     {
         comment_text: 'How fun!',
-        user_id: 1,
+        user_id: 4,
         post_id: 2
     },
     {
         comment_text: 'Awesome trip!',
-        user_id: 1,
+        user_id: 3,
         post_id: 3
     },
     {
         comment_text: 'Cool trip!',
-        user_id: 1,
+        user_id: 2,
         post_id: 4
     },
     {
@@ -28,22 +28,22 @@ const commentData = [
     },
     {
         comment_text: 'I am traveling there soon!',
-        user_id: 1,
+        user_id: 5,
         post_id: 6
     },
     {
         comment_text: 'My family is from there!',
-        user_id: 1,
+        user_id: 4,
         post_id: 7
     },
     {
         comment_text: 'Sounds like an amazing trip!',
-        user_id: 1,
+        user_id: 3,
         post_id: 8
     },
     {
         comment_text: 'Very cool!',
-        user_id: 1,
+        user_id: 2,
         post_id: 9
     },
     {
@@ -53,12 +53,12 @@ const commentData = [
     },
     {
         comment_text: 'So much fun!',
-        user_id: 1,
+        user_id: 5,
         post_id: 11
     },
     {
         comment_text: 'Will have to go back some day!',
-        user_id: 1,
+        user_id: 4,
         post_id: 12
     }
 ]

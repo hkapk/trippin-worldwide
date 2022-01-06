@@ -3,15 +3,12 @@
   <section>
     {{#each this}}
       <li class="comment" >
-        
           {{comment_text}} </br>
           <sub><strong>posted by:</strong>
-            {{user.first_name}}
-            {{user.last_name}}
-            <strong>on {{format_date created_at}}</strong></sub><br />
-        
+          {{user.first_name}}
+          {{user.last_name}}
+          <strong>on {{format_date created_at}}</strong></sub><br />
       </li>
     {{/each}}
-
   </section>
 </div>
