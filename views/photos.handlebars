@@ -1,0 +1,18 @@
+<div class="nav-mini">
+
+</div>
+
+<article class="single-post">
+    <h4 class="sub-heading">Trip Photos</h4>
+    {{#each posts as |post|}}
+    {{#if post.photo_url}}
+    <div class="post-card">
+        <h5 class="blog-title">{{post.title}}</h5>
+        <span class="list-item">
+            <img id="blog-photo-preview" style="border:1px solid gray" class="single-img" src="{{post.photo_url}}">
+        </span>
+    </div>
+    {{/if}}
+    {{/each}}
+</article>
+    
