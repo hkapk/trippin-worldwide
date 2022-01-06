@@ -9,7 +9,6 @@ module.exports = {
       if (amount !== 1) {
         return `${word}s`;
       }
-  
       return word;
   }
 }

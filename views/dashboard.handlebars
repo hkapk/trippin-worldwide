@@ -2,14 +2,14 @@
   <a href="/dashboard/create" class="large-btn-nav">Create a new blog</a>
 </div>
 
-<div class="home">
+<div class="home" id="button-bubble">
 {{#if posts.length}}
   <h4 class="sub-heading">My Trips</h4>
-  <ol class="post-list">
+  <ol class="post-list" >
     {{#each posts as |post|}}
       <li>
         <article class="post">
-          <div class="post-card">
+          <div class="post-card" >
             <h5 class="blog-title">{{title}}</h5>
             <span class="list-item"><strong>Posted by:</strong>
               {{user.first_name}}
@@ -36,4 +36,3 @@
   {{> edit-comments}}
 </div>
 {{/if}}
-<script src="/javascript/delete-comment.js"></script>

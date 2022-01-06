@@ -2,12 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
-//include models here: 
 const { Post, Comment, User, Location, PostLocation } = require('../../models');
 
-// get all posts
 router.get('/', (req, res) => {
-  //console.log('======================');
   Post.findAll({
     attributes: [
       'id',
@@ -18,7 +15,7 @@ router.get('/', (req, res) => {
       'end_date',
       'photo_url',
     ],
-    order: [['end_date', 'DESC']],
+      order: [['end_date', 'DESC']],
     include: [
       {
         model: User,
@@ -35,7 +32,6 @@ router.get('/', (req, res) => {
       'locations',
       'activities',
       'cuisine',
-      'codes'
     ]
   })
     .then(dbPostData => res.json(dbPostData))

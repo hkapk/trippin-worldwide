@@ -1,0 +1,178 @@
+/* css - individual */
+
+.main {
+	position: relative;
+	left: 8.33%;
+	z-index: 2;
+  }
+/* sometimes this nav contains large-btn-nav */
+  .nav-mini {
+	background-color: rgb(245, 245, 245, 0.8);
+	margin-bottom: 25px;
+	display: flex;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	position: fixed;
+	height: 30px;
+	width: 100%;
+	z-index: 3;
+  }
+  /* only for /popular page */
+  .nav-mini-pop {
+	background-color: rgb(245, 245, 245, 0.8);
+	margin-bottom: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	position: fixed;
+	height: 30px;
+	width: 100%;
+	z-index: 3;
+	justify-content: center;
+  }
+/* heading and titles */
+  .sub-heading {
+	font-size: 2.2rem;
+	text-align: center;
+	color: darkblue;
+	margin: 0 auto;
+	max-width: inherit;
+	border-radius: 7px;
+	padding: 10px;
+	font-weight: 700;
+	background-color: rgb(245, 245, 245, 0.8);
+  }
+
+  .blog-title {
+	background-color: rgb(245, 245, 245, 0.8);
+	margin: 5px;
+	border-radius: 10px;
+	color: darkblue;
+	text-align: center;
+	font-weight: 700;
+	padding: 10px;
+	font-size: 1.9rem;
+  }
+  .blog-heading {
+	font-size: 1.6rem;
+	text-align: center;
+	color: darkblue;
+	background-color: rgb(192, 192, 192, 0.8);
+	margin: 25px 20px;
+	max-width: inherit;
+	border-radius: 7px;
+	padding: 10px;
+	font-weight: 700;
+  }
+  .link-title {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	color: whitesmoke;
+	text-align: center;
+  }
+  h4 {
+	background-color: rgb(245, 245, 245, 0.8);
+	margin: 10px;
+	border-radius: 15px;
+	color: darkblue;
+	text-align: center;
+	font-weight: 700;
+	padding: 2rem;
+	font-size: 1.8rem;
+  }
+  
+  .home h4 {
+	width: 60%;
+	margin-bottom: 10px;
+  }
+  .users-title {
+	background-color: whitesmoke;
+	text-align: center;
+	font-size: 1.2rem;
+	color: darkblue;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+  }
+  .users-title:hover {
+	background-color: rgb(0, 0, 139, 0.6);
+	color: whitesmoke;
+  }
+
+/* buttons */ 
+
+/* log in, log out, sign-up */
+.btn-nav {
+	color: whitesmoke;
+	border-radius: 6px;
+	padding: 3px 6px;
+	font-size: 0.8rem;
+	text-decoration: none;
+	color: whitesmoke;
+	font-weight: bolder;
+	transition: color 0.1s;
+	border: none;
+	border: 0px;
+	background-color: rgb(0, 0, 139, 0.8);
+	margin: 5px 20px;
+  }
+  .btn-nav:hover {
+	color: darkblue;
+	background-color: rgb(245, 245, 245, 0.8);
+  }
+
+/* links on white nav across top of pages */
+  .large-btn-nav {
+	color: darkblue;
+	font-size: 1rem;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.1s;
+	border: 0px;
+  }
+  .large-btn-nav:hover {
+	color: whitesmoke;
+	background-color: rgb(0, 0, 139, 0.8);
+  }
+  /* links on white nav across top of popular page */
+  .popular-btn-nav {
+	color: darkblue;
+	font-size: 1rem;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.1s;
+	border: 0px;
+  }
+  .popular-btn-nav:hover {
+	color: whitesmoke;
+	background-color: rgb(0, 0, 139, 0.8);
+  }
+  a {
+	text-decoration: none;
+	color: darkblue;
+	font-weight: bold;
+	transition: color 0.1s;
+	padding: 3px;
+  }
+  a:hover {
+	color: whitesmoke;
+  }
+  .button {
+	background-color: darkblue;
+	transition: background-color 0.1s;
+	color: whitesmoke;
+	border-radius: 6px;
+	padding: 2px 6px;
+	font-size: 1rem;
+	margin: 5px auto;
+  }
+  
+  .button:hover {
+	background-color: rgb(85, 169, 243);
+  }
+
+
+
+
+

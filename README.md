@@ -182,7 +182,7 @@ If you have any questions about the repo, open an issue or contact us directly a
 
 |       Name       |            Email            |    GitHub     |
 | :--------------: | :-------------------------: | :-----------: |
-|  Kristin Gaito   |    kngurley25@gmail.com     |               |
+|  Kristin Gaito   |    kngurley25@gmail.com     |   kngurley25	 |
 |  Sam Davenport   |   samueldavenport@att.net   |               |
 |     Raman TV     |     ramantv@outlook.com     |    ramantv    |
 |    Hank Kapka    |     hankkapka@gmail.com     |     hkapk     |
