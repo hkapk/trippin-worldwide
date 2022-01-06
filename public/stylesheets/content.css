@@ -57,8 +57,14 @@
 .single-img {
 	margin: 10px;
 	border-radius: 15px;
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
+}
+.image-tag {
+    margin: 0;
+    text-align: center;
+    color:black;
+    font-weight: bold;
 }
 
   /* forms */

@@ -42,7 +42,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  console.log("post id = " + req.params.id);
   Post.findOne({
     where: {
       id: req.params.id
@@ -79,11 +78,10 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      console.log(dbPostData);
       res.json(dbPostData);
     })
     .catch(err => {
-      console.log(err);
+      console.log(err)
       res.status(500).json(err);
     });
 });
@@ -149,7 +147,7 @@ router.post('/', withAuth, (req, res) => {
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
-      console.log(err);
+      console.log(err)
       res.status(500).json(err);
     });
 });

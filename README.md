@@ -1,5 +1,8 @@
 # Trippin Worldwide
 
+![screenshot](./public/images/screenshot.png)
+[Deployed Application](https://trippin-worldwide.herokuapp.com/)
+
 ## Description
 
 This application will provide a user the ability to journalize information about their travels such as description, start and end dates, city and country, activities, and cuisine as well as provide an opportunity to review/comment on other users' adventures. In addition, the most visited cities will be displayed via a map to help plan any future journeys.
@@ -182,10 +185,10 @@ If you have any questions about the repo, open an issue or contact us directly a
 
 |       Name       |            Email            |    GitHub     |
 | :--------------: | :-------------------------: | :-----------: |
-|  Kristin Gaito   |    kngurley25@gmail.com     |   kngurley25	 |
-|  Sam Davenport   |   samueldavenport@att.net   |               |
-|     Raman TV     |     ramantv@outlook.com     |    ramantv    |
-|    Hank Kapka    |     hankkapka@gmail.com     |     hkapk     |
-| Christine Baxter | christine.d.baxter@live.com | baxters4karma |
+|  Kristin Gaito   |    kngurley25@gmail.com     |   [kngurley25](https://github.com/kngurley25)	 |
+|  Sam Davenport   |   samueldavenport@att.net   |    [steadysamwise4](https://github.com/steadysamwise4)           |
+|     Raman TV     |     ramantv@outlook.com     |    [ramantv](https://github.com/ramantv)    |
+|    Hank Kapka    |     hankkapka@gmail.com     |     [hkapk](https://github.com/hkapk)     |
+| Christine Baxter | christine.d.baxter@live.com | [baxters4karma](https://github.com/baxters4karma) |
 
 [back to top](#table-of-contents)
