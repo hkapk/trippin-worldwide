@@ -57,6 +57,8 @@
 .single-img {
 	margin: 10px;
 	border-radius: 15px;
+    max-width: 100%;
+    height: auto;
 }
 
   /* forms */
@@ -216,6 +218,7 @@
   }
   ol {
     padding: 0;
+    list-style: none;
   }
   .popular-nav {
     height: 10%;
