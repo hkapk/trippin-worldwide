@@ -135,6 +135,22 @@
     margin-left: 0;
     margin-bottom: 3%;
   }
+  .photo-entry {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(192, 192, 192, 0.8);
+    margin: 3% auto;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.5rem;
+    max-width: 350px;
+    height: fit-content;
+  }
+  .photo-entry-img {
+      height:fit-content;
+      margin: 0 auto;
+  }
 
   /* comments */
   .comment-form {
