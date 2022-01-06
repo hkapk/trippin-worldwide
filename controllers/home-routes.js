@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
       'content',
       'start_date',
       'end_date',
+      'photo_url'
     ],
     order: [['end_date', 'DESC']],
     include: [
@@ -66,7 +67,8 @@ router.get('/post/:id', (req, res) => {
       'description',
       'content',
       'start_date',
-      'end_date'
+      'end_date',
+      'photo_url'
     ],
     include: [
       {

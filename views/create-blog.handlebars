@@ -4,6 +4,17 @@
 <section class="create-section">
     <h4 class="sub-heading mx-auto" style="width: 40%">Create a new blog</h4>
 
+    {{!-- 
+        The photo upload to S3 is an asynchronous, client-side function, so it's kept outside the submitted form.
+        Only the uploaded photo URL is populated into the hidden blog-photo-url form field and submitted with the form.
+    --}}
+    <div class="blog-form">
+        <label for="blog-photo">Upload a photo with your blog (optional):</label>
+        <input type="file" id="blog-photo" name="blog-photo" accept="image/png, image/jpeg">
+        <img id="blog-photo-preview" style="visibility:hidden;border:1px solid gray;width:250px;" class="single-img" src="">
+        <h3 hidden id="blog-photo-s3-url"></h3>
+    </div>
+
     <form class="blog-form" id="create-blog-form">
         <div class="form-floating">
             <input type="text" id="blog-title" name="blog-title" placeholder="Blog title" class="form-control"/>
@@ -41,6 +52,10 @@
             <textarea name="cuisine-name" id="cuisine-name" placeholder="Cuisine" class="form-control"></textarea>
             <label for="cuisine-name">List cuisine (optional)</label>
         </div>
+
+        {{!-- Hidden input field that gets set with the URL of the uploaded blog photo--}}
+        <input type="hidden" id="blog-photo-url" name="blog-photo-url" value="">
+
         <div class="field">
             <button type="submit" class="button">Create blog</button>
         </div>
@@ -48,3 +63,4 @@
 </section>
 
 <script src="/javascript/create-blog.js"></script>
+<script src="/javascript/s3-img-upload.js"></script>

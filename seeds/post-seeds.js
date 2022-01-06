@@ -40,7 +40,8 @@ const postData = [
         description: "Relaxing time with friends",
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         start_date: '2014-06-01',
-        end_date: '2014-06-07'
+        end_date: '2014-06-07',
+        photo_url: "https://rvt-trippin-ww.s3.us-east-2.amazonaws.com/1641259367015_mockupv1.png",
     },
     {
         user_id: 1,
@@ -96,7 +97,8 @@ const postData = [
         description: "Tour the city and traveled surrounding areas",
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         start_date: '2021-11-01',
-        end_date: '2021-11-07'
+        end_date: '2021-11-07',
+        photo_url: "https://rvt-trippin-ww.s3.us-east-2.amazonaws.com/1641335636933_9c86fea396cb9b34376bf5dd2e7e0d4e.jpg",
     },
     {
         user_id: 3,

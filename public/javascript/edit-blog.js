@@ -21,6 +21,7 @@ async function editBlogHandler(event) {
     const country = document.querySelector('input[name="country"]').value;
     const activity = document.querySelector('textarea[name="activity-name"]').value;
     const cuisine = document.querySelector('textarea[name="cuisine-name"]').value;
+    
     const id = window.location.toString().split("/")[
         window.location.toString().split("/").length -1
     ];
