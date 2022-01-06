@@ -1,5 +1,7 @@
 # Trippin Worldwide
 
+![screenshot](./public/images/screenshot.png)
+
 ## Description
 
 Our Application is live: [Click this link to visit our site](https://trippin-worldwide.herokuapp.com/)
