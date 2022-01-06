@@ -49,4 +49,6 @@ async function editBlogHandler(event) {
     }
 }
 
+
+
 document.querySelector('#edit-blog-form').addEventListener('submit', editBlogHandler);
