@@ -21,6 +21,7 @@ async function newBlogHandler(event) {
     const country = document.querySelector('input[name="country"]').value;
     const activity = document.querySelector('textarea[name="activity-name"]').value;
     const cuisine = document.querySelector('textarea[name="cuisine-name"]').value;
+    const photo_url = document.querySelector('input[name="blog-photo-url"]').value;
 
     const response = await fetch('/api/posts', {
         method: 'POST',
@@ -33,7 +34,8 @@ async function newBlogHandler(event) {
             city,
             country,
             activity,
-            cuisine
+            cuisine,
+            photo_url
         }),
         headers: {
             'Content-Type': 'application/json'

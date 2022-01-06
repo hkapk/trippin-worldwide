@@ -11,11 +11,13 @@
 		"node": "^17.3.0",
 		"require": "^0.4.4",
 		"requirejs": "^2.3.6",
-		"sequelize": "^6.12.2"
+		"sequelize": "^6.12.2",
+		"aws-sdk": "^2.1051.0"
 	},
 	"scripts": {
 		"start": "node server.js",
-		"seed": "node seeds/index.js"
+		"seed": "node seeds/index.js",
+		"watch": "nodemon server.js"
 	},
 	"name": "trippin-worldwide",
 	"description": "This application will provide a user the ability to journalize information about their travels such as description, start and end dates, city and country, activities, and cuisine as well as provide an opportunity to review/comment on other users' adventures. In addition, the most visited cities will be displayed via a map to help plan any future journeys. Application uses: Node.js and Express.js (create a RESTful API), Handlebars.js (templating engine), MySQL and Sequelize ORM (database), dotenv and bcrypt (secure sensitive data), and bootstrap/CSS (styling).",
@@ -28,6 +30,9 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	},
 	"bugs": {
 		"url": "https://github.com/hkapk/trippin-worldwide/issues"
 	},

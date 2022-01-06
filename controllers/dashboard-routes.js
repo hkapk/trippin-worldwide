@@ -15,7 +15,8 @@ router.get('/', withAuth, (req, res) => {
         'description',
         'content',
         'start_date',
-        'end_date'
+        'end_date',
+        'photo_url'
       ],
       include: [
         {
@@ -58,7 +59,8 @@ router.get('/', withAuth, (req, res) => {
           'description',
           'content',
           'start_date',
-          'end_date'
+          'end_date',
+          'photo_url'
         ],
         include: [
           {

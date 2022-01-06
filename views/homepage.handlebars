@@ -22,6 +22,13 @@
 						</span>
 						<span class="list-item"><strong>Date:
 							</strong>{{end_date}}</span>
+
+						{{#if photo_url}}
+			            <span class="list-item">
+					        <img id="blog-photo-preview" style="border:1px solid gray;width:250px;" class="single-img" src="{{photo_url}}">
+			            </span>
+						{{/if}}
+
             <span class="list-item">
 						  <a href="/post/{{id}}">More Details</a>
             </span>

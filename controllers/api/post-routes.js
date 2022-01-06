@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
       'description',
       'content',
       'start_date',
-      'end_date'
+      'end_date',
+      'photo_url',
     ],
     order: [['end_date', 'DESC']],
     include: [
@@ -45,6 +46,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+  console.log("post id = " + req.params.id);
   Post.findOne({
     where: {
       id: req.params.id
@@ -55,7 +57,8 @@ router.get('/:id', (req, res) => {
       'description',
       'content',
       'start_date',
-      'end_date'
+      'end_date',
+      'photo_url',
     ],
     include: [
       {
@@ -80,6 +83,7 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
+      console.log(dbPostData);
       res.json(dbPostData);
     })
     .catch(err => {
@@ -105,6 +109,7 @@ router.post('/', withAuth, (req, res) => {
         content: req.body.content,
         start_date: req.body.start_date,
         end_date: req.body.end_date,
+        photo_url: req.body.photo_url,
         locations: [ 
           { city: req.body.city, country: req.body.country }
         ],
@@ -126,6 +131,7 @@ router.post('/', withAuth, (req, res) => {
         content: req.body.content,
         start_date: req.body.start_date,
         end_date: req.body.end_date,
+        photo_url: req.body.photo_url,
         activities: [
           { name: req.body.activity }
         ],
@@ -160,6 +166,7 @@ router.put('/:id', withAuth, (req, res) => {
       content: req.body.content,
       start_date: req.body.start_date,
       end_date: req.body.end_date,
+      photo_url: req.body.photo_url,
     }, 
     {
       where: {
