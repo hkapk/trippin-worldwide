@@ -8,12 +8,12 @@
         The photo upload to S3 is an asynchronous, client-side function, so it's kept outside the submitted form.
         Only the uploaded photo URL is populated into the hidden blog-photo-url form field and submitted with the form.
     --}}
-    <div class="blog-form">
+    <form class="photo-entry">
         <label for="blog-photo">Upload a photo with your blog (optional):</label>
-        <input type="file" id="blog-photo" name="blog-photo" accept="image/png, image/jpeg">
-        <img id="blog-photo-preview" style="visibility:hidden;border:1px solid gray;width:250px;" class="single-img" src="">
+        <input type="file" id="blog-photo" name="blog-photo" accept="image/png, image/jpeg"></br>
+        <img id="blog-photo-preview" style="visibility:hidden;border:1px solid gray;width:250px;" class="photo-entry-img" src="">
         <h3 hidden id="blog-photo-s3-url"></h3>
-    </div>
+    </form>
 
     <form class="blog-form" id="create-blog-form">
         <div class="form-floating">
